@@ -1,0 +1,89 @@
+.logo__portrait {
+    margin-left: 10px;
+    margin-top: 10px;
+    height: 100px;
+}
+
+.contents-container {
+    display: table;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+    align-items: top;
+    margin-top: 70px;
+}
+
+.contents-left {
+    display: table-cell;
+    width: 60%;
+    max-width: 300px;
+    height: 350px;
+}
+
+.contents-right {
+    display: table-cell;
+    text-align: right;
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+}
+
+.contents-nav {
+    font-size: 15pt;
+}
+
+.intro {
+    font-family: 'Heebo', sans-serif;
+}
+
+.description {
+    margin-top: 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 18pt;
+}
+
+.my-projects {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 400;
+    top: 0;
+}
+
+.external-links {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 30px;
+}
+
+.github, .linkedin, .email {
+    max-width: 40px;
+    height: auto;
+}
+
+.check-me-out {
+    margin-bottom: 15px;
+}
+
+.about-me {
+    font-family: 'Heebo', sans-serif;
+    font-size: 6pt;
+    margin-top: 30px;
+}
+
+.github, .linkedin {
+    margin-right: 10px;
+}
+
+.bg-blank {
+    position: absolute;
+    width: 75%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+@media (max-width: 655px) {
+    .contents-right {
+        display: none;
+    }
+}
