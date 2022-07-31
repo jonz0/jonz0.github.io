@@ -28,6 +28,64 @@
     font-weight: 800;
 }
 
+.project-1, .project-2, .project-3, .project-4 {
+    position: relative;
+}
+
+.hover-1, .hover-2, .hover-3, .hover-4 {
+    position: absolute;
+    height: 20px;
+    bottom: 0;
+    right: 0;
+    padding-bottom: 5px;
+    opacity: 70%;
+    z-index: -1;
+    display: none;
+}
+
+.hover-1 {
+    width: 150px;
+}
+
+.background-blank {
+    position: fixed;
+    width: 75%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: -3;
+}
+
+.gitlet, .worlds, .in-progress, .travel-map {
+    opacity: 0;
+    position: fixed;
+    width: 75%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: -2;
+    object-fit: cover;
+    transition: 750ms;
+}
+
+.project-1:hover img, .project-2:hover img,
+.project-3:hover img, .project-4:hover img {
+    display: block;
+    opacity: 1;
+}
+
+.hover-2 {
+    width: 240px;
+}
+
+.hover-3 {
+    width: 265px;
+}
+
+.hover-4 {
+    width: 260px;
+}
+
 .contents-nav {
     font-size: 15pt;
 }
@@ -61,6 +119,9 @@
 
 .check-me-out {
     margin-bottom: 15px;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 300;
+    font-size: 14px;
 }
 
 .about-me {
@@ -71,15 +132,6 @@
 
 .github, .linkedin {
     margin-right: 10px;
-}
-
-.bg-blank {
-    position: absolute;
-    width: 75%;
-    height: 100%;
-    right: 0;
-    top: 0;
-    z-index: -1;
 }
 
 @media (max-width: 655px) {
