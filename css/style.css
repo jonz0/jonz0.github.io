@@ -13,6 +13,7 @@
     height: 95px;
     top: 20px;;
     left: 20px;
+    border-radius: 10px;
 }
 
 .hamburger-icon {
@@ -21,6 +22,7 @@
     right: 20px;
     top: 20px;
     background-color: #96ff8c;
+    border-radius: 5px;
     /* z-index: 1; */
 }
 
@@ -253,11 +255,14 @@
 }
 
 .project-cover-text {
+    margin-top: 250px;
+    font-family: 'Playfair Display', serif;
+    margin-left: 12%;
+    width: 90%;
     display: flex;
     flex-direction: column;
-    margin-top: 250px;
-    margin-left: 140px;
-    font-family: 'Playfair Display', serif;
+    margin-bottom: 200px;
+    flex-wrap: wrap;
 }
 
 .project-title {
@@ -269,9 +274,9 @@
     box-sizing: border-box;
     background-color: white;
     height: 2px;
-    width: 80%;
     margin-top: -13px;
     margin-bottom: 20px;
+    width: 85%;
 }
 
 .project-blurb {
@@ -284,8 +289,8 @@
 
 .about-container {
     margin-top: 160px;
-    margin-left: 140px;
-    width: 85%;
+    margin-left: 12%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     margin-bottom: 200px;
@@ -326,6 +331,10 @@
     .about-right {
         display: none;
     }
+
+    .about-left {
+        width: 85%
+    }
 }
 
 
@@ -333,8 +342,8 @@
 
 .project-container {
     margin-top: 160px;
-    margin-left: 140px;
-    width: 85%;
+    margin-left: 12%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     margin-bottom: 200px;
@@ -391,4 +400,41 @@
     font-family: 'Jost', sans-serif;
     font-weight: 300;
     font-size: 22px;
+}
+
+@media (max-width: 900px) {
+    .project-right {
+        display: none;
+    }
+
+    .project-left {
+        width: 85%
+    }
+}
+
+.breakdown-container {
+    width: 90%;
+}
+
+.breakdown-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 26pt;
+}
+
+.breakdown-text {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+/************ PROJECT 1: GITLET ************/
+
+
+.project-image-full {
+    display: flex;
+    justify-content: center;
+}
+
+.gitlet-diagram {
+    width: 95%;
 }
