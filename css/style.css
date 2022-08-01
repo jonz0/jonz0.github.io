@@ -1,11 +1,14 @@
 .logo__portrait {
-    margin-left: 10px;
-    margin-top: 10px;
-    height: 100px;
+    margin-left: 15px;
+    margin-top: 15px;
+    height: 95px;
 }
 
+/** CONTAINER AND BACKGROUND */
+
 .contents-container {
-    display: table;
+    display: flex;
+    flex-direction: row;
     position: relative;
     margin-right: auto;
     margin-left: auto;
@@ -14,18 +17,123 @@
     margin-top: 70px;
 }
 
-.contents-left {
-    display: table-cell;
-    width: 60%;
-    max-width: 300px;
-    height: 350px;
+.background-blank {
+    position: fixed;
+    width: 75%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    z-index: -3;
+    background-color: #f5f5f5;
+    border: none;
 }
 
+/** LEFT SIDE */
+
+.contents-left {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: 800px;
+}
+
+.check-me-out {
+    margin-bottom: 15px;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    padding-top: 50px;
+}
+
+.github-container, .linkedin-container, .email-container {
+    display: inline-block;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    transition: 250ms;
+}
+
+.github, .linkedin, .email {
+    max-width: 40px;
+    margin: 5px;
+    height: 30px
+}
+
+.github-container:hover {
+    background-color: #6e5494;
+}
+
+.linkedin-container:hover {
+    background-color: #0072b1;
+}
+
+.email-container:hover {
+    background-color: #db4437;
+}
+
+.about-me {
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+.right-arrow {
+    margin-top: 12px;
+    height: 22px;
+    background-color: #96ff8c;
+    align-items: center;
+}
+
+.about-link {
+    margin-left: 15px;
+    margin-top: 1px;
+    display: inline-block;
+    font-family: 'Heebo', sans-serif;
+    font-size: 6pt;
+}
+
+.about-hover {
+    opacity: 0;
+    position: absolute;
+    background-color: #96ff8c;
+    height: 22px;
+    width: 105px;
+    margin-left: -20px;
+    margin-top: -34px;
+    z-index: -1;
+    transition: 250ms;
+    
+}
+
+.about-link:hover area {
+    opacity: 1;
+}
+
+.github, .linkedin {
+    margin-right: 10px;
+}
+
+.intro {
+    font-family: 'Heebo', sans-serif;
+    color: grey;
+}
+
+.description {
+    margin-top: 30px;
+    font-family: 'Playfair Display', serif;
+    font-size: 24pt;
+}
+
+/** RIGHT SIDE */
+
 .contents-right {
-    display: table-cell;
+    display: flex;
+    flex-direction: column;
     text-align: right;
     font-family: 'Playfair Display', serif;
     font-weight: 800;
+    width: 800px;
 }
 
 .project-1, .project-2, .project-3, .project-4 {
@@ -41,19 +149,9 @@
     opacity: 70%;
     z-index: -1;
     display: none;
-}
-
-.hover-1 {
-    width: 150px;
-}
-
-.background-blank {
-    position: fixed;
-    width: 75%;
-    height: 100%;
-    right: 0;
-    top: 0;
-    z-index: -3;
+    background-color: #96ff8c;
+    margin-bottom: 3px;
+    height: 17px;
 }
 
 .gitlet, .worlds, .in-progress, .travel-map {
@@ -66,12 +164,21 @@
     z-index: -2;
     object-fit: cover;
     transition: 750ms;
+    border: none;
 }
 
 .project-1:hover img, .project-2:hover img,
 .project-3:hover img, .project-4:hover img {
     display: block;
     opacity: 1;
+}
+
+.project-1:hover + .gitlet {
+    opacity: 1;
+}
+
+.hover-1 {
+    width: 150px;
 }
 
 .hover-2 {
@@ -90,52 +197,29 @@
     font-size: 15pt;
 }
 
-.intro {
-    font-family: 'Heebo', sans-serif;
-}
-
-.description {
-    margin-top: 30px;
-    font-family: 'Playfair Display', serif;
-    font-size: 18pt;
-}
-
 .my-projects {
     font-family: 'Heebo', sans-serif;
     font-weight: 400;
     top: 0;
+    color: grey;
 }
 
-.external-links {
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 30px;
-}
+/** MEDIA QUERIES */
 
-.github, .linkedin, .email {
-    max-width: 40px;
-    height: auto;
-}
-
-.check-me-out {
-    margin-bottom: 15px;
-    font-family: 'Heebo', sans-serif;
-    font-weight: 300;
-    font-size: 14px;
-}
-
-.about-me {
-    font-family: 'Heebo', sans-serif;
-    font-size: 6pt;
-    margin-top: 30px;
-}
-
-.github, .linkedin {
-    margin-right: 10px;
-}
-
-@media (max-width: 655px) {
+@media (max-width: 760px) {
     .contents-right {
         display: none;
+    }
+
+    .description {
+        font-size: 18pt;
+    }
+
+    .logo__portrait {
+        margin-left: 15px;
+        margin-top: 20px;
+        min-height: 70px;
+        max-height: 95px;
+        height: 14vw;
     }
 }
