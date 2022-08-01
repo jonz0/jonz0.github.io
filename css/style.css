@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500&family=Jost:wght@100;200;300;400&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+/************ MAIN LANDING PAGE ************/
+
+::selection {
+    color: #000942;
+    background: #96ff8c;
+  }
+
 .logo__portrait {
     margin-left: 15px;
     margin-top: 15px;
@@ -103,7 +112,6 @@
     margin-top: -34px;
     z-index: -1;
     transition: 250ms;
-    
 }
 
 .about-link:hover area {
@@ -173,13 +181,8 @@
     opacity: 1;
 }
 
-.project-1:hover + .gitlet {
-    opacity: 1;
-}
-
 .hover-1 {
     width: 150px;
-    filter: brightness(5);
 }
 
 .hover-2 {
@@ -223,4 +226,90 @@
         max-height: 95px;
         height: 14vw;
     }
+}
+
+
+/************ ABOUT ME SECTION ************/
+
+.about-photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    height: 500px;
+    width: 100%;
+    object-fit: cover;
+    opacity: 1;
+    filter: brightness(0.7)
+}
+
+.about-cover {
+    flex-direction: column;
+}
+
+.about-cover-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 130px;
+    margin-left: 100px;
+    font-family: 'Playfair Display', serif;
+}
+
+.about-title {
+    color: white;
+    font-size: 30pt;
+}
+
+.about-line {
+    box-sizing: border-box;
+    background-color: white;
+    height: 2px;
+    width: 87%;
+    margin-top: -13px;
+    margin-bottom: 20px;
+}
+
+.about-description {
+    color: white;
+    font-size: 20pt;
+    font-weight: 500;
+}
+
+/** ABOUT ME TEXT */
+
+.about-container {
+    margin-top: 160px;
+    margin-left: 100px;
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 200px;
+}
+
+.about-header {
+    width: 55%;
+    font-family: 'Playfair Display', serif;
+    font-size: 15pt;
+}
+
+.about-body-1, .about-body-2, .about-body-3 {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.about-right {
+    margin-left: 90px;
+
+}
+
+.gallery, .hello-world {
+    color: grey;
+    font-family: 'Heebo', sans-serif;
+    font-size: 14pt;
+}
+
+.gallery-placeholder {
+    color: black;
+    font-family: 'Jost', sans-serif;
 }

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="keywords" content="Jonathan Lu">
+        <meta name="description" content="This is my personal site.">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body class="about-body">
+        <div class="logo">
+            <img class="logo__portrait" src="https://media-exp1.licdn.com/dms/image/C5603AQEO04vZ49jzqg/profile-displayphoto-shrink_200_200/0/1635138897208?e=1661990400&v=beta&t=CGJL1ezdABx8gnjyP43NC7P36uWoMFZiYatbkmVbGik">
+        </div>
+        
+        <div class="about-cover">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/09/Downtown_Los_Angeles_at_Night.jpg" class="about-photo">
+            <div class="about-cover-text">
+                <h1 class="about-title">About me</h1>
+                <area class="about-line">
+                <h1 class="about-description"> Upbeat, competitive, and people-oriented </h1>
+            </div>
+        </div>
+        
+        <div class="about-container">
+            <div class="about-header">
+                <h1 class="my-name"> My name is Jonathan Lu. I just jumped ship! </h1>
+                <p class="about-body-1"> I'm a 2021 graduate living in the San Francisco Bay Area. Right out of college,
+                    I set off in early-stage investing, corporate networking, and business strategy - as I have always been 
+                    inspired by unknown founders who end up building great things. In pursuit of my own
+                    great thing, I bean experimenting with software development just under a year ago. 
+                    It feels like I'm barely staying afloat right now, but I'm treading relentlessly, and I look forward to 
+                    discovering the people and opportunities that lie ahead. 
+                </p>
+
+                <p class="about-body-2"> My work has always involved sharing and receiving information
+                    from other people, so my belief in ongoing feedback and challenging opinions is woven into my own
+                    process for working and iterating on projects. Although I'm a relatively inexperienced developer, I have
+                    a passion for creating useful things with my own two hands, and I comfortably drop into my flow state
+                    when I'm piecing together something that's right in front of me. It took me five years to realize this, so
+                    I'm determined to capitalize on every chance I have to improve as a creator & developer.
+                </p>
+
+                <p class="about-body-3"> Outside of work, you'll find me getting my ass kicked in Brazilian jiu-jitsu, handing it right
+                    back in Super Smash Bros. Ultimate, and finally catching some green waves at a beach nearby - regretting each of my 
+                    18 years living in San Diego that I didn't start surfing sooner.
+                </p>
+            </div>
+
+            <div class="get-in-touch">
+                <h2>Get in Touch</h2>
+                <p class="about-email">email: ijonluu@gmail.com</p>
+                <p class="three-js">Eye candy I made using Three.js: </p>
+            </div>
+        </div>
+    </body>
+</html>
