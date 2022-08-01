@@ -179,6 +179,7 @@
 
 .hover-1 {
     width: 150px;
+    filter: brightness(5);
 }
 
 .hover-2 {
