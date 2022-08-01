@@ -141,7 +141,7 @@
 .description {
     margin-top: 30px;
     font-family: 'Playfair Display', serif;
-    font-size: 24pt;
+    font-size: 26pt;
 }
 
 /** RIGHT SIDE */
@@ -309,7 +309,7 @@
 .about-body-1, .about-body-2, .about-body-3 {
     font-family: 'Jost', sans-serif;
     font-weight: 300;
-    font-size: 23px;
+    font-size: 25px;
 }
 
 .my-name {
@@ -400,6 +400,7 @@
     font-family: 'Jost', sans-serif;
     font-weight: 300;
     font-size: 22px;
+    padding-bottom: 70px;
 }
 
 @media (max-width: 900px) {
@@ -408,8 +409,9 @@
     }
 
     .project-left {
-        width: 85%
+        width: 90%
     }
+
 }
 
 .breakdown-container {
