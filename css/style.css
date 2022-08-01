@@ -153,7 +153,7 @@
     width: 800px;
 }
 
-.project-1, .project-2, .project-3, .project-4 {
+.project {
     position: relative;
 }
 
@@ -184,8 +184,7 @@
     border: none;
 }
 
-.project-1:hover img, .project-2:hover img,
-.project-3:hover img, .project-4:hover img {
+.project:hover img {
     display: block;
     opacity: 1;
 }
