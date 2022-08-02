@@ -20,16 +20,23 @@
         <div class="project-title">
             <img src="https://i.etsystatic.com/11032490/r/il/6d7f14/2739849289/il_fullxfull.2739849289_dyfv.jpg" class="project-photo">
             <div class="project-cover-text">
-                <h1 class="project-title">About me</h1>
+                <h1 class="project-title">Gitlet</h1>
                 <area class="project-line">
-                <h1 class="project-blurb"> Upbeat, competitive, and people-oriented </h1>
+                <h1 class="project-blurb">A local version control system modeled after Git</h1>
             </div>
         </div>
         
         <div class="project-container">
             <div class="project-left">
-                <h1 class="project-context">Project Context</h1>
-                <p class="project-context-description"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna. Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede.  
+                <h1 class="project-context">Project Overview</h1>
+                <p class="project-context-description">
+                    Gitlet is a part of UC Berkeley's CS 61B: Data Structures course, and is typically the first assigned project without a skeleton. 
+                    Thus, I wrote my code for this project from scratch, with guidance from Gitlet's project spec, which serves as a list of required commands and how they 
+                    should function - but did not lay out a structure for how Gitlet should be put together. <br>
+                </p>
+                <p class="project-context-description">
+                    This was a challenging project that exposed me to software design principles including decomposition, abstraction, and flexibility. I leveraged file persistence, graph traversals, and 
+                    cryptographic hashing so Gitlet could mimic how the real Git manages repositories, branches, and version history.
                 </p>
             </div>
 
@@ -37,31 +44,85 @@
                 <h2 class="key-learnings">KEY LEARNINGS</h2>
                 <div class="learning-block">
                     <h2 class="learning-number">01</h2>
-                    <p class="learning-content">Learning</p>
+                    <p class="learning-content">Building from scratch</p>
                 </div>
                 <div class="learning-block">
                     <h2 class="learning-number">02</h2>
-                    <p class="learning-content">Learning</p>
+                    <p class="learning-content">Software design</p>
                 </div>
                 <div class="learning-block">
                     <h2 class="learning-number">03</h2>
-                    <p class="learning-content">Learning</p>
+                    <p class="learning-content">Persistence</p>
                 </div>
                 <div class="learning-block">
                     <h2 class="learning-number">04</h2>
-                    <p class="learning-content">Learning</p>
+                    <p class="learning-content">Data structures</p>
+                </div>
+                <div class="learning-block">
+                    <h2 class="learning-number">05</h2>
+                    <p class="learning-content">Unit testing</p>
                 </div>
             </div>
 
-            <div class="project breakdown">
-                <h1>Project Breakdown</h1>
+            <div class="breakdown-container">
+                <h1 class="breakdown-title">My Approach</h1>
+                <p class="breakdown-text">Without a project skeleton, I first put pen to paper 
+                    in order to diagram how my implementation of Gitlet should look. To figure out how Git stores things like
+                    head commits, branches, and logs, I explored the .git file in my own repositories and came up with a modified structure that looks like this:
+                </p>
+
+                <div class="project-image-full">
+                    <img src="images/gitlet-diagram.png" class="gitlet-diagram">
+                </div>
+
+                <p class="breakdown-text"> All repository information is saved in a .gitlet file, which stores information about the current head, 
+                    staging area, blobs, branches, commits, commit history, and remote repositories.
+                </p>
+                <p class="breakdown-text">
+                    Commits and blobs are assigned a UUID using SHA-1, 
+                    then serialized and stored in the objects folder. To speed up object traversal, objects are packaged in folders
+                    named by the first two digits of their IDs, similar to Git.
+                </p>
+
+                <p class="breakdown-text">
+                    Once I had a workable roadmap going, I could start implementing each of Gitlet's commands one by one:
+
+                    init add commit rm log global-log find status checkout branch rm-branch reset merge add-remote rm-remote fetch push pull
+                </p>
+
+                <h1 class="breakdown-title">Challenges</h1>
+                <p class="breakdown-text">Project design: Planning Gitlet's design was not a straightforward process. Due to my inexperience
+                    with Git, my initial planning often did not support the kind of functionality that Gitlet needed to have. However, alternating
+                    between coding and designing helped me discover flaws, plan ahead, and continuously iterate until my
+                    implementation aligned perfectly with the intended design.
+                </p>
+
+                <p class="breakdown-text">Checkout, merge, and fetch: These commands involve altering the working directory based on information pulled from commit histories.
+                    For example, the command merge behaves differently based on the earliest split point of the given branches. For these commands to work, I treated commit histories as directed acyclic graphs
+                    so I could easily traverse them in reverse level order. My implementation involved using hashmaps, linked lists, and unordered sets
+                    to store and retrieve information during traversals.
+                </p>
+                <figure>
+                    <img src="images/gitlet-merge.png" class="gitlet-diagram">
+                    <figcaption>Exalple of LCA in the merge command: Gitlet finds the latest common ancestor of two commits in O(n) time (where n represents the number of parents
+                        of each branch head) by running DFS to find all parents of commit A, then matching those commits with each parent of commit B. Every shared 
+                        commit is a split point, and the LCA is the split point with the greatest depth. Gitlet avoids calculating commit node depths when merging by amortizing the calculation
+                        each time a new commit is saved. </figcaption>
+                </figure> 
+
+                <p class="breakdown-text">Testing and debugging: Gitlet was particularly challenging because each command relies upon the proper functionality of the other commands (for example, 
+                    fetching a remote branch is impossible if the remote repository is improperly initialized.) I rigorously unit tested elements
+                    to ensure that undiscovered bugs did not permeate the rest of my code, and I found myself spending as much time
+                    writing tests as I did coding up the main content. My poorly-written tests often led me astray, and my well-written ones were crucial to helping me clarify key invariables and manage overall complexity.
+                </p>
+
+                <h1 class="breakdown-title">Takeaways</h1>
+                <p class="breakdown-text">This was my first introduction to software design; instead of coding to meet a list of predefined requirements, I had to preemptively think about designing
+                    in a way that is structured, well-organized, fast, and flexible so I can develop new features without getting lost. I spent - and wasted - a lot of time working and reworking
+                    both my design and implementation, which helped me learn how to not waste time when programming larger projects.
+                </p>
             </div>
         </div>
-        
-        
-        <div class="project-image-full">
-            <img src="images/gitlet-diagram.png" class="gitlet-diagram">
-        </div>
-        
+
     </body>
 </html>

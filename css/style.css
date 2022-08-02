@@ -23,7 +23,7 @@
     top: 20px;
     background-color: #96ff8c;
     border-radius: 5px;
-    /* z-index: 1; */
+    z-index: 1;
 }
 
 /** CONTAINER AND BACKGROUND */
@@ -157,6 +157,7 @@
 
 .project {
     position: relative;
+    margin-bottom: 28px;
 }
 
 .hover-1, .hover-2, .hover-3, .hover-4 {
@@ -173,7 +174,7 @@
     height: 17px;
 }
 
-.project-name {
+.project-bg {
     opacity: 0;
     position: fixed;
     width: 75%;
@@ -184,6 +185,12 @@
     object-fit: cover;
     transition: 750ms;
     border: none;
+}
+
+.project-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    color: black;
 }
 
 .project:hover img {
@@ -208,6 +215,8 @@
 }
 
 .contents-nav {
+    display: flex;
+    flex-direction: column;
     font-size: 15pt;
 }
 
@@ -215,6 +224,7 @@
     font-family: 'Heebo', sans-serif;
     font-weight: 400;
     color: grey;
+    margin-bottom: 40px;
 }
 
 /** MEDIA QUERIES */
@@ -257,7 +267,7 @@
 .project-cover-text {
     margin-top: 250px;
     font-family: 'Playfair Display', serif;
-    margin-left: 12%;
+    margin-left: 11%;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -288,8 +298,8 @@
 /** ABOUT ME TEXT */
 
 .about-container {
-    margin-top: 160px;
-    margin-left: 12%;
+    margin-top: -30px;
+    margin-left: 10%;
     width: 90%;
     display: flex;
     flex-direction: row;
@@ -342,8 +352,8 @@
 /************ PROJECT TEMPLATE ************/
 
 .project-container {
-    margin-top: 160px;
-    margin-left: 12%;
+    margin-top: -30px;
+    margin-left: 11%;
     width: 90%;
     display: flex;
     flex-direction: row;
@@ -352,15 +362,18 @@
 }
 
 .project-left {
-    width: 55%;
+    width: 48%;
+    padding-right: 5%;
     font-family: 'Playfair Display', serif;
     font-size: 14pt;
 }
 
 .project-right {
     position: relative;
-    margin-left: 60px;
-    width: 30%;
+    margin-left: 40px;
+    width: 36%;
+    max-width: 350px;
+    /* TODO: fix for very large screen */
 }
 
 .key-learnings {
@@ -376,7 +389,6 @@
     flex-direction: row;
     align-items: center;
     padding-left: 20px;
-    padding-right: 10px;
     height: 65px;
     background-color: #ededed;
     width: auto;
@@ -416,6 +428,8 @@
 }
 
 .breakdown-container {
+    display: flex;
+    flex-direction: column;
     width: 90%;
 }
 
@@ -430,14 +444,30 @@
     font-size: 24px;
 }
 
+.project-list {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+}
+
 /************ PROJECT 1: GITLET ************/
-
-
-.project-image-full {
+.project-figure {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    font-family: 'Jost', sans-serif;
+    color: gray;
+    font-style: italic;
+    font-size:11pt;
+}
+
+.fig-caption {
+    padding-top: 8px;
 }
 
 .gitlet-diagram {
-    width: 95%;
+    width: 100%;
+}
+
+.gitlet-merge {
+    width: 100%;
 }
