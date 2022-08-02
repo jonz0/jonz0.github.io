@@ -96,6 +96,10 @@
     display: flex;
     flex-direction: row;
     margin-top: 20px;
+    flex-flow: row wrap;
+    overflow: hidden;
+    width: 200px;
+    flex-grow: 1;
 }
 
 .right-arrow {
@@ -113,9 +117,10 @@
     font-size: 6pt;
 }
 
-.about-hover {
-    opacity: 0;
+.about-wrapper {
+    opacity: 1;
     position: absolute;
+    left: -25px;
     background-color: #96ff8c;
     height: 22px;
     width: 105px;
@@ -444,11 +449,7 @@
     font-size: 24px;
 }
 
-.project-list {
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    font-size: 24px;
-}
+
 
 /************ PROJECT 1: GITLET ************/
 .project-figure {
@@ -458,6 +459,13 @@
     color: gray;
     font-style: italic;
     font-size:11pt;
+}
+
+.gitlet-list {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    background-color: #ededed;
 }
 
 .fig-caption {
@@ -471,3 +479,36 @@
 .gitlet-merge {
     width: 100%;
 }
+
+.show-hide-area {
+    display: flex;
+    flex-direction: column;
+}
+
+.show-hide {
+    height: 0%;
+}
+
+.show-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    height: 50px;
+}
+
+.dropdown-button {
+    height: 54px;
+    width: 50px;
+    position: absolute;
+    margin-left: 72%;
+}
+
+.repository-commands {
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+} 

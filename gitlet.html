@@ -8,6 +8,8 @@
         <meta name="keywords" content="Jonathan Lu">
         <meta name="description" content="This is my personal site.">
         <link rel="stylesheet" href="css/style.css">
+        <script src="jquery-3.6.0.min.js"></script>
+        <script src="js/script-main.js"></script>
     </head>
 
     <body class="about-body">
@@ -29,12 +31,12 @@
         <div class="project-container">
             <div class="project-left">
                 <h1 class="project-context">Project Overview</h1>
-                <p class="project-context-description">
+                <p class="breakdown-text">
                     Gitlet is a part of UC Berkeley's CS 61B: Data Structures course, and is typically the first assigned project without a skeleton. 
                     Thus, I wrote my code for this project from scratch, with guidance from Gitlet's project spec, which serves as a list of required commands and how they 
                     should function - but did not lay out a structure for how Gitlet should be put together. <br>
                 </p>
-                <p class="project-context-description">
+                <p class="breakdown-text">
                     This was a challenging project that exposed me to software design principles including decomposition, abstraction, and flexibility. I leveraged file persistence, graph traversals, and 
                     cryptographic hashing so Gitlet could mimic how the real Git manages repositories, branches, and version history.
                 </p>
@@ -70,25 +72,56 @@
                     in order to diagram how my implementation of Gitlet should look. To figure out how Git stores things like
                     head commits, branches, and logs, I explored the .git file in my own repositories and came up with a modified structure that looks like this:
                 </p>
-
-                <div class="project-image-full">
+                <figure class="project-figure">
                     <img src="images/gitlet-diagram.png" class="gitlet-diagram">
-                </div>
+                </figure>
 
                 <p class="breakdown-text"> All repository information is saved in a .gitlet file, which stores information about the current head, 
-                    staging area, blobs, branches, commits, commit history, and remote repositories.
-                </p>
-                <p class="breakdown-text">
-                    Commits and blobs are assigned a UUID using SHA-1, 
+                    staging area, blobs, branches, commits, commit history, and remote repositories. Commits and blobs are assigned a UUID using SHA-1, 
                     then serialized and stored in the objects folder. To speed up object traversal, objects are packaged in folders
                     named by the first two digits of their IDs, similar to Git.
                 </p>
 
                 <p class="breakdown-text">
                     Once I had a workable roadmap going, I could start implementing each of Gitlet's commands one by one:
-
-                    init add commit rm log global-log find status checkout branch rm-branch reset merge add-remote rm-remote fetch push pull
-                </p>
+                    
+                    <div class="show-hide-area">
+                        <button onclick="showGitletCommands()" class="show-button">
+                            <p class="repository-commands">Gitlet commands:</p>
+                            <img src="images/ic-chevron-down@4x.png" class="dropdown-button">
+                        </button>
+                        <div class="show-hide" id="show-hide">
+                            <ul class="gitlet-list">
+                                <li>init: Creates a Gitlet version control system in the current directory, initializing the master branch and initial commit.</li>
+                                <li>add: Stages a file for addition. </li>
+                                <li>commit: Saves a snapshot of the staging area and tracked files so they can be restored at a later time.</li>
+                                <li>rm: Stages a file for removal and removes it from the working directory.</li>
+                                <li>log: Displays information about each commit backwards, starting from the current head commit.</li>
+                                <li>global-log: Displays information about all commits ever made.</li>
+                                <li>find: Prints the ids of all commits that have a given commit message.</li>
+                                <li>status: Displays all branches, staged files, removed files, modified unstaged files, and untracked files in the working directory.</li>
+                                <li>checkout: 
+                                    <ul class="checkout-list">
+                                        <li>checkout -- (file name): Copies/overwrites the file as it exists in the head commit to the working directory.</li>
+                                        <li>checkout (commit id) -- (file name): Copies/overwrites the file as it exists in the given commit to the working directory.</li>
+                                        <li>checkout -- (branch name): Copies/overwrites all files in the head commit of the given branch to the working directory.</li>
+                                    </ul>
+                                </li>
+                                <li>branch: Description: Creates a new branch with the given name, and points it at the current head commit.</li>
+                                <li>rm-branch: Deletes the branch with the given name.</li>
+                                <li>reset: Checks out the files tracked by the given commit, removes untracked files, and moves the current head to the given commit.</li>
+                                <li>merge:  Merges files from the given branch into the current branch, similar to git merge.</li>
+                            </ul>
+                            
+                            <ul class="gitlet-list">
+                                <li>add-remote: Saves a remote repository under the given name.</li>
+                                <li>rm-remote: Removes information associated with the given remote name.</li>
+                                <li>fetch: Copies commits and blobs from the given remote branch into the local repository, saving fetched commits under a new branch.</li>
+                                <li>push: Appends commits from the current branch to the end of the given remote branch.</li>
+                                <li>pull: Fetches the remote branch and merges it into the current branch.</li>
+                            </ul>
+                        </div>
+                    </div>
 
                 <h1 class="breakdown-title">Challenges</h1>
                 <p class="breakdown-text">Project design: Planning Gitlet's design was not a straightforward process. Due to my inexperience
@@ -102,9 +135,9 @@
                     so I could easily traverse them in reverse level order. My implementation involved using hashmaps, linked lists, and unordered sets
                     to store and retrieve information during traversals.
                 </p>
-                <figure>
-                    <img src="images/gitlet-merge.png" class="gitlet-diagram">
-                    <figcaption>Exalple of LCA in the merge command: Gitlet finds the latest common ancestor of two commits in O(n) time (where n represents the number of parents
+                <figure class="project-figure">
+                    <img src="images/gitlet-merge.png" class="gitlet-merge">
+                    <figcaption class="fig-caption">Example of LCA in the merge command: Gitlet finds the latest common ancestor of two commits in O(n) time (where n represents the number of parents
                         of each branch head) by running DFS to find all parents of commit A, then matching those commits with each parent of commit B. Every shared 
                         commit is a split point, and the LCA is the split point with the greatest depth. Gitlet avoids calculating commit node depths when merging by amortizing the calculation
                         each time a new commit is saved. </figcaption>
