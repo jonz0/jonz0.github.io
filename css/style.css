@@ -96,10 +96,6 @@
     display: flex;
     flex-direction: row;
     margin-top: 20px;
-    flex-flow: row wrap;
-    overflow: hidden;
-    width: 200px;
-    flex-grow: 1;
 }
 
 .right-arrow {
@@ -118,9 +114,8 @@
 }
 
 .about-wrapper {
-    opacity: 1;
+    opacity: 0;
     position: absolute;
-    left: -25px;
     background-color: #96ff8c;
     height: 22px;
     width: 105px;
@@ -387,6 +382,7 @@
     color: grey;
     font-family: 'Heebo', sans-serif;
     font-size: 14pt;
+    font-weight: 400;
 }
 
 .learning-block {
