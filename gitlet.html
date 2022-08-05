@@ -8,7 +8,7 @@
         <meta name="keywords" content="Jonathan Lu">
         <meta name="description" content="This is my personal site.">
         <link rel="stylesheet" href="css/style.css">
-        <script src="jquery-3.6.0.min.js"></script>
+        <script src="js/jquery-3.6.0.min.js"></script>
         <script src="js/script-main.js"></script>
     </head>
 
@@ -32,13 +32,10 @@
             <div class="project-left">
                 <h1 class="project-context">Project Overview</h1>
                 <p class="breakdown-text">
-                    Gitlet is a part of UC Berkeley's CS 61B: Data Structures course, and is typically the first assigned project without a skeleton. 
-                    Thus, I wrote my code for this project from scratch, with guidance from Gitlet's project spec, which serves as a list of required commands and how they 
-                    should function - but did not lay out a structure for how Gitlet should be put together. <br>
-                </p>
-                <p class="breakdown-text">
-                    This was a challenging project that exposed me to software design principles including decomposition, abstraction, and flexibility. I leveraged file persistence, graph traversals, and 
-                    cryptographic hashing so Gitlet could mimic how the real Git manages repositories, branches, and version history.
+                    Gitlet is a part of UC Berkeley's CS 61B: Data Structures, and is typically the first assigned project without skeleton code. 
+                    This was a challenging project that exposed me to software design principles including decomposition, abstraction, and flexibility. 
+                    I implemented file persistence, graph traversals, and cryptographic hashing so Gitlet could mimic how the real Git manages repositories, 
+                    branches, and version history.
                 </p>
             </div>
 
@@ -68,64 +65,57 @@
 
             <div class="breakdown-container">
                 <h1 class="breakdown-title">My Approach</h1>
-                <p class="breakdown-text">Without a project skeleton, I first put pen to paper 
-                    in order to diagram how my implementation of Gitlet should look. To figure out how Git stores things like
-                    head commits, branches, and logs, I explored the .git file in my own repositories and came up with a modified structure that looks like this:
+                <p class="breakdown-text">Without a project skeleton, I planned ahead by diagramming how my implementation of Gitlet should look. To figure out how Git stores things like
+                    head commits, branches, and logs, I explored .git in my own repositories and came up with a modified structure that looks like this:
                 </p>
                 <figure class="project-figure">
                     <img src="images/gitlet-diagram.png" class="gitlet-diagram">
                 </figure>
 
-                <p class="breakdown-text"> All repository information is saved in a .gitlet file, which stores information about the current head, 
-                    staging area, blobs, branches, commits, commit history, and remote repositories. Commits and blobs are assigned a UUID using SHA-1, 
-                    then serialized and stored in the objects folder. To speed up object traversal, objects are packaged in folders
-                    named by the first two digits of their IDs, similar to Git.
+                <p class="breakdown-text"> All repository information (e.g. current head, staging area, blobs, branches, commits, and remote repositories) is saved in a .gitlet file. 
+                    Commits and blobs are assigned a UUID using SHA-1, serialized, and stored in the objects folder. To speed up object traversal, objects are packaged in folders
+                    named by the first two digits of their UUID, similar to Git.
                 </p>
 
                 <p class="breakdown-text">
-                    Once I had a workable roadmap going, I could start implementing each of Gitlet's commands one by one:
+                    Once I had a workable roadmap going, I implemented command one by one:
                     
-                    <div class="show-hide-area">
-                        <button onclick="showGitletCommands()" class="show-button">
-                            <p class="repository-commands">Gitlet commands:</p>
-                            <img src="images/ic-chevron-down@4x.png" class="dropdown-button">
-                        </button>
-                        <div class="show-hide" id="show-hide">
-                            <ul class="gitlet-list">
-                                <li>init: Creates a Gitlet version control system in the current directory, initializing the master branch and initial commit.</li>
-                                <li>add: Stages a file for addition. </li>
-                                <li>commit: Saves a snapshot of the staging area and tracked files so they can be restored at a later time.</li>
-                                <li>rm: Stages a file for removal and removes it from the working directory.</li>
-                                <li>log: Displays information about each commit backwards, starting from the current head commit.</li>
-                                <li>global-log: Displays information about all commits ever made.</li>
-                                <li>find: Prints the ids of all commits that have a given commit message.</li>
-                                <li>status: Displays all branches, staged files, removed files, modified unstaged files, and untracked files in the working directory.</li>
-                                <li>checkout: 
-                                    <ul class="checkout-list">
-                                        <li>checkout -- (file name): Copies/overwrites the file as it exists in the head commit to the working directory.</li>
-                                        <li>checkout (commit id) -- (file name): Copies/overwrites the file as it exists in the given commit to the working directory.</li>
-                                        <li>checkout -- (branch name): Copies/overwrites all files in the head commit of the given branch to the working directory.</li>
-                                    </ul>
-                                </li>
-                                <li>branch: Description: Creates a new branch with the given name, and points it at the current head commit.</li>
-                                <li>rm-branch: Deletes the branch with the given name.</li>
-                                <li>reset: Checks out the files tracked by the given commit, removes untracked files, and moves the current head to the given commit.</li>
-                                <li>merge:  Merges files from the given branch into the current branch, similar to git merge.</li>
-                            </ul>
-                            
-                            <ul class="gitlet-list">
-                                <li>add-remote: Saves a remote repository under the given name.</li>
-                                <li>rm-remote: Removes information associated with the given remote name.</li>
-                                <li>fetch: Copies commits and blobs from the given remote branch into the local repository, saving fetched commits under a new branch.</li>
-                                <li>push: Appends commits from the current branch to the end of the given remote branch.</li>
-                                <li>pull: Fetches the remote branch and merges it into the current branch.</li>
-                            </ul>
-                        </div>
-                    </div>
+                <button class="show-button" id="show-button">
+                    Gitlet commands:
+                    <img src="images/ic-chevron-down@4x.png" class="dropdown-button">
+                </button>
+
+                <div class="show-hide" id="show-hide">
+                    <ul class="gitlet-list" style="list-style: none;">
+                        <li>init: Creates a Gitlet version control system in the current directory, initializing the master branch and initial commit.</li>
+                        <li>add: Stages a file for addition. </li>
+                        <li>commit: Saves a snapshot of the staging area and tracked files so they can be restored at a later time.</li>
+                        <li>rm: Stages a file for removal and removes it from the working directory.</li>
+                        <li>log: Displays information about each commit backwards, starting from the current head commit.</li>
+                        <li>global-log: Displays information about all commits ever made.</li>
+                        <li>find: Prints the ids of all commits that have a given commit message.</li>
+                        <li>status: Displays all branches, staged files, removed files, modified unstaged files, and untracked files in the working directory.</li>
+                        <li>checkout: 
+                        <ul class="checkout-list">
+                            <li>checkout -- (file name): Copies/overwrites the file as it exists in the head commit to the working directory.</li>
+                            <li>checkout (commit id) -- (file name): Copies/overwrites the file as it exists in the given commit to the working directory.</li>
+                            <li>checkout -- (branch name): Copies/overwrites all files in the head commit of the given branch to the working directory.</li>
+                        </ul>
+                        <li>branch: Description: Creates a new branch with the given name, and points it at the current head commit.</li>
+                        <li>rm-branch: Deletes the branch with the given name.</li>
+                        <li>reset: Checks out the files tracked by the given commit, removes untracked files, and moves the current head to the given commit.</li>
+                        <li>merge:  Merges files from the given branch into the current branch, similar to git merge.</li>
+                        <li>add-remote: Saves a remote repository under the given name.</li>
+                        <li>rm-remote: Removes information associated with the given remote name.</li>
+                        <li>fetch: Copies commits and blobs from the given remote branch into the local repository, saving fetched commits under a new branch.</li>
+                        <li>push: Appends commits from the current branch to the end of the given remote branch.</li>
+                        <li>pull: Fetches the remote branch and merges it into the current branch.</li>
+                    </ul>
+                </div>
+                    
 
                 <h1 class="breakdown-title">Challenges</h1>
-                <p class="breakdown-text">Project design: Planning Gitlet's design was not a straightforward process. My inexperience
-                    with Git hindered my initial designs, which di not support the functionalities Gitlet needed to have. Cycling between
+                <p class="breakdown-text">Project design: Planning Gitlet's design was not a straightforward process. Methodically cycling between
                     learning, planning, and coding helped me locate design flaws, plan ahead, and continuously iterate until my
                     implementation aligned perfectly with the intended design.
                 </p>
