@@ -1,8 +1,14 @@
 $(document).ready(function() {
-
+    // HAMBURGER MENU
+    const icons = document.querySelectorAll('.hamburger-icon');
+    icons.forEach (icon => {  
+        icon.addEventListener('click', (event) => {
+            icon.classList.toggle("open");
+        });
+    });
+    
     // MAIN MENU
-
-    // $(".hamburger-menu").hide();
+    $(".hamburger-menu").hide();
     $(".hamburger-icon").click(function() {
         $(".hamburger-menu").slideToggle();
     });

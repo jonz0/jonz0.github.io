@@ -16,16 +16,6 @@
     border-radius: 10px;
 }
 
-.hamburger-icon {
-    position: fixed;
-    width: 50px;
-    right: 20px;
-    top: 20px;
-    background-color: #96ff8c;
-    border-radius: 5px;
-    z-index: 1;
-}
-
 /** CONTAINER AND BACKGROUND */
 
 .contents-container {
@@ -421,7 +411,7 @@
     .menu-wrapper-1, .menu-wrapper-2, 
     .menu-wrapper-3, .menu-wrapper-4,
     .menu-wrapper-5 {
-        opacity: 1;
+        opacity: 0;
         padding-bottom: 8px;
         z-index: -1;
         background-color: #96ff8c;
@@ -620,4 +610,84 @@
 .split-container {
     display: flex;
     flex-direction: row;
+}
+
+
+
+/************ HAMBURGER ANIMATIONS ************/
+
+.hamburger-background {
+    background-color: #96ff8c;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    border-radius: 5px;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger-icon {
+    position: relative;
+    z-index: 1;
+    width: 27px;
+    height: 24px;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.hamburger-icon span {
+    background-color:black;
+    position: absolute;
+    border-radius: 20px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    width: 100%;
+    height: 4px;
+}
+
+.hamburger-icon span:nth-child(1) {
+    top: 0px;
+    left: 0px;
+}
+
+.hamburger-icon span:nth-child(2) {
+    top: 10px;
+    left: 0px;
+}
+
+.hamburger-icon span:nth-child(3) {
+    bottom:0px;
+    left: 0px;
+}
+
+.hamburger-icon:not(.open):hover span:nth-child(1) {
+    transform: scaleY(1);
+    left: -5px;
+}
+
+.hamburger-icon:not(.open):hover span:nth-child(3) {
+    transform: scaleY(1);
+    left: 5px;
+}
+
+.hamburger-icon.open span:nth-child(1) {
+    transform: rotate(45deg) scaleX(0.8);
+    top: 11px;
+    left: -6px;
+}
+
+.hamburger-icon.open span:nth-child(2) {
+    transform: scale(0);
+    transition-duration: 50ms;
+}
+
+.hamburger-icon.open span:nth-child(3) {
+    transform: rotate(-45deg) scaleX(0.8);
+    top: 11PX;
+    left: 7px;
 }
