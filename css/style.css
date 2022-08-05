@@ -113,12 +113,7 @@
     margin-left: -20px;
     margin-top: -34px;
     z-index: -1;
-    /* transition: 250ms; */
 }
-
-/* .about-link:hover area {
-    opacity: 1;
-} */
 
 .github, .linkedin {
     margin-right: 10px;
@@ -239,6 +234,14 @@
 
 /************ ABOUT ME SECTION ************/
 
+.about-body {
+    background-color: #f5f5f5;
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 24px;
+    margin-bottom: 50px;
+}
+
 .project-photo {
     position: absolute;
     left: 0;
@@ -307,13 +310,6 @@
     font-size: 14pt;
 }
 
-.about-body-1, .about-body-2, .about-body-3 {
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    font-size: 24px;
-    margin-bottom: 50px;
-}
-
 .my-name {
     margin-bottom: 50px;
 }
@@ -344,6 +340,7 @@
 .hamburger-menu {
     position: absolute;
     top: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -357,9 +354,9 @@
 
 .menu-item {
     font-family: 'Playfair Display', serif;
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 700;
-    margin-bottom: 30px;;
+    margin-bottom: 25px;;
     color: black;
     align-items: center;
     justify-content: center;
@@ -374,9 +371,9 @@
     background-color: #96ff8c;
     position: absolute;
     height: 20px;
-    margin-top: 38px;
+    margin-top: 30px;
     transition: 350ms;
-    transform: translateX(-30px);
+    transform: translateX(-25px);
 }
 
 .menu-item:hover area {
@@ -384,23 +381,23 @@
 }
 
 .menu-wrapper-1 {
-    width: 282px;
+    width: 250px;
 }
 
 .menu-wrapper-2 {
-    width: 191px;
+    width: 167px;
 }
 
 .menu-wrapper-3 {
-    width: 295px;
+    width: 265px;
 }
 
 .menu-wrapper-4 {
-    width: 327px;
+    width: 291px;
 }
 
 .menu-wrapper-5 {
-    width: 321px;
+    width: 289px;
 }
 
 @media (max-width: 400px) {
@@ -485,7 +482,7 @@
     align-items: center;
     padding-left: 20px;
     height: 65px;
-    background-color: #ededed;
+    background-color: #e8e8e8;
     width: auto;
     margin-bottom: 15px;
 }
@@ -541,6 +538,10 @@
 
 
 /************ PROJECT 1: GITLET ************/
+.project-body {
+    background-color: #f5f5f5;
+}
+
 .project-figure {
     display: flex;
     flex-direction: column;
@@ -625,7 +626,6 @@
     z-index: 1;
     width: 50px;
     height: 50px;
-    cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: center;
