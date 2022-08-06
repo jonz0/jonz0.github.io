@@ -46,6 +46,7 @@ $(document).ready(function() {
     });
 
     // GITLET PAGE
+    $("#show-hide").hide();
     $("#show-button").click(function() {
         $("#show-hide").slideToggle();
     });
