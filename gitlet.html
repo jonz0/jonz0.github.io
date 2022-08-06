@@ -98,17 +98,16 @@
                 <p class="breakdown-text">Without a project skeleton, I planned ahead by diagramming how my implementation of Gitlet should look. To figure out how Git stores things like
                     head commits, branches, and logs, I explored .git in my own repositories and came up with a modified structure that looks like this:
                 </p>
-                <figure class="project-figure">
+                <div class="gitlet-structure">
                     <img src="images/gitlet-diagram.png" class="gitlet-diagram">
-                </figure>
-
-                <p class="breakdown-text"> All repository information (e.g. current head, staging area, blobs, branches, commits, and remote repositories) is saved in a .gitlet file. 
-                    Commits and blobs are assigned a UUID using SHA-1, serialized, and stored in the objects folder. To speed up object traversal, objects are packaged in folders
-                    named by the first two digits of their UUID, similar to Git.
-                </p>
+                    <p class="gitlet-text"> All repository information (e.g. current head, staging area, blobs, branches, commits, and remote repositories) is saved in a .gitlet file. 
+                        Commits and blobs are assigned a UUID using SHA-1, serialized, and stored in the objects folder. To speed up object traversal, objects are packaged in folders
+                        named by the first two digits of their UUID, similar to Git.
+                    </p>
+                </div>
 
                 <p class="breakdown-text">
-                    Once I had a workable roadmap going, I implemented command one by one:
+                    Once I had a good roadmap to follow, I implemented each command one by one:
                     
                 <button class="show-button" id="show-button">
                     Gitlet commands:
