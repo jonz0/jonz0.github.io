@@ -8,7 +8,7 @@ $(document).ready(function() {
     });
     
     // MAIN MENU
-    // $(".hamburger-menu").hide();
+    $(".hamburger-menu").hide();
     $(".hamburger-icon").click(function() {
         $(".hamburger-menu").slideToggle();
     });

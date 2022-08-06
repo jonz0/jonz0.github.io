@@ -149,15 +149,15 @@
 .project-wrapper-1, .project-wrapper-2, 
 .project-wrapper-3, .project-wrapper-4 {
     position: absolute;
-    height: 20px;
     bottom: 0;
     right: 0;
     padding-bottom: 5px;
     z-index: -1;
     background-color: #96ff8c;
     margin-bottom: 3px;
-    height: 17px;
+    height: 15px;
     display: none;
+    opacity: 0.9;
 }
 
 .project-bg {
@@ -213,6 +213,8 @@
     margin-bottom: 40px;
 }
 
+
+
 /** MEDIA QUERIES */
 
 @media (max-width: 760px) {
@@ -232,7 +234,7 @@
 }
 
 
-/************ ABOUT ME SECTION ************/
+/************ ABOUT SECTION ************/
 
 .about-body {
     background-color: #f5f5f5;
@@ -286,7 +288,6 @@
 .project-blurb {
     color: white;
     font-size: 20pt;
-    font-weight: 500;
 }
 
 /** ABOUT ME TEXT */
@@ -297,35 +298,120 @@
     width: 90%;
     display: flex;
     flex-direction: row;
-    margin-bottom: 200px;
+    margin-bottom: 150px;
 }
 
 .about-right {
-    margin-left: 90px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 60px;
+    margin-right: 5%;
+    width: 34%;
 }
 
 .about-left {
     width: 55%;
     font-family: 'Playfair Display', serif;
     font-size: 14pt;
+    width: 66%;
 }
 
 .my-name {
     margin-bottom: 50px;
 }
 
-.gallery, .hello-world {
+.experience, .hello-world {
     color: grey;
     font-family: 'Heebo', sans-serif;
     font-size: 14pt;
+    font-weight: 400;
 }
 
-.gallery-placeholder {
-    color: black;
+.experience {
+    margin-bottom: 35px;
+    margin-right: 20px;
+}
+
+.work-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.work-logo {
+    width: 90px;
+    height: 90px;
+    margin-right: 15px;
+}
+
+.work-item {
+    display: flex;
+    flex-direction: row;
     font-family: 'Jost', sans-serif;
+    font-size: 11pt;
+    font-weight: 400;
 }
 
-@media (max-width: 900px) {
+.work-text {
+    margin-top: 2px;
+}
+
+.work-blurb {
+    font-family: 'Playfair Display', serif;
+    font-family: 'Jost', sans-serif;
+    font-size: 10pt;
+    font-weight: 300;
+    margin-bottom: 40px;
+    margin-top: 5px;
+}
+
+.internship-logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.internships {
+    display: flex;
+    flex-direction: column;
+}
+
+.internship-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.internship-text {
+    font-family: 'Jost', sans-serif;
+    font-size: 11pt;
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.internship-section {
+    display: flex;
+    flex-direction: row;
+}
+
+.internship-line {
+    background-color: #868686;
+    height: 160px;
+    width: 1px;
+    margin-top: 5px;
+    margin-left: 18px;
+}
+
+.various-internships {
+    font-family: 'Jost', sans-serif;
+    font-size: 11pt;
+    font-weight: 400;
+    margin-left: 15px;
+    align-self: center;
+    margin-top: 0;
+}
+
+@media (max-width: 1200px) {
     .about-right {
         display: none;
     }
@@ -334,6 +420,8 @@
         width: 85%
     }
 }
+
+
 
 /************ HAMBURGER MENU ************/
 
@@ -350,6 +438,15 @@
     justify-content: center;
     text-align: center;
     z-index: 1;
+    box-shadow: 0px -5px 10px 5px #e8e8e8;
+}
+
+.nav {
+    font-size: 14pt;
+    font-family: 'Heebo', sans-serif;
+    font-weight: 400;
+    color: grey;
+    margin-bottom: 30px;
 }
 
 .menu-item {
@@ -370,14 +467,14 @@
     z-index: -1;
     background-color: #96ff8c;
     position: absolute;
-    height: 20px;
-    margin-top: 30px;
+    height: 15px;
+    margin-top: 35px;
     transition: 350ms;
     transform: translateX(-25px);
 }
 
 .menu-item:hover area {
-    opacity: 1;
+    opacity: 0.9;
 }
 
 .menu-wrapper-1 {
@@ -615,6 +712,88 @@
 
 
 
+/************ FOOTER AREA ************/
+
+.footer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #e8e8e8;
+    width: 100%;
+    left: 0;
+}
+
+.need-more {
+    color: grey;
+    font-family: 'Heebo', sans-serif;
+    font-size: 11pt;
+    font-weight: 400;
+    margin-top: 50px;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 0;
+    margin-bottom: 60px;
+    font-family: 'Playfair Display', serif;
+    font-size: 12pt;
+    font-weight: 500;
+}
+
+.about-linkedin {
+    width: 67px;
+}
+
+.about-github {
+    width: 52px;
+}
+
+.about-email {
+    width: 44px;
+}
+
+.about-aboutme {
+    width: 72px;
+}
+
+.about-linkedin:hover span, .about-github:hover span,
+.about-email:hover span, .about-aboutme:hover span {
+    font-weight: 700;
+}
+
+@media (max-width: 350px) {
+    .need-more {
+        font-size: 10pt;
+    }
+
+    .footer-links {
+        font-size: 10pt;
+    }
+
+    .about-linkedin {
+        width: 56px;
+    }
+    
+    .about-github {
+        width: 43px;
+    }
+    
+    .about-email {
+        width: 36px;
+    }
+    
+    .about-aboutme {
+        width: 60px;
+    }
+}
+
+
+
 /************ HAMBURGER ANIMATIONS ************/
 
 .hamburger-background {
@@ -623,7 +802,7 @@
     right: 20px;
     top: 20px;
     border-radius: 5px;
-    z-index: 1;
+    z-index: 2;
     width: 50px;
     height: 50px;
     display: flex;
@@ -634,7 +813,6 @@
 
 .hamburger-icon {
     position: relative;
-    z-index: 1;
     width: 27px;
     height: 24px;
     cursor: pointer;
