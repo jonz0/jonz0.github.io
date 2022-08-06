@@ -46,9 +46,16 @@ $(document).ready(function() {
     });
 
     // GITLET PAGE
-    // $("#show-hide").hide();
+    $("#show-hide").hide();
     $("#show-button").click(function() {
         $("#show-hide").slideToggle();
     });
 
+    // DROPDOWN CHEVRON
+    $("#show-button").click(function() {
+        const chevron = document.querySelectorAll('.dropdown-chevron');
+        chevron.forEach (icon => {  
+            icon.classList.toggle("open");
+        });
+    })
 });

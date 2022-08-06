@@ -114,8 +114,11 @@
                     Once I had a roadmap to follow, I implemented each command one by one:
                     
                 <button class="show-button" id="show-button">
-                    Commands:
-                    <!-- <img src="images/ic-chevron-down@4x.png" class="dropdown-button"> -->
+                    <p>Commands:</p>
+                    <div class="dropdown-chevron">
+                        <span></span>
+                        <span></span>
+                    </div>
                 </button>
 
                 <div class="show-hide" id="show-hide">
@@ -158,82 +161,6 @@
                             <p class="command-description">Fetches the remote branch and merges it into the current branch.</p>
                     </ul>
                 </div>
-
-                    <!-- <div class="show-hide" id="show-hide">
-                        <ul class="command-list" style="list-style: none;">
-                            <div class="gitlet-command">
-                                <p class="command-name">init</p>
-                                <p class="command-description">Creates a Gitlet version control system in the current directory, initializing the master branch and initial commit.</p>
-                            </div>
-                            <div class="gitlet-command">
-                                <p class="command-name">add</p>
-                                <p class="command-description">Stages a file for addition.</p>
-                            </div>
-                            <div class="gitlet-command">
-                                <p class="command-name">commit</p>
-                                <p class="command-description">Saves a snapshot of the staging area and tracked files so they can be restored at a later time.</p>
-                            </div>
-                            <div class="gitlet-command">
-                                <p class="command-name">rm</p>
-                                <p class="command-description">Stages a file for removal and removes it from the working directory.</p>
-                            </div>
-                            <div class="gitlet-command">
-                                <p class="command-name">log</p>
-                                <p class="command-description">Displays information about each commit backwards, starting from the current head commit.</p>
-                            </div>
-                            <div class="gitlet-command">
-                                <p class="command-name">global log</p>
-                                <p class="command-description">Displays information about all commits ever made.</p>
-                            </div>
-                            <div class="gitlet-command">
-                                <p class="command-name">find</p>
-                                <p class="command-description">Prints the ids of all commits that have a given commit message.</p>
-                            </div>
-                            <div class="gitlet-command">
-                                <p class="command-name">status</p>
-                                <p class="command-description">Displays all branches, staged files, removed files, modified unstaged files, and untracked files in the working directory.</p>
-                            </div>
-                            <div class="gitlet-command">
-                                <p class="command-name">checkout</p>
-                                <p class="command-description">Copies and overwrites files in the head or given commit or branch over to the working directory.</p>
-                            </div>
-                            <div class="gitlet-command">
-                                <p class="command-name">branch</p>
-                                <p class="command-description">Description: Creates a new branch with the given name, and points it at the current head commit.</p>
-                            </div>
-                            <div class="gitlet-command">
-                                <p class="command-name">rm-branch</p>
-                                <p class="command-description">Deletes the branch with the given name.</p>
-                            </div>
-                            <div class="gitlet-command">
-                                <p class="command-name">reset</p>
-                                <p class="command-description">Checks out the files tracked by the given commit, removes untracked files, and moves the current head to the given commit.</p>
-                            </div>
-                            <div class="gitlet-command">
-                                <p class="command-name">merge</p>
-                                <p class="command-description">Merges files from the given branch into the current branch, similar to git merge.</p>
-                            </div>
-                            <div class="gitlet-command">
-                                <p class="command-name">add-remote</p>
-                                <p class="command-description">Saves a remote repository under the given name.</p>
-                            </div>
-                            <div class="gitlet-command">
-                                <p class="command-name">rm-remote</p>
-                                <p class="command-description">Removes information associated with the given remote name.</p>
-                            </div>
-                            <div class="gitlet-command">
-                                <p class="command-name">fetch</p>
-                                <p class="command-description">Copies commits and blobs from the given remote branch into the local repository, saving fetched commits under a new branch.</p>
-                            </div>
-                            <div class="gitlet-command">
-                                <p class="command-name">push</p>
-                                <p class="command-description">Appends commits from the current branch to the end of the given remote branch.</p>
-                            </div>
-                            <div class="gitlet-command">
-                                <p class="command-name">pull</p>
-                                <p class="command-description">Fetches the remote branch and merges it into the current branch.</p>
-                            </div>
-                        </ul> -->
 
                 <h1 class="breakdown-title">Challenges</h1>
                 <p class="breakdown-text">Project design: Planning Gitlet's design was not a straightforward process. Methodically cycling between
