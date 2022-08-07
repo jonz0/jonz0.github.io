@@ -177,6 +177,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 40px;
     color: black;
+    font-weight: 700;
 }
 
 .project:hover img {
@@ -473,7 +474,7 @@
     transform: translateX(-25px);
 }
 
-.menu-item:hover area {
+.menu-item:hover area, .menu-item:active area {
     opacity: 0.9;
 }
 
