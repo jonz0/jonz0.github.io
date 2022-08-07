@@ -474,7 +474,11 @@
     transform: translateX(-25px);
 }
 
-.menu-item:hover area, .menu-item:active area {
+.menu-item:hover area {
+    opacity: 0.9;
+}
+
+.menu-item:active area {
     opacity: 0.9;
 }
 

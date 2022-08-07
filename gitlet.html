@@ -177,7 +177,7 @@
                     <img src="images/gitlet-merge.png" class="gitlet-merge">
                     <figcaption class="fig-caption">Example of LCA in the merge command: Gitlet finds the latest common ancestor of two commits in O(n) time (where n represents the number of parents
                         of each branch head) by running DFS to find all parents of commit A, then matching those commits with each parent of commit B. Every shared 
-                        commit is a split point, and the LCA is the split point with the greatest depth. Gitlet avoids calculating commit node depths when merging by amortizing the calculation
+                        commit is a split point, and the LCA is the split point with the greatest depth. Gitlet avoids calculating node depths when merging by memoizing depth
                         each time a new commit is saved. </figcaption>
                 </figure> 
 
