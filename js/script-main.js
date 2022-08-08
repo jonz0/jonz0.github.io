@@ -14,50 +14,38 @@ $(document).ready(function() {
     });
 
     // MAIN PAGE
-    $('#gitlet').on('mouseenter', function(){
-        $('.project-wrapper-1').stop().animate({width: 'toggle'}, 300);
-    }), $('#gitlet').on('mouseleave', function(){
-        $('.project-wrapper-1').stop().animate({width: 'toggle'}, 300);
-    });
-
-    $('#worlds').on('mouseenter', function(){
-        $('.project-wrapper-2').stop().animate({width: 'toggle'}, 300);
-    }), $('#worlds').on('mouseleave', function(){
-        $('.project-wrapper-2').stop().animate({width: 'toggle'}, 300);
-    });
-
-    $('#inprogress').on('mouseenter', function(){
-        $('.project-wrapper-3').stop().animate({width: 'toggle'}, 300);
-    }), $('#inprogress').on('mouseleave', function(){
-        $('.project-wrapper-3').stop().animate({width: 'toggle'}, 300);
-    });
-
-    $('#travelmap').on('mouseenter', function(){
-        $('.project-wrapper-4').stop().animate({width: 'toggle'}, 300);
-    }), $('#travelmap').on('mouseleave', function(){
-        $('.project-wrapper-4').stop().animate({width: 'toggle'}, 300);
+    $('.project').on('mouseenter', function() {
+        $(this).children('#project-wrapper').stop().animate({width: 'toggle'}, 300);
+    }), $('.project').on('mouseleave', function() {
+        $(this).children('#project-wrapper').stop().animate({width: 'toggle'}, 300);
     });
 
     // HAMBURGER MENU
 
-    $('.menu-item-about').on('mouseenter', function(){
-        $('.menu-wrapper-1').css('opacity', '0.9');
-    }), $('.menu-item-about').on('mouseleave', function(){
-        $('.menu-wrapper-1').css('opacity', '0');
+    $('.menu-item').on('mouseenter', function() {
+        const link = $(this).children('.menu-link').attr('href');
+        const wrapper = $(this).children('#menu-wrapper');
+        wrapper.css('opacity', '0.9');
+
+        $('.menu-item').on('mouseleave', function(){
+            wrapper.css('opacity', '0');
+        })
     });
 
-    if ($('.menu-wrapper-1').css('opacity') != '0.9') {
-        $(".menu-item-about").click(function(event){
+    $('.menu-item').on('click', function(event) {
+        const link = $(this).children('.menu-link').attr('href');
+        const wrapper = $(this).children('#menu-wrapper');
+        if (wrapper.css('opacity') == '0') {
             event.preventDefault();
-        });
-        
-        $('.menu-item-about').on('click', function(){
-            $('.menu-wrapper-1').css('opacity', '0.9');
+            wrapper.css('opacity', '0.9');
             setTimeout( function() {
-                window.location = '/about.html'; 
+                window.location = link;
             }, 350);
-        });
-    }
+            setTimeout( function() {
+                wrapper.css('opacity', '0');
+            }, 350);
+        }
+    });
     
     // ABOUT MD
     $('.about-link').on('mouseenter', function(){
