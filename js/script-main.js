@@ -1,4 +1,37 @@
 $(document).ready(function() {
+
+    const supportsTouch = 'ontouchstart' in window;
+    let isUsingTouch = false;
+
+    // `touchstart`, `pointerdown`
+    const touchHandler = () => {
+    isUsingTouch = true;
+    document.addEventListener('mousemove', mousemoveHandler);
+    };
+
+    // use a simple closure to store previous time as internal state
+    const mousemoveHandler = (() => {
+    let time;
+    
+    return () => {
+        const now = performance.now();
+
+        if (now - time < 20) {
+        isUsingTouch = false;
+        document.removeEventListener('mousemove', mousemoveHandler);
+        }
+
+        time = now;
+    }
+    })();
+
+    // add listeners
+    if (supportsTouch) {
+    document.addEventListener('touchstart', touchHandler);
+    } else if (navigator.maxTouchPoints || navigator.msMaxTouchPoints) {
+    document.addEventListener('pointerdown', touchHandler);
+    }
+
     // HAMBURGER MENU
     const icons = document.querySelectorAll('.hamburger-icon');
     icons.forEach (icon => {  
