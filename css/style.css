@@ -138,15 +138,15 @@
     text-align: right;
     font-family: 'Playfair Display', serif;
     font-weight: 800;
-    width: 800px;
+     width: 800px;
 }
 
 .project-wrapper-1, .project-wrapper-2, 
 .project-wrapper-3, .project-wrapper-4 {
+    display: none;
     position: absolute;
     z-index: -1;
     background-color: #96ff8c;
-    opacity: 0;
     height: 37%;
     right: -5px;
     bottom: 2px;
@@ -190,19 +190,13 @@
     position: relative;
 }
 
-.project-name:hover img {
-    display: block;
+#gitlet:hover ~ #bg-1, #worlds:hover ~ #bg-2,
+#inprogress:hover ~ #bg-3, #travelmap:hover ~ #bg-4 {
     opacity: 1;
 }
 
 .project-name:hover area {
     opacity: 0.9;
-}
-
-.contents-nav {
-    display: flex;
-    flex-direction: column;
-    font-size: 15pt;
 }
 
 .my-projects {
@@ -445,6 +439,11 @@
     font-weight: 400;
     color: grey;
     padding-bottom: 30px;
+    transition: 20ms;
+}
+
+.nav:hover {
+    font-weight:500;
 }
 
 .menu-link {

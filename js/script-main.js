@@ -57,6 +57,12 @@ $(document).ready(function() {
             }, 350);
         });
     });
+
+    $('.home-button').on('click', function() {
+        setTimeout(function() { 
+            $(".hamburger-menu").stop().slideToggle();
+        }, 350);
+    };
     
     // MAIN MENU
     $(".hamburger-menu").hide();
@@ -65,9 +71,9 @@ $(document).ready(function() {
     });
 
     // MAIN PAGE
-    $('.project').on('mouseenter', function() {
+    $('.project-name').on('mouseenter', function() {
         $(this).children('#project-wrapper').stop().animate({width: 'toggle'}, 300);
-    }), $('.project').on('mouseleave', function() {
+    }), $('.project-name').on('mouseleave', function() {
         $(this).children('#project-wrapper').stop().animate({width: 'toggle'}, 300);
     });
     
