@@ -50,26 +50,26 @@ $(document).ready(function() {
 
     // HAMBURGER MENU
 
-    $('.menu-item').on('mouseenter', function() {
+    $('.menu-link').on('mouseenter', function() {
         if (!isUsingTouch) {
             var wrapper = $(this).children('#menu-wrapper');
             wrapper.css('opacity', '0.9');
 
-            $('.menu-item').on('mouseleave', function(){
+            $('.menu-link').on('mouseleave', function(){
                 wrapper.css('opacity', '0');
             })
         }
-    });
 
-    $('.menu-item').on('click', function(event) {
-        if (isUsingTouch) {
-            event.preventDefault();
-            var link = $(this).children('.menu-link').attr('href');
-            var wrapper = $(this).children('#menu-wrapper');
-            wrapper.css('opacity', '0.9');
-            setTimeout(function() { window.location = link; }, 350);
-            setTimeout(function() { wrapper.css('opacity', '0'); }, 450);
-        }
+        $('.menu-link').on('click', function(event) {
+            if (isUsingTouch) {
+                var link = $(this).attr('href');
+                var wrapper = $(this).children('#menu-wrapper');
+                event.preventDefault();
+                wrapper.css('opacity', '0.9');
+                setTimeout(function() { window.location = link; }, 350);
+                setTimeout(function() { wrapper.css('opacity', '0'); }, 450);
+            }
+        });
     });
     
     // ABOUT ME
@@ -84,7 +84,7 @@ $(document).ready(function() {
             });
         }
 
-        $('.about-link').on('vmouseover', function(event) {
+        $('.about-link').on('mouseenter', function(event) {
             var link = $(this).attr('href');
             var wrapper = $(this).children('.about-wrapper');
             if (wrapper.css('display') == 'none') {

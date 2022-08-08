@@ -450,7 +450,7 @@
     margin-bottom: 30px;
 }
 
-.menu-item {
+.menu-link {
     font-family: 'Playfair Display', serif;
     font-size: 45px;
     font-weight: 700;
@@ -458,25 +458,22 @@
     color: black;
     align-items: center;
     justify-content: center;
-}
-
-.menu-link {
+    display: flex;
     position: relative;
-    z-index: 3;
 }
 
 .menu-wrapper-1, .menu-wrapper-2, 
 .menu-wrapper-3, .menu-wrapper-4,
 .menu-wrapper-5 {
     opacity: 0;
-    padding-bottom: 8px;
-    z-index: 2;
     background-color: #96ff8c;
     position: fixed;
     height: 15px;
-    margin-top: 35px;
     transition: 350ms;
-    transform: translateX(-25px);
+    margin-top: 35px;
+    padding-bottom: 8px;
+    z-index: -1;
+    justify-self: center;
 }
 
 .menu-wrapper-1 {
@@ -500,7 +497,7 @@
 }
 
 @media (max-width: 400px) {
-    .menu-item {
+    .menu-link {
         font-size: 30px;
     }
 
