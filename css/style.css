@@ -460,12 +460,17 @@
     justify-content: center;
 }
 
+.menu-link {
+    position: relative;
+    z-index: 3;
+}
+
 .menu-wrapper-1, .menu-wrapper-2, 
 .menu-wrapper-3, .menu-wrapper-4,
 .menu-wrapper-5 {
     opacity: 0;
     padding-bottom: 8px;
-    z-index: -1;
+    z-index: 2;
     background-color: #96ff8c;
     position: fixed;
     height: 15px;
