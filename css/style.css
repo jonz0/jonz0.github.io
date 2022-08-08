@@ -463,9 +463,9 @@
     background-color: #96ff8c;
     height: 37%;
     bottom: 2px;
-    left: 0;
+    left: -18%;;
     z-index: -1;
-    width: 132%;
+    width: 136%;
 }
 
 @media (max-width: 400px) {
