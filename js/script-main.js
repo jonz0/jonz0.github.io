@@ -34,21 +34,6 @@ $(document).ready(function() {
             icon.classList.toggle("open");
         });
     });
-    
-    // MAIN MENU
-    $(".hamburger-menu").hide();
-    $(".hamburger-icon").click(function() {
-        $(".hamburger-menu").slideToggle();
-    });
-
-    // MAIN PAGE
-    $('.project').on('mouseenter', function() {
-        $(this).children('#project-wrapper').stop().animate({width: 'toggle'}, 300);
-    }), $('.project').on('mouseleave', function() {
-        $(this).children('#project-wrapper').stop().animate({width: 'toggle'}, 300);
-    });
-
-    // HAMBURGER MENU
 
     $('.menu-link').on('mouseenter', function() {
         if (!isUsingTouch) {
@@ -65,10 +50,27 @@ $(document).ready(function() {
             var wrapper = $(this).children('.menu-wrapper');
             event.preventDefault();
             wrapper.stop().fadeTo(350, 0.9);
-            setTimeout(function() { window.location = link; }, 350);
-            setTimeout(function() { wrapper.stop().fadeTo(350, 0); }, 450);
+            setTimeout(function() { 
+                window.location = link; 
+                wrapper.stop().fadeTo(350, 0);
+                $(".hamburger-menu").stop().slideToggle();
+            }, 350);
         });
     });
+    
+    // MAIN MENU
+    $(".hamburger-menu").hide();
+    $(".hamburger-icon").click(function() {
+        $(".hamburger-menu").stop().slideToggle();
+    });
+
+    // MAIN PAGE
+    $('.project').on('mouseenter', function() {
+        $(this).children('#project-wrapper').stop().animate({width: 'toggle'}, 300);
+    }), $('.project').on('mouseleave', function() {
+        $(this).children('#project-wrapper').stop().animate({width: 'toggle'}, 300);
+    });
+    
     
     // ABOUT ME
 
@@ -81,7 +83,7 @@ $(document).ready(function() {
                 wrapper.stop().animate({width: 'toggle'}, 300);
             });
         }
-        
+    
         
         $('.about-link').on('click', function(event) {
             var link = $(this).attr('href');
@@ -91,8 +93,6 @@ $(document).ready(function() {
                 wrapper.stop().animate({width: 'toggle'}, 300);
                 setTimeout( function() {
                     window.location = link;
-                }, 300);
-                setTimeout(function() {
                     wrapper.stop().animate({width: 'toggle'}, 300);
                 }, 300);
             }
