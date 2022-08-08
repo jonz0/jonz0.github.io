@@ -1,6 +1,6 @@
 $(document).ready(function() {
-
-    const supportsTouch = 'ontouchstart' in window;
+    // Open touch emulator
+    const supportsTouch = true; //'ontouchstart' in window;
     let isUsingTouch = false;
 
     // `touchstart`, `pointerdown`
@@ -12,24 +12,23 @@ $(document).ready(function() {
     // use a simple closure to store previous time as internal state
     const mousemoveHandler = (() => {
     let time;
-    
+
     return () => {
         const now = performance.now();
-
+        span.innerHTML = ++mousemovesFired
         if (now - time < 20) {
         isUsingTouch = false;
         document.removeEventListener('mousemove', mousemoveHandler);
         }
-
         time = now;
     }
     })();
 
     // add listeners
     if (supportsTouch) {
-    document.addEventListener('touchstart', touchHandler);
+        document.addEventListener('touchstart', touchHandler);
     } else if (navigator.maxTouchPoints || navigator.msMaxTouchPoints) {
-    document.addEventListener('pointerdown', touchHandler);
+        document.addEventListener('pointerdown', touchHandler);
     }
 
     // HAMBURGER MENU
