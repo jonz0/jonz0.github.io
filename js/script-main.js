@@ -1,36 +1,36 @@
+// Open touch emulator
+const supportsTouch = true; //'ontouchstart' in window;
+let isUsingTouch = false;
+
+// `touchstart`, `pointerdown`
+const touchHandler = () => {
+  isUsingTouch = true;
+  document.addEventListener('mousemove', mousemoveHandler);
+};
+
+// use a simple closure to store previous time as internal state
+const mousemoveHandler = (() => {
+  let time;
+
+  return () => {
+    const now = performance.now();
+    
+    if (now - time < 20) {
+      isUsingTouch = false;
+      document.removeEventListener('mousemove', mousemoveHandler);
+    }
+    time = now;
+  }
+})();
+
+// add listeners
+if (supportsTouch) {
+  document.addEventListener('touchstart', touchHandler);
+} else if (navigator.maxTouchPoints || navigator.msMaxTouchPoints) {
+  document.addEventListener('pointerdown', touchHandler);
+}
+
 $(document).ready(function() {
-    // Open touch emulator
-    const supportsTouch = true; //'ontouchstart' in window;
-    let isUsingTouch = false;
-
-    // `touchstart`, `pointerdown`
-    const touchHandler = () => {
-    isUsingTouch = true;
-    document.addEventListener('mousemove', mousemoveHandler);
-    };
-
-    // use a simple closure to store previous time as internal state
-    const mousemoveHandler = (() => {
-    let time;
-
-    return () => {
-        const now = performance.now();
-        span.innerHTML = ++mousemovesFired
-        if (now - time < 20) {
-        isUsingTouch = false;
-        document.removeEventListener('mousemove', mousemoveHandler);
-        }
-        time = now;
-    }
-    })();
-
-    // add listeners
-    if (supportsTouch) {
-        document.addEventListener('touchstart', touchHandler);
-    } else if (navigator.maxTouchPoints || navigator.msMaxTouchPoints) {
-        document.addEventListener('pointerdown', touchHandler);
-    }
-
     // HAMBURGER MENU
     const icons = document.querySelectorAll('.hamburger-icon');
     icons.forEach (icon => {  
@@ -64,13 +64,12 @@ $(document).ready(function() {
             })
         });
     } else {
+        const link = $(this).children('.menu-link').attr('href');
+        const wrapper = $(this).children('#menu-wrapper');
         $('.menu-item').on('click', function(event) {
             event.preventDefault();
-            const link = $(this).children('.menu-link').attr('href');
-            const wrapper = $(this).children('#menu-wrapper');
-            
             wrapper.css('opacity', '0.9');
-            setTimeout(function() { window.location = link; }, 350);
+            setTimeout(function() { window.location = link; }, 3500);
             // setTimeout(function() { wrapper.css('opacity', '0'); }, 350);
         });
     }
