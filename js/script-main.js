@@ -38,7 +38,28 @@ $(document).ready(function() {
         $('.project-wrapper-4').stop().animate({width: 'toggle'}, 300);
     });
 
-    // ABOUT PAGE
+    // HAMBURGER MENU
+
+    $('.menu-item-about').on('mouseenter', function(){
+        $('.menu-wrapper-1').css('opacity', '0.9');
+    }), $('.menu-item-about').on('mouseleave', function(){
+        $('.menu-wrapper-1').css('opacity', '0');
+    });
+
+    if ($('.menu-wrapper-1').css('opacity') != '0.9') {
+        $(".menu-item-about").click(function(event){
+            event.preventDefault();
+        });
+        
+        $('.menu-item-about').on('click', function(){
+            $('.menu-wrapper-1').css('opacity', '0.9');
+            setTimeout( function() {
+                window.location = '/about.html'; 
+            }, 350);
+        });
+    }
+    
+    // ABOUT MD
     $('.about-link').on('mouseenter', function(){
         $('.about-wrapper').stop().animate({width: 'toggle'}, 300);
     }), $('.about-link').on('mouseleave', function(){
