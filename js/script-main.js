@@ -81,21 +81,21 @@ $(document).ready(function() {
                 wrapper.stop().animate({width: 'toggle'}, 300);
             });
         }
+    });
 
-        $('.about-link').on('vmouseover', function(event) {
-            var link = $(this).attr('href');
-            var wrapper = $(this).children('.about-wrapper');
-            if (wrapper.css('display') == 'none') {
-                event.preventDefault();
+    $('.about-link').on('vmouseover', function(event) {
+        var link = $(this).attr('href');
+        var wrapper = $(this).children('.about-wrapper');
+        if (wrapper.css('display') == 'none') {
+            event.preventDefault();
+            wrapper.stop().animate({width: 'toggle'}, 300);
+            setTimeout( function() {
+                window.location = link;
+            }, 300);
+            setTimeout(function() {
                 wrapper.stop().animate({width: 'toggle'}, 300);
-                setTimeout( function() {
-                    window.location = link;
-                }, 300);
-                setTimeout(function() {
-                    wrapper.stop().animate({width: 'toggle'}, 300);
-                }, 300);
-            }
-        });
+            }, 300);
+        }
     });
 
     // GITLET PAGE
