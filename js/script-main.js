@@ -65,7 +65,7 @@ $(document).ready(function() {
                 var wrapper = $(this).children('#menu-wrapper');
                 wrapper.css('opacity', '0.9');
                 setTimeout(function() { window.location = link; }, 350);
-                setTimeout(function() { wrapper.css('opacity', '0'); }, 350);
+                setTimeout(function() { wrapper.css('opacity', '0'); }, 450);
             });
         }
     });
@@ -107,7 +107,7 @@ $(document).ready(function() {
     // DROPDOWN CHEVRON
     $("#show-button").click(function() {
         const chevron = document.querySelectorAll('.dropdown-chevron');
-        chevron.forEach (icon => {  
+        chevron.forEach (icon => {
             icon.classList.toggle("open");
         });
     })
