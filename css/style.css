@@ -460,6 +460,7 @@
     justify-content: center;
     display: flex;
     position: relative;
+    z-index: 3;
 }
 
 .menu-wrapper-1, .menu-wrapper-2, 
@@ -467,7 +468,7 @@
 .menu-wrapper-5 {
     opacity: 0;
     background-color: #96ff8c;
-    position: fixed;
+    position: absolute;
     height: 15px;
     transition: 350ms;
     margin-top: 35px;
