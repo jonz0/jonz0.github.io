@@ -105,7 +105,7 @@
 
 .about-wrapper {
     display: none;
-    opacity: 1;
+    opacity: 0.9;
     position: absolute;
     background-color: #96ff8c;
     height: 22px;
@@ -470,7 +470,6 @@
     background-color: #96ff8c;
     position: absolute;
     height: 15px;
-    transition: 350ms;
     margin-top: 35px;
     padding-bottom: 8px;
     z-index: -1;
