@@ -54,9 +54,10 @@ $(document).ready(function() {
 
     // HAMBURGER MENU
 
-    if (!isUsingTouch) {
+    if (isUsingTouch) {
+        $('.menu-link').css('color', 'blue');
         $('.menu-item').on('mouseenter', function() {
-            const wrapper = $(this).children('#menu-wrapper');
+            var wrapper = $(this).children('#menu-wrapper');
             wrapper.css('opacity', '0.9');
     
             $('.menu-item').on('mouseleave', function(){
@@ -64,12 +65,12 @@ $(document).ready(function() {
             })
         });
     } else {
-        const link = $(this).children('.menu-link').attr('href');
-        const wrapper = $(this).children('#menu-wrapper');
+        var link = $(this).children('.menu-link').attr('href');
+        var wrapper = $(this).children('#menu-wrapper');
         $('.menu-item').on('click', function(event) {
             event.preventDefault();
             wrapper.css('opacity', '0.9');
-            setTimeout(function() { window.location = link; }, 3500);
+            setTimeout(function() { window.location = link; }, 350);
             // setTimeout(function() { wrapper.css('opacity', '0'); }, 350);
         });
     }
@@ -78,7 +79,7 @@ $(document).ready(function() {
     // ABOUT ME
 
     $('.about-link').on('mouseenter', function() {
-        const wrapper = $(this).children('.about-wrapper');
+        var wrapper = $(this).children('.about-wrapper');
         wrapper.stop().animate({width: 'toggle'}, 300);
 
         $('.about-link').on('mouseleave', function(){
@@ -87,8 +88,8 @@ $(document).ready(function() {
     });
 
     $('.about-link').on('click', function(event) {
-        const link = $(this).attr('href');
-        const wrapper = $(this).children('.about-wrapper');
+        var link = $(this).attr('href');
+        var wrapper = $(this).children('.about-wrapper');
         if (wrapper.css('display') == 'none') {
             event.preventDefault();
             wrapper.stop().animate({width: 'toggle'}, 300);
