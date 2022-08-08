@@ -467,7 +467,7 @@
     padding-bottom: 8px;
     z-index: -1;
     background-color: #96ff8c;
-    position: absolute;
+    position: fixed;
     height: 15px;
     margin-top: 35px;
     transition: 350ms;
@@ -502,11 +502,6 @@
     .menu-wrapper-1, .menu-wrapper-2, 
     .menu-wrapper-3, .menu-wrapper-4,
     .menu-wrapper-5 {
-        opacity: 0;
-        padding-bottom: 8px;
-        z-index: -1;
-        background-color: #96ff8c;
-        position: absolute;
         height: 9px;
         margin-top: 23px;
         transform: translateX(-20px);
