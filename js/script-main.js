@@ -72,12 +72,6 @@ $(document).ready(function() {
         }
     });
 
-    // $('.about-link').on('mouseenter', function(){
-    //     $('.about-wrapper').stop().animate({width: 'toggle'}, 300);
-    // }), $('.about-link').on('mouseleave', function(){
-    //     $('.about-wrapper').stop().animate({width: 'toggle'}, 300);
-    // });
-
     // GITLET PAGE
     $("#show-hide").hide();
     $("#show-button").click(function() {
