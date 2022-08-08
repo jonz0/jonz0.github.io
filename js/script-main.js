@@ -52,7 +52,7 @@ $(document).ready(function() {
 
     $('.menu-link').on('mouseenter', function() {
         if (!isUsingTouch) {
-            var wrapper = $(this).children('#menu-wrapper');
+            var wrapper = $(this).children('.menu-wrapper');
             wrapper.stop().fadeTo(350, 0.9);
 
             $('.menu-link').on('mouseleave', function(){
@@ -62,7 +62,7 @@ $(document).ready(function() {
 
         $('.menu-link').on('click', function(event) {
             var link = $(this).attr('href');
-            var wrapper = $(this).children('#menu-wrapper');
+            var wrapper = $(this).children('.menu-wrapper');
             event.preventDefault();
             wrapper.stop().fadeTo(350, 0.9);
             setTimeout(function() { window.location = link; }, 350);
