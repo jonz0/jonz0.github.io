@@ -84,7 +84,7 @@ $(document).ready(function() {
             });
         }
 
-        $('.about-link').on('mouseenter', function(event) {
+        $('.about-link').on('click', function(event) {
             var link = $(this).attr('href');
             var wrapper = $(this).children('.about-wrapper');
             if (wrapper.css('display') == 'none') {
