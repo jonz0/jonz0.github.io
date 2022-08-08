@@ -23,7 +23,6 @@ $(document).ready(function() {
     // HAMBURGER MENU
 
     $('.menu-item').on('mouseenter', function() {
-        const link = $(this).children('.menu-link').attr('href');
         const wrapper = $(this).children('#menu-wrapper');
         wrapper.css('opacity', '0.9');
 
@@ -47,12 +46,37 @@ $(document).ready(function() {
         }
     });
     
-    // ABOUT MD
-    $('.about-link').on('mouseenter', function(){
-        $('.about-wrapper').stop().animate({width: 'toggle'}, 300);
-    }), $('.about-link').on('mouseleave', function(){
-        $('.about-wrapper').stop().animate({width: 'toggle'}, 300);
+    // ABOUT ME
+
+    $('.about-link').on('mouseenter', function() {
+        const wrapper = $(this).children('.about-wrapper');
+        wrapper.stop().animate({width: 'toggle'}, 300);
+
+        $('.about-link').on('mouseleave', function(){
+            wrapper.stop().animate({width: 'toggle'}, 300);
+        })
     });
+
+    $('.about-link').on('click', function(event) {
+        const link = $(this).attr('href');
+        const wrapper = $(this).children('.about-wrapper');
+        if (wrapper.css('display') == 'none') {
+            event.preventDefault();
+            wrapper.stop().animate({width: 'toggle'}, 300);
+            setTimeout( function() {
+                window.location = link;
+            }, 300);
+            setTimeout( function() {
+                wrapper.stop().animate({width: 'toggle'}, 300);
+            }, 300);
+        }
+    });
+
+    // $('.about-link').on('mouseenter', function(){
+    //     $('.about-wrapper').stop().animate({width: 'toggle'}, 300);
+    // }), $('.about-link').on('mouseleave', function(){
+    //     $('.about-wrapper').stop().animate({width: 'toggle'}, 300);
+    // });
 
     // GITLET PAGE
     $("#show-hide").hide();
