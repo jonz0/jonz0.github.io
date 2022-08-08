@@ -58,15 +58,17 @@ $(document).ready(function() {
             $('.menu-item').on('mouseleave', function(){
                 wrapper.css('opacity', '0');
             })
-        } else {
-            $('.menu-item').on('click', function(event) {
-                event.preventDefault();
-                var link = $(this).children('.menu-link').attr('href');
-                var wrapper = $(this).children('#menu-wrapper');
-                wrapper.css('opacity', '0.9');
-                setTimeout(function() { window.location = link; }, 350);
-                setTimeout(function() { wrapper.css('opacity', '0'); }, 450);
-            });
+        }
+    });
+
+    $('.menu-item').on('click', function(event) {
+        if (isUsingTouch) {
+            event.preventDefault();
+            var link = $(this).children('.menu-link').attr('href');
+            var wrapper = $(this).children('#menu-wrapper');
+            wrapper.css('opacity', '0.9');
+            setTimeout(function() { window.location = link; }, 350);
+            setTimeout(function() { wrapper.css('opacity', '0'); }, 450);
         }
     });
     
@@ -81,21 +83,21 @@ $(document).ready(function() {
                 wrapper.stop().animate({width: 'toggle'}, 300);
             });
         }
-    });
 
-    $('.about-link').on('vmouseover', function(event) {
-        var link = $(this).attr('href');
-        var wrapper = $(this).children('.about-wrapper');
-        if (wrapper.css('display') == 'none') {
-            event.preventDefault();
-            wrapper.stop().animate({width: 'toggle'}, 300);
-            setTimeout( function() {
-                window.location = link;
-            }, 300);
-            setTimeout(function() {
+        $('.about-link').on('vmouseover', function(event) {
+            var link = $(this).attr('href');
+            var wrapper = $(this).children('.about-wrapper');
+            if (wrapper.css('display') == 'none') {
+                event.preventDefault();
                 wrapper.stop().animate({width: 'toggle'}, 300);
-            }, 300);
-        }
+                setTimeout( function() {
+                    window.location = link;
+                }, 300);
+                setTimeout(function() {
+                    wrapper.stop().animate({width: 'toggle'}, 300);
+                }, 300);
+            }
+        });
     });
 
     // GITLET PAGE
