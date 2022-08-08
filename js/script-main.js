@@ -11,12 +11,10 @@ const mousemoveHandler = (() => {
 
   return () => {
     const now = performance.now();
-
     if (now - time < 20) {
       isUsingTouch = false;
       document.removeEventListener('mousemove', mousemoveHandler);
     }
-
     time = now;
   }
 })();

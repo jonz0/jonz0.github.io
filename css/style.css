@@ -741,7 +741,7 @@
     font-size: 20px;
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
-    color: #0053b3;
+    color: #00397a;
 }
 
 .dropdown-chevron {
@@ -979,7 +979,7 @@
 }
 
 .dropdown-chevron span {
-    background-color: #0053b3;
+    background-color: #00397a;
     position: absolute;
     border-radius: 20px;
     transition: .3s cubic-bezier(.5, .5, .2, 1.4);
