@@ -1,28 +1,28 @@
-const supportsTouch = true; //'ontouchstart' in window;
+const supportsTouch = true;
 let isUsingTouch = false;
 
 const touchHandler = () => {
-  isUsingTouch = true;
-  document.addEventListener('mousemove', mousemoveHandler);
+    isUsingTouch = true;
+    document.addEventListener('mousemove', mousemoveHandler);
 };
 
 const mousemoveHandler = (() => {
-  let time;
+    let time;
 
-  return () => {
-    const now = performance.now();
+    return () => {
+        const now = performance.now();
     if (now - time < 20) {
-      isUsingTouch = false;
-      document.removeEventListener('mousemove', mousemoveHandler);
+        isUsingTouch = false;
+        document.removeEventListener('mousemove', mousemoveHandler);
     }
-    time = now;
-  }
-})();
+        time = now;
+    }
+});
 
 if (supportsTouch) {
-  document.addEventListener('touchstart', touchHandler);
+    document.addEventListener('touchstart', touchHandler);
 } else if (navigator.maxTouchPoints || navigator.msMaxTouchPoints) {
-  document.addEventListener('pointerdown', touchHandler);
+    document.addEventListener('pointerdown', touchHandler);
 }
 
 $(document).ready(function() {

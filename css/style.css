@@ -474,8 +474,8 @@
     }
 
     .menu-wrapper {
-        height: 37%;
-        bottom: 1px;
+        height: 25%;
+        bottom: 25px;
     }
 }
 
@@ -925,7 +925,7 @@
 }
 
 .dropdown-chevron span {
-    background-color: #00397a;
+    background-color: black;
     position: absolute;
     border-radius: 20px;
     transition: .3s cubic-bezier(.5, .5, .2, 1.4);
