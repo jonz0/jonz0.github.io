@@ -1,29 +1,26 @@
-// Open touch emulator
 const supportsTouch = true; //'ontouchstart' in window;
 let isUsingTouch = false;
 
-// `touchstart`, `pointerdown`
 const touchHandler = () => {
   isUsingTouch = true;
   document.addEventListener('mousemove', mousemoveHandler);
 };
 
-// use a simple closure to store previous time as internal state
 const mousemoveHandler = (() => {
   let time;
 
   return () => {
     const now = performance.now();
-    
+
     if (now - time < 20) {
       isUsingTouch = false;
       document.removeEventListener('mousemove', mousemoveHandler);
     }
+
     time = now;
   }
 })();
 
-// add listeners
 if (supportsTouch) {
   document.addEventListener('touchstart', touchHandler);
 } else if (navigator.maxTouchPoints || navigator.msMaxTouchPoints) {
@@ -31,6 +28,7 @@ if (supportsTouch) {
 }
 
 $(document).ready(function() {
+
     // HAMBURGER MENU
     const icons = document.querySelectorAll('.hamburger-icon');
     icons.forEach (icon => {  
@@ -54,51 +52,51 @@ $(document).ready(function() {
 
     // HAMBURGER MENU
 
-    if (isUsingTouch) {
-        $('.menu-link').css('color', 'blue');
-        $('.menu-item').on('mouseenter', function() {
+    $('.menu-item').on('mouseenter', function() {
+        if (!isUsingTouch) {
             var wrapper = $(this).children('#menu-wrapper');
             wrapper.css('opacity', '0.9');
-    
+
             $('.menu-item').on('mouseleave', function(){
                 wrapper.css('opacity', '0');
             })
-        });
-    } else {
-        var link = $(this).children('.menu-link').attr('href');
-        var wrapper = $(this).children('#menu-wrapper');
-        $('.menu-item').on('click', function(event) {
-            event.preventDefault();
-            wrapper.css('opacity', '0.9');
-            setTimeout(function() { window.location = link; }, 350);
-            // setTimeout(function() { wrapper.css('opacity', '0'); }, 350);
-        });
-    }
-    
+        } else {
+            $('.menu-item').on('click', function(event) {
+                event.preventDefault();
+                var link = $(this).children('.menu-link').attr('href');
+                var wrapper = $(this).children('#menu-wrapper');
+                wrapper.css('opacity', '0.9');
+                setTimeout(function() { window.location = link; }, 350);
+                setTimeout(function() { wrapper.css('opacity', '0'); }, 350);
+            });
+        }
+    });
     
     // ABOUT ME
 
     $('.about-link').on('mouseenter', function() {
-        var wrapper = $(this).children('.about-wrapper');
-        wrapper.stop().animate({width: 'toggle'}, 300);
-
-        $('.about-link').on('mouseleave', function(){
+        if (!isUsingTouch) {
+            var wrapper = $(this).children('.about-wrapper');
             wrapper.stop().animate({width: 'toggle'}, 300);
-        })
-    });
 
-    $('.about-link').on('click', function(event) {
-        var link = $(this).attr('href');
-        var wrapper = $(this).children('.about-wrapper');
-        if (wrapper.css('display') == 'none') {
-            event.preventDefault();
-            wrapper.stop().animate({width: 'toggle'}, 300);
-            setTimeout( function() {
-                window.location = link;
-            }, 300);
-            setTimeout( function() {
+            $('.about-link').on('mouseleave', function(){
                 wrapper.stop().animate({width: 'toggle'}, 300);
-            }, 300);
+            });
+        } else {
+            $('.about-link').on('click', function(event) {
+                var link = $(this).attr('href');
+                var wrapper = $(this).children('.about-wrapper');
+                if (wrapper.css('display') == 'none') {
+                    event.preventDefault();
+                    wrapper.stop().animate({width: 'toggle'}, 300);
+                    setTimeout( function() {
+                        window.location = link;
+                    }, 300);
+                    setTimeout( function() {
+                        wrapper.stop().animate({width: 'toggle'}, 300);
+                    }, 300);
+                }
+            });
         }
     });
 
