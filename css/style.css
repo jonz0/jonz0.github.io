@@ -474,8 +474,8 @@
     }
 
     .menu-wrapper {
-        margin-top: 25px;
-        height: 20%;
+        height: 37%;
+        bottom: 1px;
     }
 }
 
