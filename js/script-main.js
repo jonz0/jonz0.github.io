@@ -62,7 +62,7 @@ $(document).ready(function() {
         setTimeout(function() { 
             $(".hamburger-menu").stop().slideToggle();
         }, 350);
-    };
+    });
     
     // MAIN MENU
     $(".hamburger-menu").hide();
