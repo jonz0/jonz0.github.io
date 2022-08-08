@@ -55,29 +55,27 @@ $(document).ready(function() {
 
     // HAMBURGER MENU
 
-    $('.menu-item').on('mouseenter', function() {
-        const wrapper = $(this).children('#menu-wrapper');
-        wrapper.css('opacity', '0.9');
-
-        $('.menu-item').on('mouseleave', function(){
-            wrapper.css('opacity', '0');
-        })
-    });
-
-    $('.menu-item').on('click', function(event) {
-        const link = $(this).children('.menu-link').attr('href');
-        const wrapper = $(this).children('#menu-wrapper');
-        if (wrapper.css('opacity') == '0') {
-            event.preventDefault();
+    if (!isUsingTouch) {
+        $('.menu-item').on('mouseenter', function() {
+            const wrapper = $(this).children('#menu-wrapper');
             wrapper.css('opacity', '0.9');
-            setTimeout( function() {
-                window.location = link;
-            }, 350);
-            setTimeout( function() {
+    
+            $('.menu-item').on('mouseleave', function(){
                 wrapper.css('opacity', '0');
-            }, 350);
-        }
-    });
+            })
+        });
+    } else {
+        $('.menu-item').on('click', function(event) {
+            event.preventDefault();
+            const link = $(this).children('.menu-link').attr('href');
+            const wrapper = $(this).children('#menu-wrapper');
+            
+            wrapper.css('opacity', '0.9');
+            setTimeout(function() { window.location = link; }, 350);
+            // setTimeout(function() { wrapper.css('opacity', '0'); }, 350);
+        });
+    }
+    
     
     // ABOUT ME
 
