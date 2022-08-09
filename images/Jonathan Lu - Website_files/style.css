@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500&family=Jost:wght@100;200;300;400&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
 
-/************ MAIN PAGE ************/
+/************ MAIN LANDING PAGE ************/
 
 ::selection {
     color: #000942;
@@ -16,6 +16,8 @@
     border-radius: 10px;
 }
 
+/** CONTAINER AND BACKGROUND */
+
 .contents-container {
     display: flex;
     flex-direction: row;
@@ -28,7 +30,7 @@
 
 .background-blank {
     position: fixed;
-    width: 75%;
+    width: 77%;
     height: 100%;
     right: 0;
     top: 0;
@@ -37,9 +39,12 @@
     border: none;
 }
 
+/** LEFT SIDE */
+
 .contents-left {
     display: flex;
     flex-direction: column;
+    margin-top: 1px;
 }
 
 .check-me-out {
@@ -125,14 +130,15 @@
     font-size: 26pt;
 }
 
+/** RIGHT SIDE */
+
 .contents-right {
-    margin-top: -20px;
     display: flex;
     flex-direction: column;
     text-align: right;
     font-family: 'Playfair Display', serif;
     font-weight: 800;
-    width: 800px;
+     width: 800px;
 }
 
 .project-wrapper-1, .project-wrapper-2, 
@@ -165,7 +171,7 @@
 .project-bg {
     opacity: 0;
     position: fixed;
-    width: 75%;
+    width: 77%;
     height: 100%;
     right: 0;
     top: 0;
@@ -177,10 +183,10 @@
 
 .project-name {
     font-family: 'Playfair Display', serif;
-    font-size: 38pt;
+    font-size: 40pt;
     color: black;
     font-weight: 700;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
     position: relative;
 }
 
@@ -200,13 +206,13 @@
     margin-bottom: 25px;
 }
 
+
+
+/** MEDIA QUERIES */
+
 @media (max-width: 900px) {
     .description {
         font-size: 24pt;
-    }
-
-    .my-projects {
-        margin-bottom: 30px;
     }
 
     .project-name {
@@ -259,15 +265,14 @@
 }
 
 .project-cover-text {
-    margin-top: 210px;
+    margin-top: 250px;
     font-family: 'Playfair Display', serif;
-    margin-left: 14%;
-    margin-right: 14%;
+    margin-left: 11%;
+    width: 90%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 160px;
+    margin-bottom: 200px;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .project-title {
@@ -276,46 +281,46 @@
 }
 
 .project-line {
-    display: relative;
     box-sizing: border-box;
     background-color: white;
     height: 2px;
-    margin-top: -10px;
+    margin-top: -13px;
+    margin-bottom: 20px;
+    width: 85%;
 }
 
 .project-blurb {
     color: white;
     font-size: 20pt;
-    font-weight: 600;
-    margin-top: 60px;
 }
 
 /** ABOUT ME TEXT */
 
 .about-container {
+    margin-top: -30px;
+    margin-left: 10%;
+    width: 90%;
     display: flex;
     flex-direction: row;
-    margin-bottom: 180px;
-    margin-left: 14%;
-    margin-right: 10%;
-    justify-content: left;
+    margin-bottom: 150px;
 }
 
 .about-right {
     display: flex;
     flex-direction: column;
-    margin-left: 5%;
-    width: 36%;
+    margin-left: 60px;
+    margin-right: 5%;
+    width: 34%;
 }
 
 .about-left {
     width: 55%;
     font-family: 'Playfair Display', serif;
     font-size: 14pt;
-    width: 64%;
+    width: 66%;
 }
 
-.about-header {
+.my-name {
     margin-bottom: 50px;
 }
 
@@ -381,7 +386,7 @@
 
 .internship-text {
     font-family: 'Jost', sans-serif;
-    font-size: 10pt;
+    font-size: 11pt;
     font-weight: 400;
     margin-bottom: 0;
     margin-top: 5px;
@@ -393,23 +398,21 @@
     flex-direction: row;
 }
 
-.internships {
-    margin-right: 21px;
-}
-
 .internship-line {
     background-color: #868686;
     height: 160px;
     width: 1px;
-    margin-top: 6px;
+    margin-top: 5px;
+    margin-left: 18px;
 }
 
 .various-internships {
     font-family: 'Jost', sans-serif;
     font-size: 11pt;
     font-weight: 400;
-    margin-left: 19px;
+    margin-left: 15px;
     align-self: center;
+    margin-top: 0;
 }
 
 @media (max-width: 1200px) {
@@ -456,7 +459,7 @@
 
 .menu-link {
     font-family: 'Playfair Display', serif;
-    font-size: 30pt;
+    font-size: 45px;
     font-weight: 700;
     padding-bottom: 25px;;
     color: black;
@@ -487,34 +490,35 @@
 }
 
 
-
 /************ PROJECT TEMPLATE ************/
 
 .project-container {
-    margin-left: 14%;
-    margin-right: 14%;
-    margin-bottom: 180px;
-    justify-content: center;
-}
-
-.overview-container {
+    margin-top: -30px;
+    margin-left: 11%;
+    width: 90%;
     display: flex;
     flex-direction: row;
+    margin-bottom: 200px;
+    flex-wrap: wrap;
 }
 
-.overview-left {
-    width: 65%;
-    font-family: 'Playfair Display', serif;
+.project-left {
+    width: 48%;
     padding-right: 5%;
+    font-family: 'Playfair Display', serif;
+    font-size: 14pt;
 }
 
-.overview-right {
-    width: 35%;
+.project-right {
     position: relative;
+    margin-left: 40px;
+    width: 36%;
+    max-width: 350px;
+    /* TODO: fix for very large screen */
 }
 
 .key-learnings {
-    margin-top: 12%;
+    margin-top: 35px;
     margin-bottom: 45px;
     color: grey;
     font-family: 'Heebo', sans-serif;
@@ -529,38 +533,45 @@
     padding-left: 20px;
     height: 65px;
     background-color: #e8e8e8;
-    width: 100%;
+    width: auto;
     margin-bottom: 15px;
 }
 
 .learning-number {
     font-family: 'Heebo', sans-serif;
     color: gray;
-    font-size: 14pt;
-    padding-right: 18px;
+    font-size: 15pt;
 }
 
 .learning-content {
+    padding-left: 18px;
     font-family: 'Playfair Display', serif;
     font-weight: 200;
-    padding-top: 2px;
-    padding-bottom: 4px;
-    font-size: 14pt;
+    padding-bottom: 3px;
+    font-size: 15pt;
 }
 
-@media (max-width: 1000px) {
-    .learning-number {
-        padding-right: 12px;
+.project-context-description {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    padding-bottom: 70px;
+}
+
+@media (max-width: 900px) {
+    .project-right {
+        display: none;
     }
 
-    .learning-number, .learning-content {
-        font-size: 13pt;
+    .project-left {
+        width: 90%
     }
 }
 
 .breakdown-container {
     display: flex;
     flex-direction: column;
+    width: 90%;
 }
 
 .breakdown-title {
@@ -571,17 +582,7 @@
 .breakdown-text {
     font-family: 'Jost', sans-serif;
     font-weight: 300;
-    font-size: 16pt;
-}
-
-@media (max-width: 900px) {
-    .overview-right {
-        display: none;
-    }
-
-    .overview-left {
-        width: 90%
-    }
+    font-size: 17pt;
 }
 
 
@@ -601,7 +602,7 @@
     float: right;
 }
 
-.gitlet-commands {
+.command-list {
     font-family: 'Jost', sans-serif;
     font-weight: 300;
     font-size: 11pt;
@@ -622,7 +623,7 @@
     flex-direction: row;
 }
 
-.command-name {
+[class^="command-name"] {
     line-height: 1.2;
     font-size: 11pt;
     margin-left: 15px;
@@ -645,28 +646,26 @@
 }
 
 .fig-caption {
-    padding-top: 1%;
-    padding-left: 1%;
-    padding-right: 1%;
+    padding-top: 8px;
 }
 
 .gitlet-diagram {
     margin-right: 30px;
-    width: 60%;
+    width: 65%;
     max-width: 1100px;
 }
 
 .gitlet-text {
     font-family: 'Jost', sans-serif;
-    font-size: 16pt;
     font-weight: 300;
-    width: 40%;
+    font-size: 17pt;
+    width: 35%;
 }
 
 .gitlet-text-hidden {
     font-family: 'Jost', sans-serif;
     font-weight: 300;
-    font-size: 16pt;
+    font-size: 24px;
     display: none;
 }
 
@@ -676,7 +675,7 @@
 
 .show-hide {
     position: relative;
-    top: -45px;
+    top: -42px;
     z-index: -1;
 }
 
@@ -695,9 +694,10 @@
     padding-left: 43px;
     font-family: 'Jost', sans-serif;
     font-weight: 400;
-    font-size: 14pt;
+    font-size: 20px;
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
+    color: #00397a;
 }
 
 .dropdown-chevron {
@@ -714,7 +714,6 @@
     flex-direction: row;
     align-items: center;
     margin-bottom: 20px;
-    margin-top: 20px;
 }
 
 @media (max-width: 1150px) {
@@ -736,7 +735,7 @@
 }
 
 @media (max-width: 900px) {
-    .gitlet-commands {
+    .command-list {
         grid-template:
         "p p";
     }
@@ -748,7 +747,7 @@
         padding-left: 28px;
     }
 
-    .command-name {
+    p[class^="command-name"] {
         font-size:10pt;
         margin-left: -24px;
     }
@@ -783,7 +782,7 @@
 .need-more {
     color: grey;
     font-family: 'Heebo', sans-serif;
-    font-size: 12pt;
+    font-size: 11pt;
     font-weight: 400;
     margin-top: 50px;
 }
@@ -800,13 +799,33 @@
     font-weight: 500;
 }
 
+.about-linkedin {
+    width: 67px;
+}
+
+.about-github {
+    width: 52px;
+}
+
+.about-email {
+    width: 44px;
+}
+
+.about-aboutme {
+    width: 72px;
+}
+
 .about-linkedin:hover span, .about-github:hover span,
 .about-email:hover span, .about-aboutme:hover span {
     font-weight: 700;
 }
 
 @media (max-width: 350px) {
-    .need-more, .footer-links {
+    .need-more {
+        font-size: 10pt;
+    }
+
+    .footer-links {
         font-size: 10pt;
     }
 
@@ -830,10 +849,6 @@
 
 
 /************ HAMBURGER ANIMATIONS ************/
-
-.hamburger-backgrond-large {
-    display: none;
-}
 
 .hamburger-background {
     background-color: #96ff8c;
@@ -919,6 +934,15 @@
     height: 20px;
 }
 
+.dropdown-chevron span {
+    background-color: black;
+    position: absolute;
+    border-radius: 20px;
+    transition: .3s cubic-bezier(.5, .5, .2, 1.4);
+    width: 100%;
+    height: 3px;
+}
+
 .dropdown-chevron span:nth-child(1) {
     transform: rotate(45deg) scaleX(0.8);
     top: 9px;
@@ -972,316 +996,5 @@
     
     .dropdown-chevron.open span:nth-child(2) {
         left: 3px;
-    }
-}
-
-
-/** LARGE SCREEN HANDLING */
-
-@media (min-width: 1700px) {
-
-    .hamburger-background {
-        display: none;
-    }
-    
-    .hamburger-background-large {
-        background-color: #96ff8c;
-        position: fixed;
-        right: 30px;
-        top: 30px;
-        border-radius: 5px;
-        z-index: 2;
-        width: 70px;
-        height: 70px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .hamburger-icon-large {
-        position: relative;
-        width: 35px;
-        height: 30px;
-        cursor: pointer;
-        margin: 0 auto;
-    }
-    
-    .hamburger-icon-large span {
-        background-color:black;
-        position: absolute;
-        border-radius: 20px;
-        transition: .3s cubic-bezier(.8, .5, .2, 1.4);
-        width: 100%;
-        height: 5px;
-    }
-    
-    .hamburger-icon-large span:nth-child(1) {
-        top: 0px;
-        left: 0px;
-    }
-    
-    .hamburger-icon-large span:nth-child(2) {
-        top: 13px;
-        left: 0px;
-    }
-    
-    .hamburger-icon-large span:nth-child(3) {
-        bottom:0px;
-        left: 0px;
-    }
-    
-    .hamburger-icon-large:not(.open):hover span:nth-child(1) {
-        transform: scaleY(1);
-        left: -5px;
-    }
-    
-    .hamburger-icon-large:not(.open):hover span:nth-child(3) {
-        transform: scaleY(1);
-        left: 5px;
-    }
-    
-    .hamburger-icon-large.open span:nth-child(1) {
-        transform: rotate(45deg) scaleX(0.8);
-        top: 12px;
-        left: -8px;
-    }
-    
-    .hamburger-icon-large.open span:nth-child(2) {
-        transform: scale(0);
-        transition-duration: 50ms;
-    }
-    
-    .hamburger-icon-large.open span:nth-child(3) {
-        transform: rotate(-45deg) scaleX(0.8);
-        top: 12px;
-        left: 9px;
-    }
-
-    /* MAIN PAGE */
-
-    .logo__portrait {
-        position: fixed;
-        border: #96ff8c;
-        height: 115px;
-        top: 30px;
-        left: 30px;
-        border-radius: 15px;
-    }
-
-    .contents-container {
-        margin-top: 250px;
-    }
-
-    .intro, .my-projects {
-        font-size: 16pt;
-    }
-
-    .description {
-        font-size: 43px;
-    }
-
-    .right-arrow {
-        margin-top: 20px;
-        height: 32px;
-        background-color: #96ff8c;
-        align-items: center;
-    }
-    
-    .about-link {
-        margin-left: 15px;
-        margin-top: 7px;
-        font-size: 8pt;
-    }
-    
-    .about-wrapper {
-        height: 32px;
-        width: 120px;
-        margin-left: -16px;
-        margin-top: -47px;
-    }
-
-    .project-name {
-        font-size: 53pt;
-        margin-bottom: 35px;
-    }
-
-    .my-projects {
-        margin-bottom: 30px;
-    }
-
-    .check-me-out {
-        margin-top: 80px;
-        font-size: 16pt;
-    }
-
-    .github-container, .linkedin-container, .email-container {
-        display: inline-block;
-        margin-right: 10px;
-        width: 52px;
-        height: 52px;
-        background-color: black;
-        transition: 250ms;
-    }
-    
-    .github, .linkedin, .email {
-        margin: 6px;
-        max-width: 40px;
-        height: 40px;
-    }
-
-    .project-wrapper-1 {
-        width: 255px;
-    }
-    
-    .project-wrapper-2 {
-        width: 415px;
-    }
-    
-    .project-wrapper-3 {
-        width: 460px;
-    }
-    
-    .project-wrapper-4 {
-        width: 440px;
-    }
-
-    .menu-link {
-        font-size: 40pt;
-        padding-bottom: 40px;
-    }
-
-    .home-button {
-        font-size: 17pt;
-        padding-bottom: 40px;
-    }
-
-    .menu-wrapper {
-        position: absolute;
-        opacity: 0;
-        background-color: #96ff8c;
-        height: 27%;
-        bottom: 41px;
-        left: -18%;
-        z-index: -1;
-        width: 136%;
-    }
-
-    /* ABOUT ME */
-
-    .need-more, .footer-links {
-        font-size: 18px;
-    }
-
-    .about-header {
-        font-size: 32pt;
-    }
-
-    .about-body {
-        font-size: 22pt;
-    }
-
-    .hello-world, .experience {
-        font-size: 18pt;
-    }
-
-    .internship-logo {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 10px;
-    }
-
-    .work-logo {
-        width: 130px;
-        height: 130px;
-    }
-
-    .work-item {
-        font-size: 15pt;
-    }
-    
-    .work-text {
-        margin-top: 7px;
-    }
-    
-    .work-blurb {
-        font-family: 'Playfair Display', serif;
-        font-family: 'Jost', sans-serif;
-        font-size: 14pt;
-        font-weight: 300;
-        margin-bottom: 70px;
-        margin-top: 5px;
-    }
-
-    .internship-text {
-        font-family: 'Jost', sans-serif;
-        font-size: 13pt;
-        font-weight: 400;
-        margin-bottom: 0;
-        margin-top: 15px;
-        margin-left: 15px;
-    }
-    
-    .internship-section {
-        display: flex;
-        flex-direction: row;
-
-    }
-    
-    .internship-line {
-        background-color: #868686;
-        height: 240px;
-        width: 2px;
-        margin-top: 10px;
-    }
-    
-    .various-internships {
-        font-family: 'Jost', sans-serif;
-        font-size: 13pt;
-        font-weight: 400;
-        margin-left: 18px;
-        align-self: center;
-        margin-top: 0;
-    }
-
-
-    /* PROJECTS */
-
-    .breakdown-title {
-        font-size: 32pt;
-    }
-    
-    .learning-number, .learning-content, .key-learnings {
-        font-size: 18pt;
-    }
-
-    .breakdown-text {
-        font-size: 22pt;
-    }
-
-    #gitlet-text {
-        font-size: 22pt;
-    }
-
-    #show-button {
-        font-size: 20pt;
-    }
-
-    #show-button {
-        height: 75px;
-        padding-left: 63px;
-        border-top-right-radius: 35px;
-        border-top-left-radius: 35px;
-    }
-
-    #command-name, .command-description, .fig-caption {
-        font-size: 16pt;
-    }
-
-    #command-name {
-        height: 26px;
-        border-radius: 10px;
-        padding-left: 15px;
-        padding-right: 15px;
     }
 }

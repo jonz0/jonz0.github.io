@@ -35,22 +35,13 @@ $(document).ready(function() {
         });
     });
 
-    // HAMBURGER MENU - LARGE SCREEN
-    const i = document.querySelectorAll('.hamburger-icon-large');
-    i.forEach (icon => {  
-        icon.addEventListener('click', (event) => {
-            icon.classList.toggle('open');
-        });
-    });
-    
-
     $('.menu-link').on('mouseenter', function() {
         if (!isUsingTouch) {
             var wrapper = $(this).children('.menu-wrapper');
-            wrapper.stop().fadeTo(300, 0.9);
+            wrapper.stop().fadeTo(350, 0.9);
 
             $('.menu-link').on('mouseleave', function(){
-                wrapper.stop().fadeTo(300, 0);
+                wrapper.stop().fadeTo(350, 0);
             })
         }
 
@@ -58,28 +49,24 @@ $(document).ready(function() {
             var link = $(this).attr('href');
             var wrapper = $(this).children('.menu-wrapper');
             event.preventDefault();
-            wrapper.stop().fadeTo(300, 0.9);
+            wrapper.stop().fadeTo(350, 0.9);
             setTimeout(function() { 
                 window.location = link; 
-                wrapper.stop().fadeTo(300, 0);
+                wrapper.stop().fadeTo(350, 0);
                 $('.hamburger-menu').stop().slideToggle();
-            }, 300);
+            }, 350);
         });
     });
 
     $('.home-button').on('click', function() {
         setTimeout(function() { 
             $('.hamburger-menu').stop().slideToggle();
-        }, 300);
+        }, 350);
     });
     
     // MAIN MENU
     $('.hamburger-menu').hide();
     $('.hamburger-icon').click(function() {
-        $('.hamburger-menu').stop().slideToggle();
-    });
-
-    $('.hamburger-icon-large').click(function() {
         $('.hamburger-menu').stop().slideToggle();
     });
 
@@ -94,17 +81,19 @@ $(document).ready(function() {
     // ABOUT ME
 
     $('.about-link').on('mouseenter', function() {
-        var wrapper = $(this).children('.about-wrapper');
         if (!isUsingTouch) {
+            var wrapper = $(this).children('.about-wrapper');
             wrapper.stop().animate({width: 'toggle'}, 300);
 
             $('.about-link').on('mouseleave', function(){
                 wrapper.stop().animate({width: 'toggle'}, 300);
-            })
+            });
         }
     
+        
         $('.about-link').on('click', function(event) {
-            var link = $(this).children('.about-link').attr('href');
+            var link = $(this).attr('href');
+            var wrapper = $(this).children('.about-wrapper');
             if (wrapper.css('display') == 'none') {
                 event.preventDefault();
                 wrapper.stop().animate({width: 'toggle'}, 300);

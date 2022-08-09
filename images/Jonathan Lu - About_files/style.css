@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500&family=Jost:wght@100;200;300;400&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
 
-/************ MAIN PAGE ************/
+/************ MAIN LANDING PAGE ************/
 
 ::selection {
     color: #000942;
@@ -15,6 +15,8 @@
     left: 20px;
     border-radius: 10px;
 }
+
+/** CONTAINER AND BACKGROUND */
 
 .contents-container {
     display: flex;
@@ -37,9 +39,12 @@
     border: none;
 }
 
+/** LEFT SIDE */
+
 .contents-left {
     display: flex;
     flex-direction: column;
+    margin-top: 1px;
 }
 
 .check-me-out {
@@ -125,14 +130,15 @@
     font-size: 26pt;
 }
 
+/** RIGHT SIDE */
+
 .contents-right {
-    margin-top: -20px;
     display: flex;
     flex-direction: column;
     text-align: right;
     font-family: 'Playfair Display', serif;
     font-weight: 800;
-    width: 800px;
+     width: 800px;
 }
 
 .project-wrapper-1, .project-wrapper-2, 
@@ -165,7 +171,7 @@
 .project-bg {
     opacity: 0;
     position: fixed;
-    width: 75%;
+    width: 77%;
     height: 100%;
     right: 0;
     top: 0;
@@ -177,10 +183,10 @@
 
 .project-name {
     font-family: 'Playfair Display', serif;
-    font-size: 38pt;
+    font-size: 40pt;
     color: black;
     font-weight: 700;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
     position: relative;
 }
 
@@ -203,10 +209,6 @@
 @media (max-width: 900px) {
     .description {
         font-size: 24pt;
-    }
-
-    .my-projects {
-        margin-bottom: 30px;
     }
 
     .project-name {
@@ -293,29 +295,30 @@
 /** ABOUT ME TEXT */
 
 .about-container {
+    margin-top: -30px;
+    margin-left: 10%;
+    width: 90%;
     display: flex;
     flex-direction: row;
-    margin-bottom: 180px;
-    margin-left: 14%;
-    margin-right: 10%;
-    justify-content: left;
+    margin-bottom: 150px;
 }
 
 .about-right {
     display: flex;
     flex-direction: column;
-    margin-left: 5%;
-    width: 36%;
+    margin-left: 60px;
+    margin-right: 5%;
+    width: 34%;
 }
 
 .about-left {
     width: 55%;
     font-family: 'Playfair Display', serif;
     font-size: 14pt;
-    width: 64%;
+    width: 66%;
 }
 
-.about-header {
+.my-name {
     margin-bottom: 50px;
 }
 
@@ -381,7 +384,7 @@
 
 .internship-text {
     font-family: 'Jost', sans-serif;
-    font-size: 10pt;
+    font-size: 11pt;
     font-weight: 400;
     margin-bottom: 0;
     margin-top: 5px;
@@ -393,23 +396,21 @@
     flex-direction: row;
 }
 
-.internships {
-    margin-right: 21px;
-}
-
 .internship-line {
     background-color: #868686;
     height: 160px;
     width: 1px;
-    margin-top: 6px;
+    margin-top: 5px;
+    margin-left: 18px;
 }
 
 .various-internships {
     font-family: 'Jost', sans-serif;
     font-size: 11pt;
     font-weight: 400;
-    margin-left: 19px;
+    margin-left: 15px;
     align-self: center;
+    margin-top: 0;
 }
 
 @media (max-width: 1200px) {
@@ -543,7 +544,6 @@
 .learning-content {
     font-family: 'Playfair Display', serif;
     font-weight: 200;
-    padding-top: 2px;
     padding-bottom: 4px;
     font-size: 14pt;
 }
@@ -831,10 +831,6 @@
 
 /************ HAMBURGER ANIMATIONS ************/
 
-.hamburger-backgrond-large {
-    display: none;
-}
-
 .hamburger-background {
     background-color: #96ff8c;
     position: fixed;
@@ -919,6 +915,15 @@
     height: 20px;
 }
 
+.dropdown-chevron span {
+    background-color: black;
+    position: absolute;
+    border-radius: 20px;
+    transition: .3s cubic-bezier(.5, .5, .2, 1.4);
+    width: 100%;
+    height: 3px;
+}
+
 .dropdown-chevron span:nth-child(1) {
     transform: rotate(45deg) scaleX(0.8);
     top: 9px;
@@ -976,274 +981,21 @@
 }
 
 
+
+
 /** LARGE SCREEN HANDLING */
 
 @media (min-width: 1700px) {
 
-    .hamburger-background {
-        display: none;
-    }
-    
-    .hamburger-background-large {
-        background-color: #96ff8c;
-        position: fixed;
-        right: 30px;
-        top: 30px;
-        border-radius: 5px;
-        z-index: 2;
-        width: 70px;
-        height: 70px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    .hamburger-icon-large {
-        position: relative;
-        width: 35px;
-        height: 30px;
-        cursor: pointer;
-        margin: 0 auto;
-    }
-    
-    .hamburger-icon-large span {
-        background-color:black;
-        position: absolute;
-        border-radius: 20px;
-        transition: .3s cubic-bezier(.8, .5, .2, 1.4);
-        width: 100%;
-        height: 5px;
-    }
-    
-    .hamburger-icon-large span:nth-child(1) {
-        top: 0px;
-        left: 0px;
-    }
-    
-    .hamburger-icon-large span:nth-child(2) {
-        top: 13px;
-        left: 0px;
-    }
-    
-    .hamburger-icon-large span:nth-child(3) {
-        bottom:0px;
-        left: 0px;
-    }
-    
-    .hamburger-icon-large:not(.open):hover span:nth-child(1) {
-        transform: scaleY(1);
-        left: -5px;
-    }
-    
-    .hamburger-icon-large:not(.open):hover span:nth-child(3) {
-        transform: scaleY(1);
-        left: 5px;
-    }
-    
-    .hamburger-icon-large.open span:nth-child(1) {
-        transform: rotate(45deg) scaleX(0.8);
-        top: 12px;
-        left: -8px;
-    }
-    
-    .hamburger-icon-large.open span:nth-child(2) {
-        transform: scale(0);
-        transition-duration: 50ms;
-    }
-    
-    .hamburger-icon-large.open span:nth-child(3) {
-        transform: rotate(-45deg) scaleX(0.8);
-        top: 12px;
-        left: 9px;
-    }
-
     /* MAIN PAGE */
 
-    .logo__portrait {
-        position: fixed;
-        border: #96ff8c;
-        height: 115px;
-        top: 30px;
-        left: 30px;
-        border-radius: 15px;
-    }
 
-    .contents-container {
-        margin-top: 250px;
-    }
-
-    .intro, .my-projects {
-        font-size: 16pt;
-    }
-
-    .description {
-        font-size: 43px;
-    }
-
-    .right-arrow {
-        margin-top: 20px;
-        height: 32px;
-        background-color: #96ff8c;
-        align-items: center;
-    }
-    
-    .about-link {
-        margin-left: 15px;
-        margin-top: 7px;
-        font-size: 8pt;
-    }
-    
-    .about-wrapper {
-        height: 32px;
-        width: 120px;
-        margin-left: -16px;
-        margin-top: -47px;
-    }
-
-    .project-name {
-        font-size: 53pt;
-        margin-bottom: 35px;
-    }
-
-    .my-projects {
-        margin-bottom: 30px;
-    }
-
-    .check-me-out {
-        margin-top: 80px;
-        font-size: 16pt;
-    }
-
-    .github-container, .linkedin-container, .email-container {
-        display: inline-block;
-        margin-right: 10px;
-        width: 52px;
-        height: 52px;
-        background-color: black;
-        transition: 250ms;
-    }
-    
-    .github, .linkedin, .email {
-        margin: 6px;
-        max-width: 40px;
-        height: 40px;
-    }
-
-    .project-wrapper-1 {
-        width: 255px;
-    }
-    
-    .project-wrapper-2 {
-        width: 415px;
-    }
-    
-    .project-wrapper-3 {
-        width: 460px;
-    }
-    
-    .project-wrapper-4 {
-        width: 440px;
-    }
-
-    .menu-link {
-        font-size: 40pt;
-        padding-bottom: 40px;
-    }
-
-    .home-button {
-        font-size: 17pt;
-        padding-bottom: 40px;
-    }
-
-    .menu-wrapper {
-        position: absolute;
-        opacity: 0;
-        background-color: #96ff8c;
-        height: 27%;
-        bottom: 41px;
-        left: -18%;
-        z-index: -1;
-        width: 136%;
-    }
 
     /* ABOUT ME */
 
     .need-more, .footer-links {
         font-size: 18px;
     }
-
-    .about-header {
-        font-size: 32pt;
-    }
-
-    .about-body {
-        font-size: 22pt;
-    }
-
-    .hello-world, .experience {
-        font-size: 18pt;
-    }
-
-    .internship-logo {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 10px;
-    }
-
-    .work-logo {
-        width: 130px;
-        height: 130px;
-    }
-
-    .work-item {
-        font-size: 15pt;
-    }
-    
-    .work-text {
-        margin-top: 7px;
-    }
-    
-    .work-blurb {
-        font-family: 'Playfair Display', serif;
-        font-family: 'Jost', sans-serif;
-        font-size: 14pt;
-        font-weight: 300;
-        margin-bottom: 70px;
-        margin-top: 5px;
-    }
-
-    .internship-text {
-        font-family: 'Jost', sans-serif;
-        font-size: 13pt;
-        font-weight: 400;
-        margin-bottom: 0;
-        margin-top: 15px;
-        margin-left: 15px;
-    }
-    
-    .internship-section {
-        display: flex;
-        flex-direction: row;
-
-    }
-    
-    .internship-line {
-        background-color: #868686;
-        height: 240px;
-        width: 2px;
-        margin-top: 10px;
-    }
-    
-    .various-internships {
-        font-family: 'Jost', sans-serif;
-        font-size: 13pt;
-        font-weight: 400;
-        margin-left: 18px;
-        align-self: center;
-        margin-top: 0;
-    }
-
 
     /* PROJECTS */
 

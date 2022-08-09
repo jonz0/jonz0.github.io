@@ -35,15 +35,6 @@ $(document).ready(function() {
         });
     });
 
-    // HAMBURGER MENU - LARGE SCREEN
-    const i = document.querySelectorAll('.hamburger-icon-large');
-    i.forEach (icon => {  
-        icon.addEventListener('click', (event) => {
-            icon.classList.toggle('open');
-        });
-    });
-    
-
     $('.menu-link').on('mouseenter', function() {
         if (!isUsingTouch) {
             var wrapper = $(this).children('.menu-wrapper');
@@ -79,10 +70,6 @@ $(document).ready(function() {
         $('.hamburger-menu').stop().slideToggle();
     });
 
-    $('.hamburger-icon-large').click(function() {
-        $('.hamburger-menu').stop().slideToggle();
-    });
-
     // MAIN PAGE
     $('.project-name').on('mouseenter', function() {
         $(this).children('#project-wrapper').stop().animate({width: 'toggle'}, 300);
@@ -94,17 +81,19 @@ $(document).ready(function() {
     // ABOUT ME
 
     $('.about-link').on('mouseenter', function() {
-        var wrapper = $(this).children('.about-wrapper');
         if (!isUsingTouch) {
+            var wrapper = $(this).children('.about-wrapper');
             wrapper.stop().animate({width: 'toggle'}, 300);
 
             $('.about-link').on('mouseleave', function(){
                 wrapper.stop().animate({width: 'toggle'}, 300);
-            })
+            });
         }
     
+        
         $('.about-link').on('click', function(event) {
-            var link = $(this).children('.about-link').attr('href');
+            var link = $(this).attr('href');
+            var wrapper = $(this).children('.about-wrapper');
             if (wrapper.css('display') == 'none') {
                 event.preventDefault();
                 wrapper.stop().animate({width: 'toggle'}, 300);

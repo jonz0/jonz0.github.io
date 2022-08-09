@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
+<!-- saved from url=(0033)http://127.0.0.1:3000/gitlet.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="./Jonathan Lu - Project_ Gitlet_files/___vscode_livepreview_injected_script"></script>
+        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="keywords" content="Jonathan Lu">
         <meta name="description" content="This is my personal site.">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="./Jonathan Lu - Project_ Gitlet_files/style.css">
         <title>Jonathan Lu - Project: Gitlet</title>
-        <script src="js/jquery-3.6.0.min.js"></script>
-        <script src="js/script-main.js"></script>
+        <script src="./Jonathan Lu - Project_ Gitlet_files/jquery-3.6.0.min.js"></script>
+        <script src="./Jonathan Lu - Project_ Gitlet_files/script-main.js"></script>
     </head>
 
     <body class="project-body">
         <div class="logo">
-            <img class="logo__portrait" src="https://media-exp1.licdn.com/dms/image/C5603AQEO04vZ49jzqg/profile-displayphoto-shrink_200_200/0/1635138897208?e=1661990400&v=beta&t=CGJL1ezdABx8gnjyP43NC7P36uWoMFZiYatbkmVbGik">
+            <img class="logo__portrait" src="./Jonathan Lu - Project_ Gitlet_files/1635138897208">
         </div>
 
         <div class="hamburger-background">
@@ -26,34 +26,26 @@
             </div>
         </div>
 
-        <div class="hamburger-background-large">
-            <div class="hamburger-icon-large">
-            <span></span>
-            <span></span>
-            <span></span>
-            </div>
-        </div>
-
-        <div class="hamburger-menu">
-            <a href="/index.html" class="home-button" style="text-decoration: none;">HOME</a>
-            <a class="menu-link" href="/about.html" style="text-decoration: none; color: black;">About Me
+        <div class="hamburger-menu" style="display: none;">
+            <a href="http://127.0.0.1:3000/index.html" class="home-button" style="text-decoration: none;">HOME</a>
+            <a class="menu-link" href="http://127.0.0.1:3000/about.html" style="text-decoration: none; color: black;">About Me
                 <area class="menu-wrapper">
             </a>
-            <a class="menu-link" href="/gitlet.html" style="text-decoration: none; color: black;">Gitlet
+            <a class="menu-link" href="http://127.0.0.1:3000/gitlet.html" style="text-decoration: none; color: black;">Gitlet
                 <area class="menu-wrapper">
             </a>
-            <a class="menu-link" href="#" style="text-decoration: none; color: black;">2D Worlds
+            <a class="menu-link" href="http://127.0.0.1:3000/gitlet.html#" style="text-decoration: none; color: black;">2D Worlds
                 <area class="menu-wrapper">
             </a>
-            <a class="menu-link" href="#" style="text-decoration: none; color: black;">In Progress
+            <a class="menu-link" href="http://127.0.0.1:3000/gitlet.html#" style="text-decoration: none; color: black;">In Progress
                 <area class="menu-wrapper">
             </a>
-            <a class="menu-link" href="#" style="text-decoration: none; color: black;">Travel Map
+            <a class="menu-link" href="http://127.0.0.1:3000/gitlet.html#" style="text-decoration: none; color: black;">Travel Map
                 <area class="menu-wrapper">
             </a>
         </div>
         
-        <img src="https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202225/0044/faux-sakura-cherry-blossom-branch-z.jpg" class="project-photo">
+        <img src="./Jonathan Lu - Project_ Gitlet_files/faux-sakura-cherry-blossom-branch-z.jpg" class="project-photo">
         <div class="project-cover-text">
             <h1 class="project-title">Gitlet</h1>
             <area class="project-line">
@@ -103,7 +95,7 @@
                     head commits, branches, and logs, I explored .git in my own repositories and came up with a modified structure that looks like this:
                 </p>
                 <div class="gitlet-structure">
-                    <img src="images/gitlet-diagram.png" class="gitlet-diagram">
+                    <img src="./Jonathan Lu - Project_ Gitlet_files/gitlet-diagram.png" class="gitlet-diagram">
                     <p class="gitlet-text" id="gitlet-text"> All repository information (e.g. current head, staging area, blobs, branches, commits, and remote repositories) is saved in a .gitlet file. 
                         Commits and blobs are assigned a UUID using SHA-1, serialized, and stored in the objects folder. To speed up object traversal, objects are packaged in folders
                         named by the first two digits of their UUID, similar to Git.
@@ -125,43 +117,43 @@
                     </div>
                 </button>
     
-                <div class="show-hide" id="show-hide">
+                </p><div class="show-hide" id="show-hide" style="display: none;">
                     <ul class="gitlet-commands" style="list-style: none;">
-                            <p class="command-name" id="command-name">init</p>
+                            <p class="command-name-init">init</p>
                             <p class="command-description">Creates a Gitlet version control system in the current directory, initializing the master branch and initial commit.</p>
-                            <p class="command-name" id="command-name">add</p>
+                            <p class="command-name-add">add</p>
                             <p class="command-description">Stages a file for addition.</p>
-                            <p class="command-name" id="command-name">commit</p>
+                            <p class="command-name-commit">commit</p>
                             <p class="command-description">Saves a snapshot of the staging area and tracked files so they can be restored at a later time.</p>
-                            <p class="command-name" id="command-name">rm</p>
+                            <p class="command-name-rm">rm</p>
                             <p class="command-description">Stages a file for removal and removes it from the working directory.</p>
-                            <p class="command-name" id="command-name">log</p>
+                            <p class="command-name-log">log</p>
                             <p class="command-description">Displays information about each commit backwards, starting from the current head commit.</p>
-                            <p class="command-name" id="command-name">global log</p>
+                            <p class="command-name-globallog">global log</p>
                             <p class="command-description">Displays information about all commits ever made.</p>
-                            <p class="command-name" id="command-name">find</p>
+                            <p class="command-name-find">find</p>
                             <p class="command-description">Prints the ids of all commits that have a given commit message.</p>
-                            <p class="command-name" id="command-name">status</p>
-                            <p class="command-description">Displays the status of branches & staged, modified, and untracked files in the working directory.</p>
-                            <p class="command-name" id="command-name">checkout</p>
+                            <p class="command-name-status">status</p>
+                            <p class="command-description">Displays the status of branches &amp; staged, modified, and untracked files in the working directory.</p>
+                            <p class="command-name-checkout">checkout</p>
                             <p class="command-description">Copies and overwrites files in the head, given commit, or given branch to the working directory.</p>
-                            <p class="command-name" id="command-name">branch</p>
+                            <p class="command-name-branch">branch</p>
                             <p class="command-description">Creates a new branch with the given name, and points it at the current head commit.</p>
-                            <p class="command-name" id="command-name">rm-branch</p>
+                            <p class="command-name-rmbranch">rm-branch</p>
                             <p class="command-description">Deletes the branch with the given name.</p>
-                            <p class="command-name" id="command-name">reset</p>
+                            <p class="command-name-reset">reset</p>
                             <p class="command-description">Checks out the files tracked by the given commit, removes untracked files, and moves the current head to the given commit.</p>
-                            <p class="command-name" id="command-name">merge</p>
+                            <p class="command-name-merge">merge</p>
                             <p class="command-description">Merges files from the given branch into the current branch, similar to git merge.</p>
-                            <p class="command-name" id="command-name">add-remote</p>
+                            <p class="command-name-addremote">add-remote</p>
                             <p class="command-description">Saves a remote repository under the given name.</p>
-                            <p class="command-name" id="command-name">rm-remote</p>
+                            <p class="command-name-rmremote">rm-remote</p>
                             <p class="command-description">Removes information associated with the given remote name.</p>
-                            <p class="command-name" id="command-name">fetch</p>
+                            <p class="command-name-fetch">fetch</p>
                             <p class="command-description">Copies commits and blobs from the given remote branch into the local repository, saving fetched commits under a new branch.</p>
-                            <p class="command-name" id="command-name">push</p>
+                            <p class="command-name-push">push</p>
                             <p class="command-description">Appends commits from the current branch to the end of the given remote branch.</p>
-                            <p class="command-name" id="command-name">pull</p>
+                            <p class="command-name-pull">pull</p>
                             <p class="command-description">Fetches the remote branch and merges it into the current branch.</p>
                     </ul>
                 </div>
@@ -178,7 +170,7 @@
                     to store and retrieve information during traversals.
                 </p>
                 <figure class="project-figure">
-                    <img src="images/gitlet-merge.png" class="gitlet-merge">
+                    <img src="./Jonathan Lu - Project_ Gitlet_files/gitlet-merge.png" class="gitlet-merge">
                     <figcaption class="fig-caption">Example of LCA in the merge command: Gitlet finds the latest common ancestor of two commits in O(n) time (where n represents the number of parents
                         of each branch head) by running DFS to find all parents of commit A, then matching those commits with each parent of commit B. Every shared 
                         commit is a split point, and the LCA is the split point with the greatest depth. Gitlet avoids calculating node depths during merge by memoizing depth
@@ -206,19 +198,19 @@
                 <a class="about-linkedin" href="https://www.linkedin.com/in/jlu130/" style="color: black; text-decoration: none;">
                     <span>Linkedin</span>
                 </a>
-                <span> &ensp;|&ensp; </span>
+                <span>  |  </span>
                 <a class="about-github" href="https://github.com/jonz0" style="color: black; text-decoration: none;">
                     <span>Github</span>
                 </a>
-                <span> &ensp;|&ensp; </span>
+                <span>  |  </span>
                 <a class="about-email" href="mailto:ijonluu@gmail.com" style="color: black; text-decoration: none;">
                     <span>Email</span>
                 </a>
-                <span> &ensp;|&ensp; </span>
-                <a class="about-aboutme" href="/about.html" style="color: black; text-decoration: none;">
+                <span>  |  </span>
+                <a class="about-aboutme" href="http://127.0.0.1:3000/about.html" style="color: black; text-decoration: none;">
                     <span>About Me</span>
                 </a>
             </p>
         </div>
-    </body>
-</html>
+    
+</body></html>
