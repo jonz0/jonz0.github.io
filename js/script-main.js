@@ -104,7 +104,7 @@ $(document).ready(function() {
         }
     
         $('.about-link').on('click', function(event) {
-            var link = $(this).children('.about-link').attr('href');
+            var link = $(this).attr('href');
             if (wrapper.css('display') == 'none') {
                 event.preventDefault();
                 wrapper.stop().animate({width: 'toggle'}, 300);

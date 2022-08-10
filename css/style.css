@@ -5,13 +5,13 @@
 ::selection {
     color: #000942;
     background: #96ff8c;
-  }
+}
 
 .logo__portrait {
     position: fixed;
     border: #96ff8c;
     height: 95px;
-    top: 20px;;
+    top: 20px;
     left: 20px;
     border-radius: 10px;
 }
@@ -50,7 +50,9 @@
     padding-top: 80px;
 }
 
-.github-container, .linkedin-container, .email-container {
+.github-container,
+.linkedin-container,
+.email-container {
     display: inline-block;
     margin-right: 10px;
     width: 40px;
@@ -59,7 +61,9 @@
     transition: 250ms;
 }
 
-.github, .linkedin, .email {
+.github,
+.linkedin,
+.email {
     max-width: 40px;
     margin: 5px;
     height: 30px
@@ -110,7 +114,8 @@
     z-index: -1;
 }
 
-.github, .linkedin {
+.github,
+.linkedin {
     margin-right: 10px;
 }
 
@@ -135,8 +140,10 @@
     width: 800px;
 }
 
-.project-wrapper-1, .project-wrapper-2, 
-.project-wrapper-3, .project-wrapper-4 {
+.project-wrapper-1,
+.project-wrapper-2,
+.project-wrapper-3,
+.project-wrapper-4 {
     display: none;
     position: absolute;
     z-index: -1;
@@ -184,8 +191,10 @@
     position: relative;
 }
 
-#gitlet:hover ~ #bg-1, #worlds:hover ~ #bg-2,
-#inprogress:hover ~ #bg-3, #travelmap:hover ~ #bg-4 {
+#gitlet:hover~#bg-1,
+#worlds:hover~#bg-2,
+#inprogress:hover~#bg-3,
+#travelmap:hover~#bg-4 {
     opacity: 1;
 }
 
@@ -247,43 +256,45 @@
     left: 0;
     top: 0;
     z-index: -1;
-    height: 500px;
+    height: 70vh;
     width: 100%;
     object-fit: cover;
     opacity: 1;
     filter: brightness(0.7)
 }
 
-.about-cover {
+.cover {
+    display: flex;
     flex-direction: column;
+    z-index: -1;
 }
 
-.project-cover-text {
-    margin-top: 210px;
+.cover-text {
+    position: absolute;
     font-family: 'Playfair Display', serif;
     margin-left: 14%;
     margin-right: 14%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 160px;
     flex-wrap: wrap;
     justify-content: center;
+    bottom: 40vh;
+    width: 72%;
 }
 
-.project-title {
+.cover-title {
     color: white;
     font-size: 30pt;
 }
 
-.project-line {
-    display: relative;
+.cover-line {
     box-sizing: border-box;
     background-color: white;
     height: 2px;
     margin-top: -10px;
 }
 
-.project-blurb {
+.cover-blurb {
     color: white;
     font-size: 20pt;
     font-weight: 600;
@@ -293,12 +304,14 @@
 /** ABOUT ME TEXT */
 
 .about-container {
+    position: relative;
     display: flex;
     flex-direction: row;
     margin-bottom: 180px;
     margin-left: 14%;
-    margin-right: 10%;
+    margin-right: 14%;
     justify-content: left;
+    margin-top: calc(70vh + 100px);
 }
 
 .about-right {
@@ -319,7 +332,8 @@
     margin-bottom: 50px;
 }
 
-.experience, .hello-world {
+.experience,
+.hello-world {
     color: grey;
     font-family: 'Heebo', sans-serif;
     font-size: 14pt;
@@ -451,14 +465,15 @@
 }
 
 .home-button:hover {
-    font-weight:500;
+    font-weight: 500;
 }
 
 .menu-link {
     font-family: 'Playfair Display', serif;
     font-size: 30pt;
     font-weight: 700;
-    padding-bottom: 25px;;
+    padding-bottom: 25px;
+    ;
     color: black;
     z-index: 3;
     position: relative;
@@ -475,17 +490,6 @@
     width: 136%;
 }
 
-@media (max-width: 400px) {
-    .menu-link {
-        font-size: 30px;
-    }
-
-    .menu-wrapper {
-        height: 25%;
-        bottom: 25px;
-    }
-}
-
 
 
 /************ PROJECT TEMPLATE ************/
@@ -493,13 +497,14 @@
 .project-container {
     margin-left: 14%;
     margin-right: 14%;
-    margin-bottom: 180px;
+    margin-bottom: 200px;
     justify-content: center;
 }
 
 .overview-container {
     display: flex;
     flex-direction: row;
+    margin-top: 180px;
 }
 
 .overview-left {
@@ -514,8 +519,8 @@
 }
 
 .key-learnings {
-    margin-top: 12%;
-    margin-bottom: 45px;
+    margin-top: 10%;
+    margin-bottom: 25px;
     color: grey;
     font-family: 'Heebo', sans-serif;
     font-size: 14pt;
@@ -527,7 +532,7 @@
     flex-direction: row;
     align-items: center;
     padding-left: 20px;
-    height: 65px;
+    height: 55px;
     background-color: #e8e8e8;
     width: 100%;
     margin-bottom: 15px;
@@ -553,7 +558,8 @@
         padding-right: 12px;
     }
 
-    .learning-number, .learning-content {
+    .learning-number,
+    .learning-content {
         font-size: 13pt;
     }
 }
@@ -597,7 +603,7 @@
     font-family: 'Jost', sans-serif;
     color: gray;
     font-style: italic;
-    font-size:11pt;
+    font-size: 11pt;
     float: right;
 }
 
@@ -738,7 +744,7 @@
 @media (max-width: 900px) {
     .gitlet-commands {
         grid-template:
-        "p p";
+            "p p";
     }
 }
 
@@ -749,7 +755,7 @@
     }
 
     .command-name {
-        font-size:10pt;
+        font-size: 10pt;
         margin-left: -24px;
     }
 
@@ -800,28 +806,32 @@
     font-weight: 500;
 }
 
-.about-linkedin:hover span, .about-github:hover span,
-.about-email:hover span, .about-aboutme:hover span {
+.about-linkedin:hover span,
+.about-github:hover span,
+.about-email:hover span,
+.about-aboutme:hover span {
     font-weight: 700;
 }
 
 @media (max-width: 350px) {
-    .need-more, .footer-links {
+
+    .need-more,
+    .footer-links {
         font-size: 10pt;
     }
 
     .about-linkedin {
         width: 56px;
     }
-    
+
     .about-github {
         width: 43px;
     }
-    
+
     .about-email {
         width: 36px;
     }
-    
+
     .about-aboutme {
         width: 60px;
     }
@@ -859,7 +869,7 @@
 }
 
 .hamburger-icon span {
-    background-color:black;
+    background-color: black;
     position: absolute;
     border-radius: 20px;
     transition: .3s cubic-bezier(.8, .5, .2, 1.4);
@@ -878,7 +888,7 @@
 }
 
 .hamburger-icon span:nth-child(3) {
-    bottom:0px;
+    bottom: 0px;
     left: 0px;
 }
 
@@ -957,32 +967,73 @@
         width: 15px;
         height: 20px;
     }
-    
+
     .dropdown-chevron span {
-        background-color:black;
+        background-color: black;
         position: absolute;
         border-radius: 20px;
         transition: .3s cubic-bezier(.5, .5, .2, 1.4);
         width: 100%;
         height: 3px;
     }
-    
+
     .dropdown-chevron span:nth-child(1) {
         left: -3px;
     }
-    
+
     .dropdown-chevron span:nth-child(2) {
         left: 3px;
     }
-    
+
     .dropdown-chevron.open span:nth-child(1) {
         left: -3px;
     }
-    
+
     .dropdown-chevron.open span:nth-child(2) {
         left: 3px;
     }
 }
+
+/** SMALL SCREEN HANDLING */
+
+
+@media (max-width: 414px) {
+    .menu-link {
+        font-size: 30px;
+    }
+
+    .menu-wrapper {
+        height: 25%;
+        bottom: 25px;
+    }
+
+    .cover-text {
+        margin-top: 320px;
+    }
+
+    .cover-title {
+        color: white;
+        font-size: 28pt;
+    }
+    
+    .cover-line {
+        display: relative;
+        box-sizing: border-box;
+        background-color: white;
+        height: 2px;
+        margin-top: 0;
+    }
+
+    .cover-blurb {
+        font-size: 18pt;
+        margin-top: 60px;
+    }
+
+    .about-container {
+        margin-top: 180px;
+    }
+}
+
 
 
 /** LARGE SCREEN HANDLING */
@@ -992,7 +1043,7 @@
     .hamburger-background {
         display: none;
     }
-    
+
     .hamburger-background-large {
         background-color: #96ff8c;
         position: fixed;
@@ -1007,7 +1058,7 @@
         justify-content: center;
         align-items: center;
     }
-    
+
     .hamburger-icon-large {
         position: relative;
         width: 35px;
@@ -1015,52 +1066,52 @@
         cursor: pointer;
         margin: 0 auto;
     }
-    
+
     .hamburger-icon-large span {
-        background-color:black;
+        background-color: black;
         position: absolute;
         border-radius: 20px;
         transition: .3s cubic-bezier(.8, .5, .2, 1.4);
         width: 100%;
         height: 5px;
     }
-    
+
     .hamburger-icon-large span:nth-child(1) {
         top: 0px;
         left: 0px;
     }
-    
+
     .hamburger-icon-large span:nth-child(2) {
         top: 13px;
         left: 0px;
     }
-    
+
     .hamburger-icon-large span:nth-child(3) {
-        bottom:0px;
+        bottom: 0px;
         left: 0px;
     }
-    
+
     .hamburger-icon-large:not(.open):hover span:nth-child(1) {
         transform: scaleY(1);
         left: -5px;
     }
-    
+
     .hamburger-icon-large:not(.open):hover span:nth-child(3) {
         transform: scaleY(1);
         left: 5px;
     }
-    
+
     .hamburger-icon-large.open span:nth-child(1) {
         transform: rotate(45deg) scaleX(0.8);
         top: 12px;
         left: -8px;
     }
-    
+
     .hamburger-icon-large.open span:nth-child(2) {
         transform: scale(0);
         transition-duration: 50ms;
     }
-    
+
     .hamburger-icon-large.open span:nth-child(3) {
         transform: rotate(-45deg) scaleX(0.8);
         top: 12px;
@@ -1082,7 +1133,8 @@
         margin-top: 250px;
     }
 
-    .intro, .my-projects {
+    .intro,
+    .my-projects {
         font-size: 16pt;
     }
 
@@ -1096,13 +1148,13 @@
         background-color: #96ff8c;
         align-items: center;
     }
-    
+
     .about-link {
         margin-left: 15px;
         margin-top: 7px;
         font-size: 8pt;
     }
-    
+
     .about-wrapper {
         height: 32px;
         width: 120px;
@@ -1124,7 +1176,9 @@
         font-size: 16pt;
     }
 
-    .github-container, .linkedin-container, .email-container {
+    .github-container,
+    .linkedin-container,
+    .email-container {
         display: inline-block;
         margin-right: 10px;
         width: 52px;
@@ -1132,8 +1186,10 @@
         background-color: black;
         transition: 250ms;
     }
-    
-    .github, .linkedin, .email {
+
+    .github,
+    .linkedin,
+    .email {
         margin: 6px;
         max-width: 40px;
         height: 40px;
@@ -1142,15 +1198,15 @@
     .project-wrapper-1 {
         width: 255px;
     }
-    
+
     .project-wrapper-2 {
         width: 415px;
     }
-    
+
     .project-wrapper-3 {
         width: 460px;
     }
-    
+
     .project-wrapper-4 {
         width: 440px;
     }
@@ -1178,7 +1234,8 @@
 
     /* ABOUT ME */
 
-    .need-more, .footer-links {
+    .need-more,
+    .footer-links {
         font-size: 18px;
     }
 
@@ -1190,7 +1247,8 @@
         font-size: 22pt;
     }
 
-    .hello-world, .experience {
+    .hello-world,
+    .experience {
         font-size: 18pt;
     }
 
@@ -1208,11 +1266,11 @@
     .work-item {
         font-size: 15pt;
     }
-    
+
     .work-text {
         margin-top: 7px;
     }
-    
+
     .work-blurb {
         font-family: 'Playfair Display', serif;
         font-family: 'Jost', sans-serif;
@@ -1230,20 +1288,20 @@
         margin-top: 15px;
         margin-left: 15px;
     }
-    
+
     .internship-section {
         display: flex;
         flex-direction: row;
 
     }
-    
+
     .internship-line {
         background-color: #868686;
         height: 240px;
         width: 2px;
         margin-top: 10px;
     }
-    
+
     .various-internships {
         font-family: 'Jost', sans-serif;
         font-size: 13pt;
@@ -1256,11 +1314,52 @@
 
     /* PROJECTS */
 
+    .project-photo {
+        height: 60%;
+    }
+
+    .cover-text {
+        position: absolute;
+        font-family: 'Playfair Display', serif;
+        margin-left: 14%;
+        margin-right: 14%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        bottom: 550px;
+        width: 72%;
+    }
+
+    .about-container {
+        margin-top: calc(70vh);
+    }
+
+    .cover-title {
+        color: white;
+        font-size: 45pt;
+    }
+    
+    .cover-line {
+        display: relative;
+        box-sizing: border-box;
+        background-color: white;
+        height: 3px;
+        margin-top: -10px;
+    }
+
+    .cover-blurb {
+        font-size: 24pt;
+        margin-top: 70px;
+    }
+
     .breakdown-title {
         font-size: 32pt;
     }
-    
-    .learning-number, .learning-content, .key-learnings {
+
+    .learning-number,
+    .learning-content,
+    .key-learnings {
         font-size: 18pt;
     }
 
@@ -1283,7 +1382,9 @@
         border-top-left-radius: 35px;
     }
 
-    #command-name, .command-description, .fig-caption {
+    #command-name,
+    .command-description,
+    .fig-caption {
         font-size: 16pt;
     }
 
