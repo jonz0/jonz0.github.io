@@ -1024,6 +1024,10 @@
   }
 }
 
+.figure-imaage {
+  width: inherit;
+}
+
 /** SMALL SCREEN HANDLING */
 
 @media (max-width: 430px) {
