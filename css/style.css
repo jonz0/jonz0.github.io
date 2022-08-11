@@ -27,7 +27,7 @@
 #title-typeface {
     font-family: 'Playfair Display', serif;
     font-size: 26pt;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
 }
 
 #body-typeface {
@@ -108,8 +108,8 @@
 }
 
 .right-arrow {
-    margin-top: 12px;
-    height: 22px;
+    margin-top: 13px;
+    height: 28px;
     background-color: #96ff8c;
     align-items: center;
 }
@@ -119,7 +119,7 @@
     margin-top: 1px;
     display: inline-block;
     font-family: 'Heebo', sans-serif;
-    font-size: 6pt;
+    font-size: 7pt;
 }
 
 .about-wrapper {
@@ -127,10 +127,10 @@
     opacity: 0.9;
     position: absolute;
     background-color: #96ff8c;
-    height: 22px;
-    width: 105px;
-    margin-left: -20px;
-    margin-top: -34px;
+    height: 28px;
+    width: 120px;
+    margin-left: -15px;
+    margin-top: -41px;
     z-index: -1;
 }
 
@@ -139,7 +139,7 @@
     margin-right: 10px;
 }
 
-.description {
+.about-description {
     margin-top: 30px;
     font-family: 'Playfair Display', serif;
     font-size: 26pt;
@@ -224,7 +224,7 @@
 }
 
 @media (max-width: 900px) {
-    .description {
+    .about-description {
         font-size: 23pt;
     }
 
@@ -244,7 +244,7 @@
         display: none;
     }
 
-    .description {
+    .about-description {
         font-size: 19pt;
     }
 
@@ -319,12 +319,12 @@
 .about-right {
     display: flex;
     flex-direction: column;
-    margin-left: 7%;
-    width: 36%;
+    width: 40%;
 }
 
 .about-left {
     width: 62%;
+    padding-right: 7%;
 }
 
 .experience,
@@ -339,82 +339,9 @@
     margin-right: 20px;
 }
 
-.work-section {
-    display: flex;
-    flex-direction: column;
-}
-
-.work-logo {
-    width: 90px;
-    height: 90px;
-    margin-right: 15px;
-}
-
-.work-item {
-    display: flex;
-    flex-direction: row;
-    font-family: 'Jost', sans-serif;
-    font-size: 11pt;
-    font-weight: 400;
-}
-
-.work-text {
-    margin-top: 2px;
-}
-
-.work-blurb {
-    font-family: 'Playfair Display', serif;
-    font-family: 'Jost', sans-serif;
-    font-size: 10pt;
-    font-weight: 300;
-    margin-bottom: 50px;
-    margin-top: 5px;
-}
-
-.internship-logo {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-}
-
-.internships {
-    display: flex;
-    flex-direction: column;
-    margin-right: 21px;
-}
-
 .internship-item {
     display: flex;
     flex-direction: row;
-}
-
-.internship-text {
-    font-family: 'Jost', sans-serif;
-    font-size: 10pt;
-    font-weight: 400;
-    margin-bottom: 0;
-    margin-top: 5px;
-    margin-left: 10px;
-}
-
-.internship-section {
-    display: flex;
-    flex-direction: row;
-}
-
-.internship-line {
-    background-color: #868686;
-    height: 160px;
-    width: 1px;
-    margin-top: 6px;
-}
-
-.various-internships {
-    font-family: 'Jost', sans-serif;
-    font-size: 11pt;
-    font-weight: 400;
-    margin-left: 19px;
-    align-self: center;
 }
 
 /************ CAROUSEL *************/
@@ -423,58 +350,84 @@
     display: grid;
     grid-template-areas: "a b"
                          "c c";
-    grid-template-columns: 55px 1fr;
+    grid-template-columns: 55px;
 }
 
 .tnt-logo, .avantstay-logo {
     width: 45px;
     height: 45px;
+    transition: 300ms;
 }
 
 .investreal-logo {
     margin-top: 10px;
     height: 46px;
+    transition: 300ms;
 }
 
-.carousel-header {
-    font-family: 'Jost', sans-serif;
-    font-size: 11pt;
+.tnt-logo:hover, .avantstay-logo:hover {
+    width: 49px;
+    height: 49px;
+    transition: 300ms;
 }
 
-.carousel-title {
-    margin-top: 60px;
-    margin-left: 14%;
-    display: none;
-}
-
-#carousel-usc-top {
-    width: 360px; 
-}
-
-.experience-carousel {
-    margin: 0 auto;
-    display: none;
-    grid-auto-flow: column;
-    gap: 3rem;
-    width: 72%;
-    overflow-y: auto;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x mandatory;
-    margin-top: -60px;
-    padding-bottom: 20px;
-    margin-top: 20px;
-}
-
-.carousel-top {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 340px;
+.investreal-logo:hover {
+    height: 48px;
 }
 
 .carousel-logo {
     width: 100px;
     height: 100px;
+    transition: 300ms;
+}
+
+.carousel-logo:hover {
+    width: 110px;
+    height: 110px;
+}
+
+.carousel-header {
+    font-family: 'Jost', sans-serif;
+    font-size: 13pt;
+}
+
+.carousel-blurb {
+    position: relative;
+    font-family: 'Jost', sans-serif;
+    font-size: 12pt;
+    font-weight: 300;
+}
+
+.carousel-title {
+    margin-left: 14%;
+}
+
+.experience-carousel {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 2rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    height: 100vh;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-top: 15px;
+    box-shadow: 
+        inset 0px 20px 20px -10px #cccccc73,
+        inset 0px -20px 20px -10px #cccccc73; 
+    border-radius: 15px;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    height: 3px;
+    width: 3px;
+  }
+  
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: rgba(173, 173, 173, 0.5);
 }
 
 .carousel-line {
@@ -486,61 +439,75 @@
     margin-left: 15px;
 }
 
-.carousel-blurb {
-    position: relative;
-    font-family: 'Jost', sans-serif;
-    font-size: 9pt;
-}
-
 .experience-carousel > div {
     scroll-snap-align: center;
 }
 
-@media (max-width: 1200px) {
-    .about-right {
-        display: none;
-    }
+.about-left {
+    width: 100%
+}
 
-    .carousel-title {
+.internship-line {
+    height: 240px;
+    width: 2px;
+    margin-top: 10px;
+}
+
+.various-internships {
+    font-size: 8pt;
+}
+
+.carousel-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 340px;
+}
+
+#carousel-usc-top {
+    width: 365px;
+}
+
+.usc-short {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .about-container {
         display: block;
     }
 
+    .about-right {
+        margin-top: 60px;
+        width: 100%;
+    }
+    
     .experience-carousel {
-        display: grid;
+        grid-auto-flow: column;
+        height: 250px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        box-shadow: inset 10px 0px 20px -15px #98989873, 
+                    inset -10px 0px 20px -15px #98989873;
     }
 
-    .about-left {
-        width: 100%
+    .carousel-title {
+        margin-top: 40px;
     }
 
-    .work-logo {
-        width: 100px;
-        height: 100px;
+    .carousel-header {
+        font-size: 11pt;
+    }
+    
+    .carousel-blurb {
+        font-size: 9pt;
     }
 
-    .internship-logo {
-        width: 31px;
-        height: 31px;
-        margin-bottom: 8px;
-    }
-
-    .internship-text {
-        margin-top: 0;
-        font-size: 8pt;
-    }
-
-    .internship-line {
-        height: 240px;
-        width: 2px;
-        margin-top: 10px;
-    }
-
-    .various-internships {
-        font-size: 8pt;
-    }
-
-    .internships {
-        margin-right: 0;
+    .carousel-top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 340px;
     }
 }
 
@@ -556,11 +523,11 @@
     left: 0;
     background-color: white;
     width: 100%;
-    height: 85%;
+    height: 80%;
     align-items: center;
     justify-content: center;
     z-index: 1;
-    box-shadow: 0px -5px 10px 5px #e8e8e8;
+    box-shadow: 0px -10px 10px 5px #8b8b8b73;
 }
 
 .home-button {
@@ -581,7 +548,6 @@
     font-size: 30pt;
     font-weight: 700;
     padding-bottom: 25px;
-    ;
     color: black;
     z-index: 3;
     position: relative;
@@ -684,11 +650,16 @@
     }
 
     .overview-right {
-        width: 100%;
+        width: 95%;
+        margin-bottom: 30px;
     }
 
     .overview-left {
-        width: 100%
+        width: 100%;
+    }
+
+    .about-right {
+        margin-top: 40px;
     }
 }
 
@@ -706,6 +677,8 @@
     color: gray;
     font-style: italic;
     font-size: 11pt;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .gitlet-commands {
@@ -752,16 +725,14 @@
 }
 
 .figure-caption {
-    padding-top: 1%;
-    padding-left: 1%;
-    padding-right: 1%;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 .gitlet-diagram {
     width: 60%;
     align-self: center;
-    max-width: 1100px;
-    margin-bottom: 25px;
 }
 
 .gitlet-text {
@@ -771,7 +742,7 @@
 
 .show-hide {
     position: relative;
-    top: -40px;
+    top: -65px;
     z-index: -1;
 }
 
@@ -793,6 +764,7 @@
     font-size: 14pt;
     border-top-right-radius: 25px;
     border-top-left-radius: 25px;
+    margin-bottom: 50px;
 }
 
 .dropdown-chevron {
@@ -803,12 +775,26 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.takeaways-title {
+    margin-top: 50px;
 }
 
 @media (max-width: 1180px) {
     .gitlet-structure {
         flex-direction: column;
+    }
+
+    .gitlet-diagram {
+        margin-bottom: 30px;
+    }
+
+    .gitlet-structure {
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 
     .gitlet-text {
@@ -817,6 +803,10 @@
 
     .gitlet-diagram {
         width: 100%;
+    }
+
+    #title-typeface {
+        margin-bottom: 35px;
     }
 }
 
@@ -842,11 +832,14 @@
     margin-top: 180px;
 }
 
+.footer-bg {
+    height: 45px;
+}
+
 .need-more {
     font-family: 'Heebo', sans-serif;
-    font-size: 12pt;
+    font-size: 13pt;
     font-weight: 400;
-    margin-top: 50px;
     color: gray;
 }
 
@@ -856,17 +849,33 @@
     margin-top: 0;
     margin-bottom: 60px;
     font-family: 'Playfair Display', serif;
-    font-size: 12pt;
+    font-size: 13pt;
     font-weight: 500;
 }
 
-.about-linkedin:hover span,
-.about-github:hover span,
-.about-email:hover span,
-.about-aboutme:hover span {
+.about-linkedin:hover,
+.about-github:hover,
+.about-email:hover,
+.about-aboutme:hover {
     font-weight: 700;
+    
 }
 
+.about-linkedin-link {
+    width: 72px;
+}
+
+.about-github-link {
+    width: 55px;
+}
+
+.about-email-link {
+    width: 47px;
+}
+
+.about-aboutme-link {
+    width: 77px;
+}
 
 
 /************ HAMBURGER ANIMATIONS ************/
@@ -1027,21 +1036,21 @@
 /** SMALL SCREEN HANDLING */
 
 
-@media (max-width: 414px) {
+@media (max-width: 430px) {
     .cover-text {
         margin-left: 8%;
         margin-right: 8%;
         bottom: 38vh;
     }
 
-    .about-container {
-        width: 100%;
+    .footer {
+        margin-top: 120px;
     }
 
     #body-container {
         margin-left: 8%;
         margin-right: 8%;
-        margin-top: calc(70vh + 50px);
+        margin-top: calc(70vh + 70px);
     }
 
     .menu-link {
@@ -1055,6 +1064,7 @@
 
     #title-typeface {
         font-size: 22pt;
+        margin-bottom: 30px;
     }
 
     #body-typeface {
@@ -1067,7 +1077,7 @@
     }
 
     .cover-blurb {
-        font-size: 16pt;
+        font-size: 18pt;
         margin-top: 50px;
     }
 
@@ -1080,20 +1090,26 @@
         font-size: 11pt;
     }
 
-    .figure-container {
-        display: flex;
-        flex-direction: column;
-        font-family: 'Jost', sans-serif;
-        color: gray;
-        font-style: italic;
-        font-size: 11pt;
+    .about-linkedin-link {
+        width: 61px;
+    }
+    
+    .about-github-link {
+        width: 47px;
+    }
+    
+    .about-email-link {
+        width: 40px;
+    }
+    
+    .about-aboutme-link {
+        width: 65px;
     }
     
     .gitlet-commands {
         font-size: 9pt;
         padding-right: 30px;
-        border-bottom-right-radius: 25px;
-        border-bottom-left-radius: 25px;
+        border-radius: 25px;
     }
     
     .gitlet-command {
@@ -1118,6 +1134,76 @@
         padding-left: 30px;
         font-size: 12pt;
     }
+
+    .show-button {
+        margin-bottom: 30px;
+    }
+
+    .experience-carousel {
+        width: 84%;
+        height: 250px;
+    }
+
+    .carousel-header {
+        font-size: 9pt;
+    }
+
+    .carousel-logo {
+        width: 90px;
+        height: 90px;
+    }
+
+    .investreal-logo {
+        margin-top: 5px;
+        height: 44px;
+        transition: 300ms;
+    }
+
+    .carousel-internship-logos {
+        display: grid;
+        grid-template-areas: "a b"
+                             "c c";
+        grid-template-columns: 50px;
+    }
+    
+    .tnt-logo:hover, .avantstay-logo:hover {
+        width: 47px;
+        height: 47px;
+    }
+    
+    .investreal-logo:hover {
+        height: 47px;
+    }
+
+    .carousel-logo:hover {
+        width: 97px;
+        height: 97px;
+    }
+
+    .carousel-line {
+        height: 90px;
+    }
+
+    .carousel-top {
+        width: 260px;
+    }
+
+    #carousel-usc-top {
+        width: 260px;
+    }
+
+    #usc-line {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .usc-long {
+        display: none;
+    }
+
+    .usc-short {
+        displaY: inline-block;
+    }
 }
 
 
@@ -1125,6 +1211,15 @@
 /** LARGE SCREEN HANDLING */
 
 @media (min-width: 1700px) {
+
+    .gitlet-text {
+        margin-left: 40px;
+    }
+
+    #title-typeface {
+        font-size: 37pt;
+        margin-bottom: 60px;
+    }
 
     .hamburger-background {
         display: none;
@@ -1273,6 +1368,22 @@
         transition: 250ms;
     }
 
+    .about-left {
+        width: 60%;
+    }
+
+    .about-right {
+        width: 40%;
+    }
+
+    .carousel-header {
+        font-size: 16pt;
+    }
+
+    .carousel-blurb {
+        font-size: 16pt;
+    }
+
     .github,
     .linkedin,
     .email {
@@ -1313,9 +1424,37 @@
 
     /* ABOUT ME */
 
+    .footer {
+        margin-top: 260px;
+    }
+
     .need-more,
     .footer-links {
-        font-size: 15pt;
+        font-size: 19pt;
+    }
+
+    .about-linkedin-link {
+        width: 105px;
+    }
+    
+    .about-github-link {
+        width: 81px;
+    }
+    
+    .about-email-link {
+        width: 67px;
+    }
+    
+    .about-aboutme-link {
+        width: 113px;
+    }
+
+    .footer-bg {
+        height: 80px;
+    }
+
+    .footer-links {
+        margin-bottom: 100px;
     }
 
     .about-header {
@@ -1325,52 +1464,9 @@
     .about-body {
         font-size: 22pt;
     }
-
     
     #mini-typeface {
         font-size: 18pt;
-    }
-
-    .internship-logo {
-        width: 80px;
-        height: 80px;
-        margin-bottom: 10px;
-    }
-
-    .work-logo {
-        width: 130px;
-        height: 130px;
-    }
-
-    .work-item {
-        font-size: 15pt;
-    }
-
-    .work-text {
-        margin-top: 7px;
-    }
-
-    .work-blurb {
-        font-size: 14pt;
-        font-weight: 300;
-        margin-bottom: 70px;
-    }
-
-    .internship-text {
-        font-size: 13pt;
-        margin-top: 15px;
-        margin-left: 15px;
-    }
-
-    .internship-line {
-        height: 240px;
-        width: 2px;
-        margin-top: 10px;
-    }
-
-    .various-internships {
-        font-size: 13pt;
-        margin-left: 18px;
     }
 
 
@@ -1432,5 +1528,27 @@
 
     .dropdown-chevron {
         margin-right: 43px;
+    }
+
+    .carousel-top {
+        width: 450px;
+    }
+
+    .key-learnings {
+        margin-bottom: 30px;
+    }
+
+    .learning-block {
+        height: 75px;
+        margin-bottom: 20px;
+    }
+
+    #carousel-usc-top {
+        width: 465px;
+    }
+
+    .carousel-line {
+        margin-left: 20px;
+        margin-right: 20px;
     }
 }

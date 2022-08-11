@@ -65,17 +65,17 @@
     
     <div class="project-container" id="body-container">
         <div class="overview-container">
-            <div class="overview-left">
-                <h1 class="breakdown-title" id="title-typeface">Project Overview</h1>
+            <section class="overview-left">
+                <h1 class="project-overview" id="title-typeface">Project Overview</h1>
                 <p class="breakdown-text" id="body-typeface">
                     Gitlet is a part of UC Berkeley's CS 61B: Data Structures, and is typically the first assigned project without skeleton code.
                     This was a challenging project that exposed me to software design principles including decomposition, abstraction, and flexibility.
                     I implemented file persistence, graph traversals, and cryptographic hashing so Gitlet could mimic how the real Git manages repositories,
                     branches, and version history.
                 </p>
-            </div>
+            </section>
 
-            <div class="overview-right">
+            <section class="overview-right">
                 <h2 class="key-learnings" id="mini-typeface">KEY LEARNINGS</h2>
                 <div class="learning-block">
                     <h2 class="learning-number">01</h2>
@@ -97,24 +97,23 @@
                     <h2 class="learning-number">05</h2>
                     <p class="learning-content">Unit testing</p>
                 </div>
-            </div>
+            </section>
         </div>
 
         <h1 class="breakdown-title" id="title-typeface">My Approach</h1>
-        <p class="breakdown-text" id="body-typeface">Without a project skeleton, I planned ahead by diagramming how my implementation of Gitlet should look. To figure out how Git stores things like
+        <span class="breakdown-text" id="body-typeface">Without a project skeleton, I planned ahead by diagramming how my implementation of Gitlet should look. To figure out how Git stores things like
             head commits, branches, and logs, I explored .git in my own repositories and came up with a modified structure that looks like this:
-        </p>
+        </span>
         <div class="gitlet-structure">
             <img src="images/gitlet-diagram.png" class="gitlet-diagram">
-            <p class="gitlet-text" id="body-typeface"> All repository information (e.g. current head, staging area, blobs, branches, commits, and remote repositories) is saved in a .gitlet file.
+            <span class="gitlet-text" id="body-typeface"> All repository information (e.g. current head, staging area, blobs, branches, commits, and remote repositories) is saved in a .gitlet file.
                 Commits and blobs are assigned a UUID using SHA-1, serialized, and stored in the objects folder. To speed up object traversal, objects are packaged in folders
                 named by the first two digits of their UUID, similar to Git.
-            </p>
+            </span>
         </div>
 
-        <p class="breakdown-text" id="body-typeface">
+        <span class="breakdown-text" id="body-typeface">
             Once I had a roadmap to follow, I implemented each command one by one:
-
             <button class="show-button" id="show-button" style="color: black;">
                 <p>Gitlet Commands:</p>
                 <div class="dropdown-chevron">
@@ -122,8 +121,9 @@
                     <span></span>
                 </div>
             </button>
+        </span>
 
-        <div class="show-hide" id="show-hide">
+        <section class="show-hide" id="show-hide">
             <ul class="gitlet-commands" style="list-style: none;">
                 <p class="command-name" id="command-name">init</p>
                 <p class="command-description">Creates a Gitlet version control system in the current directory, initializing the master branch and initial commit.</p>
@@ -162,13 +162,13 @@
                 <p class="command-name" id="command-name">pull</p>
                 <p class="command-description">Fetches the remote branch and merges it into the current branch.</p>
             </ul>
-        </div>
+        </section>
 
         <h1 class="breakdown-title" id="title-typeface">Challenges</h1>
-        <p class="breakdown-text" id="body-typeface">Project design: Planning Gitlet's design was not a straightforward process. Methodically cycling between
+        <span class="breakdown-text" id="body-typeface">Project design: Planning Gitlet's design was not a straightforward process. Methodically cycling between
             learning, planning, and coding helped me locate design flaws, plan ahead, and continuously iterate until my
             implementation aligned perfectly with the intended design.
-        </p>
+        </span>
 
         <p class="breakdown-text" id="body-typeface">Checkout, merge, and fetch: These commands involve altering the working directory based on information pulled from commit histories.
             For example, the command merge behaves differently based on the earliest split point of the given branches. For these commands to work, I treated commit histories as directed acyclic graphs
@@ -189,34 +189,34 @@
             writing tests as I did coding up the main content. My poorly-written tests often led me astray, and my well-written ones were crucial to helping me clarify key invariables and manage overall complexity.
         </p>
 
-        <h1 class="breakdown-title" id="title-typeface">Takeaways</h1>
-        <p class="breakdown-text" id="body-typeface">This was my first introduction to software design; instead of coding to meet a list of predefined requirements, I had to preemptively think about designing
+        <h1 class="takeaways-title" id="title-typeface">Takeaways</h1>
+        <span class="breakdown-text" id="body-typeface">This was my first introduction to software design; instead of coding to meet a list of predefined requirements, I had to preemptively think about designing
             in a way that is structured, well-organized, fast, and flexible so I can develop new features without getting lost. I spent - and wasted - a lot of time working and reworking
             both my design and implementation, which helped me learn how to not waste time when programming larger projects.
-        </p>
+        </span>
     </div>
 
-    <div class="footer">
+    <section class="footer">
         <area class="footer-bg">
         <p class="need-more">NEED MORE?</p>
         <p class="footer-links">
-            <a class="about-linkedin" href="https://www.linkedin.com/in/jlu130/" style="color: black; text-decoration: none;">
-                <span>Linkedin</span>
+            <a class="about-linkedin-link" href="https://www.linkedin.com/in/jlu130/" style="color: black; text-decoration: none;">
+                <span class="about-linkedin">Linkedin</span>
             </a>
             <span> &ensp;|&ensp; </span>
-            <a class="about-github" href="https://github.com/jonz0" style="color: black; text-decoration: none;">
-                <span>Github</span>
+            <a class="about-github-link" href="https://github.com/jonz0" style="color: black; text-decoration: none;">
+                <span class="about-github">Github</span>
             </a>
             <span> &ensp;|&ensp; </span>
-            <a class="about-email" href="mailto:ijonluu@gmail.com" style="color: black; text-decoration: none;">
-                <span>Email</span>
+            <a class="about-email-link" href="mailto:ijonluu@gmail.com" style="color: black; text-decoration: none;">
+                <span class="about-email">Email</span>
             </a>
             <span> &ensp;|&ensp; </span>
-            <a class="about-aboutme" href="/about.html" style="color: black; text-decoration: none;">
-                <span>About Me</span>
+            <a class="about-aboutme-link" href="/about.html" style="color: black; text-decoration: none;">
+                <span class="about-aboutme">About Me</span>
             </a>
         </p>
-    </div>
+    </section>
 </body>
 
 </html>
