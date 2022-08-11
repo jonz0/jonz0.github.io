@@ -423,11 +423,21 @@
     align-self: center;
 }
 
-.carousel-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 800px;
+.carousel-internship-logos {
+    display: grid;
+    grid-template-areas: "a b"
+                         "c c";
+    grid-template-columns: 55px 1fr;
+}
+
+.tnt-logo, .avantstay-logo {
+    width: 45px;
+    height: 45px;
+}
+
+.investreal-logo {
+    margin-top: 10px;
+    height: 30px;
 }
 
 .carousel-header {
@@ -436,9 +446,16 @@
 }
 
 .carousel-title {
-    position: absolute;
     margin-left: 14%;
-    margin-top: -100px;
+}
+
+.hidden-carousel {
+    display: flex;
+    flex-direction: column;;
+}
+
+#carousel-usc-top {
+    width: 380px; 
 }
 
 .experience-carousel {
@@ -450,9 +467,9 @@
     overflow-y: auto;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
-    margin-bottom: 180px;
     margin-top: -60px;
     padding-bottom: 20px;
+    margin-top: 20px;
 }
 
 .carousel-top {
@@ -585,7 +602,6 @@
 }
 
 #body-container {
-    margin-bottom: 180px;
     margin-left: 14%;
     margin-right: 14%;
     margin-top: calc(70vh + 100px);
@@ -826,6 +842,7 @@
     background: #e8e8e8;
     width: 100%;
     left: 0;
+    margin-top: 180px;
 }
 
 .need-more {
