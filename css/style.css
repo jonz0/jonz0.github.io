@@ -247,12 +247,6 @@
   .about-description {
     font-size: 19pt;
   }
-
-  .logo-portrait {
-    min-height: 70px;
-    max-height: 95px;
-    height: 14vw;
-  }
 }
 
 /************ ABOUT SECTION ************/
@@ -1025,7 +1019,7 @@
 }
 
 .figure-imaage {
-  width: inherit;
+  height: inherit;
 }
 
 /** SMALL SCREEN HANDLING */
