@@ -14,6 +14,25 @@
     top: 20px;
     left: 20px;
     border-radius: 10px;
+    z-index: 1;
+}
+
+#mini-typeface {
+    font-family: 'Heebo', sans-serif;
+    font-size: 14pt;
+    font-weight: 400;
+}
+
+#title-typeface {
+    font-family: 'Playfair Display', serif;
+    font-size: 26pt;
+    margin-bottom: 20px;
+}
+
+#body-typeface {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 16pt;
 }
 
 .contents-container {
@@ -211,7 +230,7 @@
 
 @media (max-width: 900px) {
     .description {
-        font-size: 24pt;
+        font-size: 23pt;
     }
 
     .my-projects {
@@ -219,12 +238,13 @@
     }
 
     .project-name {
-        font-size: 35pt;
+        font-size: 33pt;
         margin-bottom: 30px;
     }
+
 }
 
-@media (max-width: 760px) {
+@media (max-width: 800px) {
     .contents-right {
         display: none;
     }
@@ -243,15 +263,7 @@
 
 /************ ABOUT SECTION ************/
 
-.about-body {
-    background-color: #f5f5f5;
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    font-size: 24px;
-    margin-bottom: 50px;
-}
-
-.project-photo {
+.cover-photo {
     position: absolute;
     left: 0;
     top: 0;
@@ -263,7 +275,7 @@
     filter: brightness(0.7)
 }
 
-.cover {
+.cover-container {
     display: flex;
     flex-direction: column;
     z-index: -1;
@@ -284,7 +296,7 @@
 
 .cover-title {
     color: white;
-    font-size: 30pt;
+    font-size: 34pt;
 }
 
 .cover-line {
@@ -296,7 +308,7 @@
 
 .cover-blurb {
     color: white;
-    font-size: 20pt;
+    font-size: 21pt;
     font-weight: 600;
     margin-top: 60px;
 }
@@ -304,32 +316,20 @@
 /** ABOUT ME TEXT */
 
 .about-container {
-    position: relative;
     display: flex;
     flex-direction: row;
-    margin-bottom: 180px;
-    margin-left: 14%;
-    margin-right: 14%;
     justify-content: left;
-    margin-top: calc(70vh + 100px);
 }
 
 .about-right {
     display: flex;
     flex-direction: column;
-    margin-left: 5%;
+    margin-left: 7%;
     width: 36%;
 }
 
 .about-left {
-    width: 55%;
-    font-family: 'Playfair Display', serif;
-    font-size: 14pt;
-    width: 64%;
-}
-
-.about-header {
-    margin-bottom: 50px;
+    width: 62%;
 }
 
 .experience,
@@ -386,6 +386,7 @@
 .internships {
     display: flex;
     flex-direction: column;
+    margin-right: 21px;
 }
 
 .internship-item {
@@ -407,10 +408,6 @@
     flex-direction: row;
 }
 
-.internships {
-    margin-right: 21px;
-}
-
 .internship-line {
     background-color: #868686;
     height: 160px;
@@ -426,13 +423,110 @@
     align-self: center;
 }
 
+.carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 800px;
+}
+
+.carousel-header {
+    font-family: 'Jost', sans-serif;
+    font-size: 12pt;
+}
+
+.carousel-title {
+    position: absolute;
+    margin-left: 14%;
+    margin-top: -100px;
+}
+
+.experience-carousel {
+    margin: 0 auto;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 3rem;
+    width: 72%;
+    overflow-y: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    margin-bottom: 180px;
+    margin-top: -60px;
+    padding-bottom: 20px;
+}
+
+.carousel-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 340px;
+}
+
+.carousel-logo {
+    width: 100px;
+    height: 100px;
+}
+
+.carousel-line {
+    position: relative;
+    height: 100px;
+    width: 1px;
+    background-color: #868686;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.carousel-blurb {
+    position: relative;
+    font-family: 'Jost', sans-serif;
+    font-size: 9pt;
+}
+
+.experience-carousel > div {
+    scroll-snap-align: center;
+}
+
 @media (max-width: 1200px) {
     .about-right {
         display: none;
     }
 
+    .experience-carousel {
+        display: flex;
+    }
+
     .about-left {
-        width: 85%
+        width: 100%
+    }
+
+    .work-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .internship-logo {
+        width: 31px;
+        height: 31px;
+        margin-bottom: 8px;
+    }
+
+    .internship-text {
+        margin-top: 0;
+        font-size: 8pt;
+    }
+
+    .internship-line {
+        height: 240px;
+        width: 2px;
+        margin-top: 10px;
+    }
+
+    .various-internships {
+        font-size: 8pt;
+    }
+
+    .internships {
+        margin-right: 0;
     }
 }
 
@@ -490,21 +584,24 @@
     width: 136%;
 }
 
-
+#body-container {
+    margin-bottom: 180px;
+    margin-left: 14%;
+    margin-right: 14%;
+    margin-top: calc(70vh + 100px);
+    position: relative;
+}
 
 /************ PROJECT TEMPLATE ************/
 
 .project-container {
-    margin-left: 14%;
-    margin-right: 14%;
-    margin-bottom: 200px;
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .overview-container {
     display: flex;
     flex-direction: row;
-    margin-top: 180px;
 }
 
 .overview-left {
@@ -522,9 +619,6 @@
     margin-top: 10%;
     margin-bottom: 25px;
     color: grey;
-    font-family: 'Heebo', sans-serif;
-    font-size: 14pt;
-    font-weight: 400;
 }
 
 .learning-block {
@@ -548,12 +642,11 @@
 .learning-content {
     font-family: 'Playfair Display', serif;
     font-weight: 200;
-    padding-top: 2px;
     padding-bottom: 4px;
     font-size: 14pt;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
     .learning-number {
         padding-right: 12px;
     }
@@ -562,49 +655,44 @@
     .learning-content {
         font-size: 13pt;
     }
-}
 
-.breakdown-container {
-    display: flex;
-    flex-direction: column;
-}
+    .learning-content {
+        margin-left: 4px;
+    }
 
-.breakdown-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 26pt;
-}
-
-.breakdown-text {
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    font-size: 16pt;
+    .overview-right {
+        margin-top: 0px;
+    }
 }
 
 @media (max-width: 900px) {
+    .overview-container {
+        flex-direction: column;
+    }
+
     .overview-right {
-        display: none;
+        width: 100%;
     }
 
     .overview-left {
-        width: 90%
+        width: 100%
     }
 }
 
 
 
 /************ PROJECT 1: GITLET ************/
-.project-body {
+#page-body {
     background-color: #f5f5f5;
 }
 
-.project-figure {
+.figure-container {
     display: flex;
     flex-direction: column;
     font-family: 'Jost', sans-serif;
     color: gray;
     font-style: italic;
     font-size: 11pt;
-    float: right;
 }
 
 .gitlet-commands {
@@ -650,39 +738,27 @@
     margin-right: 20px;
 }
 
-.fig-caption {
+.figure-caption {
     padding-top: 1%;
     padding-left: 1%;
     padding-right: 1%;
 }
 
 .gitlet-diagram {
-    margin-right: 30px;
     width: 60%;
+    align-self: center;
     max-width: 1100px;
+    margin-bottom: 25px;
 }
 
 .gitlet-text {
-    font-family: 'Jost', sans-serif;
-    font-size: 16pt;
-    font-weight: 300;
-    width: 40%;
-}
-
-.gitlet-text-hidden {
-    font-family: 'Jost', sans-serif;
-    font-weight: 300;
-    font-size: 16pt;
-    display: none;
-}
-
-.gitlet-merge {
-    width: 100%;
+    margin-left: 20px;
+    margin-top: 0;
 }
 
 .show-hide {
     position: relative;
-    top: -45px;
+    top: -40px;
     z-index: -1;
 }
 
@@ -710,34 +786,24 @@
     margin-right: 22px;
 }
 
-.split-container {
-    display: flex;
-    flex-direction: row;
-}
-
 .gitlet-structure {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 20px;
     margin-top: 20px;
 }
 
-@media (max-width: 1150px) {
-    .gitlet-text-hidden {
-        display: block;
+@media (max-width: 1180px) {
+    .gitlet-structure {
+        flex-direction: column;
     }
 
     .gitlet-text {
-        display: none;
+        margin-left: 0;
     }
 
     .gitlet-diagram {
         width: 100%;
-    }
-
-    .gitlet-structure {
-        margin-bottom: 0;
     }
 }
 
@@ -745,29 +811,6 @@
     .gitlet-commands {
         grid-template:
             "p p";
-    }
-}
-
-@media (max-width: 600px) {
-    .show-button {
-        font-size: 13pt;
-        padding-left: 28px;
-    }
-
-    .command-name {
-        font-size: 10pt;
-        margin-left: -24px;
-    }
-
-    .command-description {
-        font-size: 10pt;
-        margin-right: -20px;
-    }
-
-    .dropdown-button {
-        height: 37px;
-        width: 37px;
-        margin-right: 8px;
     }
 }
 
@@ -780,7 +823,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background: #e8e8e8;
     width: 100%;
     left: 0;
@@ -796,8 +838,6 @@
 
 .footer-links {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: row;
     margin-top: 0;
     margin-bottom: 60px;
@@ -811,30 +851,6 @@
 .about-email:hover span,
 .about-aboutme:hover span {
     font-weight: 700;
-}
-
-@media (max-width: 350px) {
-
-    .need-more,
-    .footer-links {
-        font-size: 10pt;
-    }
-
-    .about-linkedin {
-        width: 56px;
-    }
-
-    .about-github {
-        width: 43px;
-    }
-
-    .about-email {
-        width: 36px;
-    }
-
-    .about-aboutme {
-        width: 60px;
-    }
 }
 
 
@@ -998,6 +1014,22 @@
 
 
 @media (max-width: 414px) {
+    .cover-text {
+        margin-left: 8%;
+        margin-right: 8%;
+        bottom: 38vh;
+    }
+
+    .about-container {
+        width: 100%;
+    }
+
+    #body-container {
+        margin-left: 8%;
+        margin-right: 8%;
+        margin-top: calc(70vh + 50px);
+    }
+
     .menu-link {
         font-size: 30px;
     }
@@ -1007,30 +1039,70 @@
         bottom: 25px;
     }
 
-    .cover-text {
-        margin-top: 320px;
+    #title-typeface {
+        font-size: 22pt;
+    }
+
+    #body-typeface {
+        font-size: 13pt;
+        margin-bottom: 10px;
     }
 
     .cover-title {
-        color: white;
-        font-size: 28pt;
-    }
-    
-    .cover-line {
-        display: relative;
-        box-sizing: border-box;
-        background-color: white;
-        height: 2px;
-        margin-top: 0;
+        font-size: 30pt;
     }
 
     .cover-blurb {
-        font-size: 18pt;
-        margin-top: 60px;
+        font-size: 16pt;
+        margin-top: 50px;
     }
 
-    .about-container {
-        margin-top: 180px;
+    .figure-caption {
+        font-size: 9pt;
+    }
+
+    .need-more,
+    .footer-links {
+        font-size: 11pt;
+    }
+
+    .figure-container {
+        display: flex;
+        flex-direction: column;
+        font-family: 'Jost', sans-serif;
+        color: gray;
+        font-style: italic;
+        font-size: 11pt;
+    }
+    
+    .gitlet-commands {
+        font-size: 9pt;
+        padding-right: 30px;
+        border-bottom-right-radius: 25px;
+        border-bottom-left-radius: 25px;
+    }
+    
+    .gitlet-command {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .command-name {
+        font-size: 9pt;
+        margin-left: 0;
+        height: 15px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    .command-description {
+        margin-right: 20px;
+    }
+
+    .show-button {
+        height: 45px;
+        padding-left: 30px;
+        font-size: 12pt;
     }
 }
 
@@ -1222,21 +1294,14 @@
     }
 
     .menu-wrapper {
-        position: absolute;
-        opacity: 0;
-        background-color: #96ff8c;
-        height: 27%;
         bottom: 41px;
-        left: -18%;
-        z-index: -1;
-        width: 136%;
     }
 
     /* ABOUT ME */
 
     .need-more,
     .footer-links {
-        font-size: 18px;
+        font-size: 15pt;
     }
 
     .about-header {
@@ -1247,8 +1312,8 @@
         font-size: 22pt;
     }
 
-    .hello-world,
-    .experience {
+    
+    #mini-typeface {
         font-size: 18pt;
     }
 
@@ -1272,80 +1337,45 @@
     }
 
     .work-blurb {
-        font-family: 'Playfair Display', serif;
-        font-family: 'Jost', sans-serif;
         font-size: 14pt;
         font-weight: 300;
         margin-bottom: 70px;
-        margin-top: 5px;
     }
 
     .internship-text {
-        font-family: 'Jost', sans-serif;
         font-size: 13pt;
-        font-weight: 400;
-        margin-bottom: 0;
         margin-top: 15px;
         margin-left: 15px;
     }
 
-    .internship-section {
-        display: flex;
-        flex-direction: row;
-
-    }
-
     .internship-line {
-        background-color: #868686;
         height: 240px;
         width: 2px;
         margin-top: 10px;
     }
 
     .various-internships {
-        font-family: 'Jost', sans-serif;
         font-size: 13pt;
-        font-weight: 400;
         margin-left: 18px;
-        align-self: center;
-        margin-top: 0;
     }
 
 
     /* PROJECTS */
 
-    .project-photo {
-        height: 60%;
-    }
-
     .cover-text {
-        position: absolute;
-        font-family: 'Playfair Display', serif;
-        margin-left: 14%;
-        margin-right: 14%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        justify-content: center;
-        bottom: 550px;
-        width: 72%;
+        bottom: 50vh;
     }
 
     .about-container {
-        margin-top: calc(70vh);
+        margin-top: 70vh;
     }
 
     .cover-title {
-        color: white;
         font-size: 45pt;
     }
     
     .cover-line {
-        display: relative;
-        box-sizing: border-box;
-        background-color: white;
         height: 3px;
-        margin-top: -10px;
     }
 
     .cover-blurb {
@@ -1353,21 +1383,12 @@
         margin-top: 70px;
     }
 
-    .breakdown-title {
-        font-size: 32pt;
-    }
-
     .learning-number,
-    .learning-content,
-    .key-learnings {
+    .learning-content {
         font-size: 18pt;
     }
 
-    .breakdown-text {
-        font-size: 22pt;
-    }
-
-    #gitlet-text {
+    #body-typeface {
         font-size: 22pt;
     }
 
@@ -1384,7 +1405,7 @@
 
     #command-name,
     .command-description,
-    .fig-caption {
+    .figure-caption {
         font-size: 16pt;
     }
 
