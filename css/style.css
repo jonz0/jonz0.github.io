@@ -263,12 +263,6 @@
   filter: brightness(0.7);
 }
 
-.cover-container {
-  display: flex;
-  flex-direction: column;
-  z-index: -1;
-}
-
 .cover-text {
   position: absolute;
   font-family: 'Playfair Display', serif;
@@ -280,6 +274,13 @@
   justify-content: center;
   bottom: 40%;
   width: 72%;
+}
+
+#body-container {
+  margin-left: 14%;
+  margin-right: 14%;
+  margin-top: calc(70vh + 100px);
+  position: relative;
 }
 
 .cover-title {
@@ -392,10 +393,6 @@
   font-family: 'Jost', sans-serif;
   font-size: 12pt;
   font-weight: 300;
-}
-
-.carousel-title {
-  margin-left: 14%;
 }
 
 .experience-carousel {
@@ -552,13 +549,6 @@
   width: 136%;
 }
 
-#body-container {
-  margin-left: 14%;
-  margin-right: 14%;
-  margin-top: calc(70vh + 100px);
-  position: relative;
-}
-
 /************ PROJECT TEMPLATE ************/
 
 .project-container {
@@ -667,6 +657,11 @@
   margin-right: 0;
 }
 
+.figure-image {
+  max-width:100%;
+  height: auto;
+}
+
 .gitlet-commands {
   font-family: 'Jost', sans-serif;
   font-weight: 300;
@@ -685,6 +680,10 @@
 .gitlet-command {
   display: flex;
   flex-direction: row;
+}
+
+.show-hide, .show-button {
+  background-color: #ededed;
 }
 
 .command-name {
@@ -1012,13 +1011,21 @@
   }
 }
 
-.figure-imaage {
-  height: inherit;
-}
-
 /** SMALL SCREEN HANDLING */
 
 @media (max-width: 430px) {
+  .logo-portrait {
+    height: 80px;
+    top: 15px;
+    left: 15px;
+    border-radius: 10px;
+  }
+
+  .show-hide {
+    position: relative;
+    top: -40px;
+    z-index: -1;
+  }
 
   .cover-text {
     margin-left: 8%;
@@ -1116,9 +1123,6 @@
     height: 45px;
     padding-left: 30px;
     font-size: 12pt;
-  }
-
-  .show-button {
     margin-bottom: 30px;
   }
 
@@ -1197,6 +1201,10 @@
 @media (min-width: 1700px) {
   .gitlet-text {
     margin-left: 40px;
+  }
+
+  .cover-line {
+    height: 3px;
   }
 
   #title-typeface {
@@ -1479,15 +1487,12 @@
     font-size: 22pt;
   }
 
-  #show-button {
-    font-size: 20pt;
-  }
-
-  #show-button {
+  .show-button {
     height: 75px;
     padding-left: 63px;
     border-top-right-radius: 35px;
     border-top-left-radius: 35px;
+    font-size: 20pt;
   }
 
   #command-name,
