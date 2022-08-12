@@ -812,10 +812,11 @@
   width: 100%;
   left: 0;
   margin-top: 180px;
+  height: 180px;
 }
 
 .footer-bg {
-  height: 45px;
+  height: 100%;
 }
 
 .need-more {
@@ -1026,6 +1027,7 @@
 
   .footer {
     margin-top: 120px;
+    height: 180px;
   }
 
   #body-container {
@@ -1123,6 +1125,7 @@
   .experience-carousel {
     width: 84%;
     height: 250px;
+    padding-bottom: 10px;
   }
 
   .carousel-header {
@@ -1431,8 +1434,8 @@
     width: 113px;
   }
 
-  .footer-bg {
-    height: 80px;
+  .footer {
+    height: 290px;
   }
 
   .footer-links {
