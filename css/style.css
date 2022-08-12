@@ -443,12 +443,6 @@
   width: 100%;
 }
 
-.internship-line {
-  height: 240px;
-  width: 2px;
-  margin-top: 10px;
-}
-
 .various-internships {
   font-size: 8pt;
 }
@@ -1172,6 +1166,10 @@
 
   .carousel-line {
     height: 90px;
+    width: 1px;
+    background-color: #868686;
+    margin-right: 15px;
+    margin-left: 15px;
   }
 
   .carousel-top {
