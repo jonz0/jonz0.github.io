@@ -431,8 +431,8 @@
   height: 100px;
   width: 1px;
   background-color: #868686;
-  margin-right: 15px;
-  margin-left: 15px;
+  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .experience-carousel > div {
@@ -1166,8 +1166,6 @@
 
   .carousel-line {
     height: 90px;
-    width: 1px;
-    background-color: #868686;
     margin-right: 15px;
     margin-left: 15px;
   }
