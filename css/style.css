@@ -110,17 +110,18 @@
 
 .right-arrow {
   margin-top: 13px;
-  height: 28px;
+  height: 24px;
   background-color: #96ff8c;
   align-items: center;
 }
 
 .about-link {
-  margin-left: 15px;
-  margin-top: 1px;
+  margin-left: 10px;
+  margin-top: 13px;
   display: inline-block;
   font-family: 'Heebo', sans-serif;
-  font-size: 7pt;
+  font-weight: 500;
+  font-size: 13pt;
 }
 
 .about-wrapper {
@@ -128,10 +129,9 @@
   opacity: 0.9;
   position: absolute;
   background-color: #96ff8c;
-  height: 28px;
+  height: 24px;
   width: 120px;
-  margin-left: -15px;
-  margin-top: -41px;
+  margin-left: -95px;
   z-index: -1;
 }
 
@@ -1315,23 +1315,22 @@
   }
 
   .right-arrow {
-    margin-top: 20px;
-    height: 32px;
+    height: 40px;
     background-color: #96ff8c;
     align-items: center;
   }
 
   .about-link {
-    margin-left: 15px;
-    margin-top: 7px;
-    font-size: 8pt;
+    margin-left: 25px;
+    margin-top: 14px;
+    font-size: 22pt;
   }
 
   .about-wrapper {
-    height: 32px;
-    width: 120px;
-    margin-left: -16px;
-    margin-top: -47px;
+    height: 40px;
+    width: 190px;
+    margin-left: -164px;
+    margin-top: -1px;
   }
 
   .project-name {
