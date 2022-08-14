@@ -84,12 +84,11 @@ $(document).ready(function() {
     });
 
     // MAIN PAGE
-    $('.project-name').on('mouseenter', function() {
+    $('.project-name').mouseenter(function() {
         $(this).children('#project-wrapper').stop().animate({width: 'toggle'}, 300);
-    }), $('.project-name').on('mouseleave', function() {
+    }), $('.project-name').mouseleave(function() {
         $(this).children('#project-wrapper').stop().animate({width: 'toggle'}, 300);
     });
-    
     
     // ABOUT ME
 
