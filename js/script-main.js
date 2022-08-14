@@ -97,6 +97,7 @@ $(document).ready(function() {
         var wrapper = $(this).children('.about-wrapper');
         if (!isUsingTouch) {
             wrapper.stop().animate({width: 'toggle'}, 300);
+
             $('.about-me').on('mouseleave', function(){
                 wrapper.stop().animate({width: 'toggle'}, 300);
             })
