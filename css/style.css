@@ -45,6 +45,7 @@
   width: 90%;
   align-items: top;
   margin-top: 175px;
+  justify-content: space-between;
 }
 
 .background-blank {
