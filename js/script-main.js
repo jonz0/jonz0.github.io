@@ -93,12 +93,12 @@ $(document).ready(function() {
     
     // ABOUT ME
 
-    $('.about-me').on('mouseenter', function() {
+    $('.about-me').on('mouseover', function() {
         var wrapper = $(this).children('.about-wrapper');
         if (!isUsingTouch) {
             wrapper.stop().animate({width: 'toggle'}, 300);
 
-            $('.about-me').on('mouseleave', function(){
+            $('.about-me').on('mouseout', function(){
                 wrapper.stop().animate({width: 'toggle'}, 300);
             })
         }
