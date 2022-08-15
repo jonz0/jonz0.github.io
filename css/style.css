@@ -1028,7 +1028,7 @@
   .cover-text {
     margin-left: 8%;
     margin-right: 8%;
-    bottom: 25vh;
+    bottom: 20vh;
   }
 
   .footer {
@@ -1067,7 +1067,6 @@
 
   .cover-blurb {
     font-size: 18pt;
-    margin-top: 50px;
   }
 
   .figure-caption {
