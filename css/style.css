@@ -1,5 +1,5 @@
 /* stylelint-disable selector-class-pattern */
-@import 'https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500&family=Jost:wght@100;200;300;400&family=Playfair+Display:wght@400;500;600;700;800&display=swap';
+@import "https://fonts.googleapis.com/css2?family=Heebo:wght@100;300;400;500&family=Jost:wght@100;200;300;400&family=Playfair+Display:wght@400;500;600;700;800&display=swap";
 
 /************ MAIN PAGE ************/
 
@@ -19,20 +19,20 @@
 }
 
 #mini-typeface {
-  font-family: 'Heebo', sans-serif;
+  font-family: "Heebo", sans-serif;
   font-size: 14pt;
   font-weight: 400;
   color: grey;
 }
 
 #title-typeface {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 26pt;
   margin-bottom: 45px;
 }
 
 #body-typeface {
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-weight: 300;
   font-size: 16pt;
 }
@@ -66,7 +66,7 @@
 
 .check-me-out {
   margin-bottom: 15px;
-  font-family: 'Heebo', sans-serif;
+  font-family: "Heebo", sans-serif;
   font-weight: 300;
   font-size: 15px;
   padding-top: 80px;
@@ -118,7 +118,7 @@
 
 .about-link {
   margin-left: 10px;
-  font-family: 'Heebo', sans-serif;
+  font-family: "Heebo", sans-serif;
   font-weight: 500;
   font-size: 13pt;
 }
@@ -140,7 +140,7 @@
 
 .about-description {
   margin-top: 30px;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 26pt;
 }
 
@@ -149,7 +149,7 @@
   display: flex;
   flex-direction: column;
   text-align: right;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 800;
   width: 800px;
 }
@@ -197,7 +197,7 @@
 }
 
 .project-name {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 38pt;
   color: black;
   font-weight: 700;
@@ -217,7 +217,7 @@
 }
 
 .my-projects {
-  font-family: 'Heebo', sans-serif;
+  font-family: "Heebo", sans-serif;
   font-weight: 400;
   margin-bottom: 25px;
 }
@@ -263,7 +263,7 @@
 
 .cover-text {
   position: absolute;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   margin-left: 14%;
   margin-right: 14%;
   display: flex;
@@ -319,7 +319,7 @@
 
 .experience,
 .hello-world {
-  font-family: 'Heebo', sans-serif;
+  font-family: "Heebo", sans-serif;
   font-size: 14pt;
   font-weight: 400;
 }
@@ -339,8 +339,8 @@
 .carousel-internship-logos {
   display: grid;
   grid-template-areas:
-    'a b'
-    'c c';
+    "a b"
+    "c c";
   grid-template-columns: 55px;
 }
 
@@ -380,13 +380,13 @@
 }
 
 .carousel-header {
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 13pt;
 }
 
 .carousel-blurb {
   position: relative;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 12pt;
   font-weight: 300;
 }
@@ -402,8 +402,7 @@
   padding-right: 25px;
   padding-left: 25px;
   padding-top: 15px;
-  box-shadow:
-    inset 0 20px 20px -10px #cccccc73,
+  box-shadow: inset 0 20px 20px -10px #cccccc73,
     inset 0 -20px 20px -10px #cccccc73;
   border-radius: 15px;
 }
@@ -423,7 +422,7 @@
   height: 100px;
   width: 1px;
   background-color: #868686;
-  margin-right: 4%;;
+  margin-right: 4%;
   margin-left: 4%;
 }
 
@@ -471,8 +470,7 @@
     overflow-y: hidden;
     padding-bottom: 10px;
     padding-top: 25px;
-    box-shadow:
-      inset 10px 0 20px -15px #98989873,
+    box-shadow: inset 10px 0 20px -15px #98989873,
       inset -10px 0 20px -15px #98989873;
   }
 
@@ -506,7 +504,7 @@
   left: 0;
   background-color: white;
   width: 100%;
-  height: 80%;
+  height: 80vh;
   align-items: center;
   justify-content: center;
   z-index: 1;
@@ -515,7 +513,7 @@
 
 .home-button {
   font-size: 14pt;
-  font-family: 'Heebo', sans-serif;
+  font-family: "Heebo", sans-serif;
   font-weight: 400;
   padding-bottom: 30px;
   transition: 20ms;
@@ -527,7 +525,7 @@
 }
 
 .menu-link {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 30pt;
   font-weight: 700;
   padding-bottom: 25px;
@@ -561,7 +559,7 @@
 
 .overview-left {
   width: 65%;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   padding-right: 5%;
 }
 
@@ -588,14 +586,14 @@
 }
 
 .learning-number {
-  font-family: 'Heebo', sans-serif;
+  font-family: "Heebo", sans-serif;
   color: gray;
   font-size: 14pt;
   padding-right: 18px;
 }
 
 .learning-content {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 200;
   padding-bottom: 4px;
   font-size: 14pt;
@@ -647,7 +645,7 @@
 .figure-container {
   display: flex;
   flex-direction: column;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   color: gray;
   font-style: italic;
   font-size: 11pt;
@@ -656,12 +654,12 @@
 }
 
 .figure-image {
-  max-width:100%;
+  max-width: 100%;
   height: auto;
 }
 
 .gitlet-commands {
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-weight: 300;
   font-size: 11pt;
   background-color: #ededed;
@@ -671,7 +669,7 @@
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
   display: grid;
-  grid-template: 'p p p p';
+  grid-template: "p p p p";
   align-items: center;
 }
 
@@ -680,7 +678,8 @@
   flex-direction: row;
 }
 
-.show-hide, .show-button {
+.show-hide,
+.show-button {
   background-color: #ededed;
 }
 
@@ -741,7 +740,7 @@
   width: 100%;
   text-align: left;
   padding-left: 43px;
-  font-family: 'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   font-weight: 400;
   font-size: 14pt;
   border-top-right-radius: 25px;
@@ -794,7 +793,7 @@
 
 @media (max-width: 900px) {
   .gitlet-commands {
-    grid-template: 'p p';
+    grid-template: "p p";
   }
 }
 
@@ -817,7 +816,7 @@
 }
 
 .need-more {
-  font-family: 'Heebo', sans-serif;
+  font-family: "Heebo", sans-serif;
   font-size: 13pt;
   font-weight: 400;
   color: gray;
@@ -828,7 +827,7 @@
   flex-direction: row;
   margin-top: 0;
   margin-bottom: 60px;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 13pt;
   font-weight: 500;
 }
@@ -1148,8 +1147,8 @@
   .carousel-internship-logos {
     display: grid;
     grid-template-areas:
-      'a b'
-      'c c';
+      "a b"
+      "c c";
     grid-template-columns: 50px;
   }
 
