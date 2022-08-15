@@ -268,8 +268,8 @@
   margin-right: 14%;
   display: flex;
   flex-direction: column;
-  bottom: 30vh;
   width: 72%;
+  bottom: 40vh;
 }
 
 #body-container {
@@ -1028,6 +1028,7 @@
   .cover-text {
     margin-left: 8%;
     margin-right: 8%;
+    bottom: 25vh;
   }
 
   .footer {
