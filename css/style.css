@@ -1028,6 +1028,7 @@
   .cover-text {
     margin-left: 8%;
     margin-right: 8%;
+    bottom: 30vh;
   }
 
   .footer {
