@@ -314,7 +314,7 @@
 
 .about-left {
   width: 62%;
-  padding-right: 7%;
+  padding-right: 5%;
 }
 
 .experience,
@@ -453,7 +453,7 @@
   display: none;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1272px) {
   .about-container {
     display: block;
   }
