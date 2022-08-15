@@ -309,11 +309,11 @@
 .about-right {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 42%;
 }
 
 .about-left {
-  width: 62%;
+  width: 60%;
   padding-right: 5%;
 }
 
@@ -408,7 +408,7 @@
 }
 
 .carousel-item {
-  width: 88%;
+  width: 85%;
 }
 
 ::-webkit-scrollbar {
