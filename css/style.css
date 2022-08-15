@@ -270,7 +270,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  bottom: 40%;
+  bottom: 40vh;
   width: 72%;
 }
 
@@ -1030,7 +1030,6 @@
   .cover-text {
     margin-left: 8%;
     margin-right: 8%;
-    bottom: 35%;
   }
 
   .footer {
