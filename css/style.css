@@ -1043,6 +1043,7 @@
   .cover-text {
     margin-left: 8%;
     margin-right: 8%;
+    bottom: 50%;
   }
 
   .footer {
