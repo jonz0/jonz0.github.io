@@ -268,13 +268,13 @@
   display: flex;
   flex-direction: column;
   width: 72%;
-  bottom: 40%;
+  bottom: 40vh;
 }
 
 #body-container {
   margin-left: 14%;
   margin-right: 14%;
-  margin-top: calc(70% + 100px);
+  margin-top: calc(70vh + 100px);
   position: relative;
 }
 
@@ -520,7 +520,7 @@
   left: 0;
   background-color: white;
   width: 100%;
-  height: 72%;
+  height: 72vh;
   align-items: center;
   justify-content: center;
   z-index: 1;
@@ -1043,7 +1043,7 @@
   .cover-text {
     margin-left: 8%;
     margin-right: 8%;
-    bottom: 25%;
+    bottom: 25vh;
   }
 
   .footer {
@@ -1054,7 +1054,7 @@
   #body-container {
     margin-left: 8%;
     margin-right: 8%;
-    margin-top: calc(70% + 70px);
+    margin-top: calc(70vh + 70px);
   }
 
   .menu-link {
@@ -1467,7 +1467,7 @@
 
   /* PROJECTS */
   .about-container {
-    margin-top: 70%;
+    margin-top: 70vh;
   }
 
   .cover-title {
