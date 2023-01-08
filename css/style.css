@@ -143,6 +143,7 @@
   font-family: "Playfair Display", serif;
   font-weight: 800;
   width: 800px;
+  z-index: 1;
 }
 
 .project-wrapper-1,
@@ -1542,4 +1543,5 @@
   right: 0;
   top: 0;
   object-fit: cover;
+  z-index: 0;
 }
