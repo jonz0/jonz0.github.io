@@ -91,12 +91,15 @@ $(document).ready(function () {
       .children("#project-wrapper")
       .stop()
       .animate({ width: "toggle" }, 300);
+
+    $("#particles-js").css("z-index", -50);
   }),
     $(".project-name").mouseleave(function () {
       $(this)
         .children("#project-wrapper")
         .stop()
         .animate({ width: "toggle" }, 300);
+      $("#particles-js").css("z-index", 0);
     });
 
   // ABOUT ME

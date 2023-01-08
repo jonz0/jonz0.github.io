@@ -118,6 +118,7 @@
   background-color: #96ff8c;
   height: 24px;
   width: 130px;
+  z-index: -1;
 }
 
 .github,
@@ -172,15 +173,12 @@
 }
 
 .project-bg {
-  opacity: 1;
-  z-index: 0;
   position: fixed;
   width: 75%;
   height: 100%;
   right: 0;
   top: 0;
   object-fit: cover;
-  transition: 750ms;
   border: none;
 }
 
@@ -194,11 +192,21 @@
   z-index: 3;
 }
 
+#bg-1,
+#bg-2,
+#bg-3,
+#bg-4 {
+  z-index: -1;
+  opacity: -1;
+  transition: 750ms;
+}
+
 #gitlet:hover ~ #bg-1,
 #worlds:hover ~ #bg-2,
 #inprogress:hover ~ #bg-3,
 #travelmap:hover ~ #bg-4 {
   opacity: 1;
+  z-index: 0;
 }
 
 .project-name:hover area {
@@ -209,6 +217,7 @@
   font-family: "Heebo", sans-serif;
   font-weight: 400;
   margin-bottom: 25px;
+  z-index: 1;
 }
 
 @media (max-width: 900px) {
