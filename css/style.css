@@ -15,7 +15,6 @@
   top: 20px;
   left: 20px;
   border-radius: 10px;
-  z-index: 1;
 }
 
 #mini-typeface {
@@ -46,13 +45,11 @@
   align-items: top;
   margin-top: 175px;
   justify-content: space-between;
-  z-index: 1;
 }
 
 .contents-left {
   display: flex;
   flex-direction: column;
-  z-index: 1;
 }
 
 .check-me-out {
@@ -121,7 +118,6 @@
   background-color: #96ff8c;
   height: 24px;
   width: 130px;
-  z-index: -1;
 }
 
 .github,
@@ -133,6 +129,7 @@
   margin-top: 30px;
   font-family: "Playfair Display", serif;
   font-size: 26pt;
+  z-index: 1;
 }
 
 .contents-right {
@@ -143,7 +140,6 @@
   font-family: "Playfair Display", serif;
   font-weight: 800;
   width: 800px;
-  z-index: 1;
 }
 
 .project-wrapper-1,
@@ -152,11 +148,11 @@
 .project-wrapper-4 {
   display: none;
   position: absolute;
-  z-index: -1;
   background-color: #96ff8c;
   height: 40%;
   right: -5px;
   bottom: 2px;
+  z-index: -1;
 }
 
 .project-wrapper-1 {
@@ -176,13 +172,13 @@
 }
 
 .project-bg {
-  opacity: 0;
+  opacity: 1;
+  z-index: 0;
   position: fixed;
   width: 75%;
   height: 100%;
   right: 0;
   top: 0;
-  z-index: -2;
   object-fit: cover;
   transition: 750ms;
   border: none;
@@ -195,6 +191,7 @@
   font-weight: 700;
   margin-bottom: 22px;
   position: relative;
+  z-index: 3;
 }
 
 #gitlet:hover ~ #bg-1,
@@ -245,7 +242,6 @@
   position: absolute;
   left: 0;
   top: 0;
-  z-index: -1;
   height: 70%;
   width: 100%;
   object-fit: cover;
@@ -516,8 +512,8 @@
   height: 72vh;
   align-items: center;
   justify-content: center;
-  z-index: 1;
   box-shadow: 0 -10px 10px 5px #8b8b8b73;
+  z-index: 4;
 }
 
 .home-button {
@@ -539,7 +535,6 @@
   font-weight: 700;
   padding-bottom: 25px;
   color: black;
-  z-index: 3;
   position: relative;
 }
 
@@ -550,7 +545,6 @@
   height: 27%;
   bottom: 27px;
   left: -18%;
-  z-index: -1;
   width: 136%;
 }
 
@@ -733,7 +727,6 @@
 .show-hide {
   position: relative;
   top: -65px;
-  z-index: -1;
 }
 
 .show-button {
@@ -876,13 +869,13 @@
   right: 20px;
   top: 20px;
   border-radius: 5px;
-  z-index: 2;
   width: 50px;
   height: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  z-index: 5;
 }
 
 .hamburger-icon {
@@ -1030,7 +1023,6 @@
   .show-hide {
     position: relative;
     top: -40px;
-    z-index: -1;
   }
 
   .cover-text {
@@ -1219,7 +1211,6 @@
     right: 30px;
     top: 30px;
     border-radius: 10px;
-    z-index: 2;
     width: 70px;
     height: 70px;
     display: flex;
@@ -1538,7 +1529,7 @@
 #particles-js {
   background-color: #82daff;
   position: fixed;
-  width: 100%;
+  width: 75%;
   height: 100%;
   right: 0;
   top: 0;
