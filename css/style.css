@@ -1535,9 +1535,9 @@
 }
 
 #particles-js {
-  background-color: green;
+  background-color: #82daff;
   position: fixed;
-  width: 75%;
+  width: 100%;
   height: 100%;
   right: 0;
   top: 0;
