@@ -212,10 +212,15 @@
   margin-left: 100px;
 }
 
-#bg-3,
-#bg-1 {
+#bg-3 {
   bottom: 20px;
   height: 95%;
+  margin-left: 100px;
+}
+
+#bg-1 {
+  bottom: 20px;
+  height: 85%;
   margin-left: 100px;
 }
 
