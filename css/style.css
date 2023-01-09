@@ -1395,7 +1395,7 @@
   }
 
   .project-name {
-    font-size: 53pt;
+    font-size: 48pt;
     margin-bottom: 35px;
   }
 
@@ -1448,15 +1448,15 @@
   }
 
   .project-wrapper-2 {
-    width: 415px;
-  }
-
-  .project-wrapper-3 {
     width: 460px;
   }
 
+  .project-wrapper-3 {
+    width: 380px;
+  }
+
   .project-wrapper-4 {
-    width: 440px;
+    width: 420px;
   }
 
   .menu-link {
