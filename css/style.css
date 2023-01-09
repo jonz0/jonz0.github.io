@@ -1253,6 +1253,11 @@
 /** LARGE SCREEN HANDLING */
 
 @media (min-width: 1700px) {
+  .external-links {
+    z-index: 0;
+    width: 200px;
+  }
+
   .gitlet-text {
     margin-left: 40px;
   }
@@ -1349,7 +1354,7 @@
   .logo-portrait {
     position: fixed;
     border: #abe5f1;
-    height: 115px;
+    height: 100px;
     top: 30px;
     left: 30px;
     border-radius: 15px;
