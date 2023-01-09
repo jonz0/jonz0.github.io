@@ -158,19 +158,19 @@
 }
 
 .project-wrapper-1 {
-  width: 187px;
+  width: 157px;
 }
 
 .project-wrapper-2 {
-  width: 300px;
+  width: 340px;
 }
 
 .project-wrapper-3 {
-  width: 330px;
+  width: 250px;
 }
 
 .project-wrapper-4 {
-  width: 325px;
+  width: 305px;
 }
 
 .project-bg {
@@ -195,8 +195,8 @@
 }
 
 #bg-2 {
-  top: 20px;
-  height: 95%;
+  top: 80px;
+  height: 80%;
   margin-left: 100px;
 }
 
@@ -570,6 +570,7 @@
   bottom: 27px;
   left: -18%;
   width: 136%;
+  z-index: -1;
 }
 
 /************ PROJECT TEMPLATE ************/
@@ -1400,7 +1401,7 @@
   }
 
   .project-wrapper-1 {
-    width: 255px;
+    width: 225px;
   }
 
   .project-wrapper-2 {
