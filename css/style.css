@@ -5,16 +5,17 @@
 
 ::selection {
   color: #000942;
-  background: #96ff8c;
+  background: #abe5f1;
 }
 
 .logo-portrait {
   position: fixed;
-  border: #96ff8c;
-  height: 95px;
+  border: #abe5f1;
+  height: 85px;
   top: 20px;
   left: 20px;
   border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 #mini-typeface {
@@ -100,7 +101,7 @@
 
 .right-arrow {
   height: 24px;
-  background-color: #96ff8c;
+  background-color: #8bdcec;
   align-items: center;
 }
 
@@ -115,7 +116,7 @@
   display: none;
   opacity: 0.9;
   position: absolute;
-  background-color: #96ff8c;
+  background-color: #8bdcec;
   height: 24px;
   width: 130px;
   z-index: -1;
@@ -149,7 +150,7 @@
 .project-wrapper-4 {
   display: none;
   position: absolute;
-  background-color: #96ff8c;
+  background-color: #8bdcec;
   height: 40%;
   right: -5px;
   bottom: 2px;
@@ -180,6 +181,7 @@
   top: 0;
   object-fit: cover;
   border: none;
+  filter: brightness(90%);
 }
 
 .project-name {
@@ -190,6 +192,19 @@
   margin-bottom: 22px;
   position: relative;
   z-index: 3;
+}
+
+#bg-2 {
+  top: 20px;
+  height: 95%;
+  margin-left: 100px;
+}
+
+#bg-3,
+#bg-1 {
+  bottom: 20px;
+  height: 95%;
+  margin-left: 100px;
 }
 
 #bg-1,
@@ -550,7 +565,7 @@
 .menu-wrapper {
   position: absolute;
   opacity: 0;
-  background-color: #96ff8c;
+  background-color: #8bdcec;
   height: 27%;
   bottom: 27px;
   left: -18%;
@@ -873,7 +888,7 @@
 }
 
 .hamburger-background {
-  background-color: #96ff8c;
+  background-color: #8bdcec;
   position: fixed;
   right: 20px;
   top: 20px;
@@ -885,6 +900,7 @@
   justify-content: center;
   align-items: center;
   z-index: 5;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .hamburger-icon {
@@ -1027,6 +1043,7 @@
     top: 15px;
     left: 15px;
     border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
 
   .show-hide {
@@ -1215,7 +1232,7 @@
   }
 
   .hamburger-background-large {
-    background-color: #96ff8c;
+    background-color: #8bdcec;
     position: fixed;
     right: 30px;
     top: 30px;
@@ -1226,6 +1243,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
   .hamburger-icon-large {
@@ -1291,11 +1309,12 @@
 
   .logo-portrait {
     position: fixed;
-    border: #96ff8c;
+    border: #abe5f1;
     height: 115px;
     top: 30px;
     left: 30px;
     border-radius: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
 
   .contents-container {
@@ -1313,7 +1332,7 @@
 
   .right-arrow {
     height: 40px;
-    background-color: #96ff8c;
+    background-color: #8bdcec;
     align-items: center;
   }
 
@@ -1536,7 +1555,7 @@
 }
 
 #particles-js {
-  background-color: #82daff;
+  background-color: #abe5f1;
   position: fixed;
   width: 75%;
   height: 100%;

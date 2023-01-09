@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="keywords" content="Jonathan Lu" />
+    <meta name="description" content="This is my personal site." />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Jonathan Lu - Project: Gitlet</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script-main.js"></script>
+  </head>
+
+  <body class="project-body" id="page-body">
+    <div class="logo">
+      <img
+        class="logo-portrait"
+        id="logo-portrait"
+        src="/images/jlu prof-vert.jpg"
+      />
+    </div>
+
+    <div class="hamburger-background">
+      <div class="hamburger-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="hamburger-background-large">
+      <div class="hamburger-icon-large">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div class="hamburger-menu">
+      <a href="/index.html" class="home-button" style="text-decoration: none"
+        >HOME</a
+      >
+      <a
+        class="menu-link"
+        href="/about.html"
+        style="text-decoration: none; color: black"
+        >About Me
+        <span class="menu-wrapper"></span>
+      </a>
+      <a
+        class="menu-link"
+        href="/gitlet.html"
+        style="text-decoration: none; color: black"
+        >Gitlet
+        <span class="menu-wrapper"></span>
+      </a>
+      <a
+        class="menu-link"
+        href="/exif-mapper.html"
+        style="text-decoration: none; color: black"
+        >EXIF Mapper
+        <span class="menu-wrapper"></span>
+      </a>
+      <a
+        class="menu-link"
+        href="/timeslots.html"
+        style="text-decoration: none; color: black"
+        >Timeslots
+        <span class="menu-wrapper"></span>
+      </a>
+      <a class="menu-link" href="#" style="text-decoration: none; color: black"
+        >Work in Progress
+        <span class="menu-wrapper"></span>
+      </a>
+    </div>
+
+    <img
+      src="https://assets.pbimgs.com/pbimgs/ab/images/dp/wcm/202225/0044/faux-sakura-cherry-blossom-branch-z.jpg"
+      class="cover-photo"
+    />
+    <div class="cover-text">
+      <h1 class="cover-title">Smarter Signup</h1>
+      <span class="cover-line"></span>
+      <h1 class="cover-blurb">
+        An improved take on my local gym's class sign-up tool
+      </h1>
+    </div>
+
+    <div class="project-container" id="body-container">
+      <div class="overview-container">
+        <section class="overview-left">
+          <h1 class="project-overview" id="title-typeface">Project Overview</h1>
+          <p class="breakdown-text" id="body-typeface">
+            Gitlet is a part of UC Berkeley's CS 61B: Data Structures, and is
+            typically the first assigned project without skeleton code. This was
+            a challenging project that exposed me to software design principles
+            including decomposition, abstraction, and flexibility. I implemented
+            file persistence, graph traversals, and cryptographic hashing so
+            Gitlet could mimic how the real Git manages repositories, branches,
+            and version history.
+          </p>
+        </section>
+
+        <section class="overview-right">
+          <h2 class="key-learnings" id="mini-typeface">KEY LEARNINGS</h2>
+          <div class="learning-block">
+            <h2 class="learning-number">01</h2>
+            <p class="learning-content">Building more complex web apps</p>
+          </div>
+          <div class="learning-block">
+            <h2 class="learning-number">02</h2>
+            <p class="learning-content">Front-end design with React</p>
+          </div>
+          <div class="learning-block">
+            <h2 class="learning-number">03</h2>
+            <p class="learning-content">AWS SDK (AppSync, Lambda, Cognito)</p>
+          </div>
+          <div class="learning-block">
+            <h2 class="learning-number">04</h2>
+            <p class="learning-content">Data manipulation using DynamoDB</p>
+          </div>
+          <div class="learning-block">
+            <h2 class="learning-number">05</h2>
+            <p class="learning-content">Useful JS libraries (Redux, Next.js)</p>
+          </div>
+        </section>
+      </div>
+
+      <h1 class="breakdown-title" id="title-typeface">My Approach</h1>
+      <span class="breakdown-text" id="body-typeface"
+        >Without a project skeleton, I planned ahead by diagramming how my
+        implementation of Gitlet should look. To figure out how Git stores
+        things like head commits, branches, and logs, I explored .git in my own
+        repositories and came up with a modified structure that looks like this:
+      </span>
+      <div class="gitlet-structure">
+        <img src="images/gitlet-diagram.png" class="gitlet-diagram" />
+        <span class="gitlet-text" id="body-typeface">
+          All repository information (e.g. current head, staging area, blobs,
+          branches, commits, and remote repositories) is saved in a .gitlet
+          file. Commits and blobs are assigned a UUID using SHA-1, serialized,
+          and stored in the objects folder. To speed up object traversal,
+          objects are packaged in folders named by the first two digits of their
+          UUID, similar to Git.
+        </span>
+      </div>
+
+      <span class="breakdown-text" id="body-typeface">
+        Once I had a roadmap to follow, I implemented each command one by one:
+      </span>
+      <button class="show-button" id="show-button" style="color: black">
+        <p>Gitlet Commands:</p>
+        <div class="dropdown-chevron">
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+
+      <section class="show-hide" id="show-hide">
+        <ul class="gitlet-commands" style="list-style: none">
+          <p class="command-name" id="command-name">init</p>
+          <p class="command-description">
+            Creates a Gitlet version control system in the current directory,
+            initializing the master branch and initial commit.
+          </p>
+          <p class="command-name" id="command-name">add</p>
+          <p class="command-description">Stages a file for addition.</p>
+          <p class="command-name" id="command-name">commit</p>
+          <p class="command-description">
+            Saves a snapshot of the staging area and tracked files so they can
+            be restored at a later time.
+          </p>
+          <p class="command-name" id="command-name">rm</p>
+          <p class="command-description">
+            Stages a file for removal and removes it from the working directory.
+          </p>
+          <p class="command-name" id="command-name">log</p>
+          <p class="command-description">
+            Displays information about each commit backwards, starting from the
+            current head commit.
+          </p>
+          <p class="command-name" id="command-name">global log</p>
+          <p class="command-description">
+            Displays information about all commits ever made.
+          </p>
+          <p class="command-name" id="command-name">find</p>
+          <p class="command-description">
+            Prints the ids of all commits that have a given commit message.
+          </p>
+          <p class="command-name" id="command-name">status</p>
+          <p class="command-description">
+            Displays the status of branches & staged, modified, and untracked
+            files in the working directory.
+          </p>
+          <p class="command-name" id="command-name">checkout</p>
+          <p class="command-description">
+            Copies and overwrites files in the head, given commit, or given
+            branch to the working directory.
+          </p>
+          <p class="command-name" id="command-name">branch</p>
+          <p class="command-description">
+            Creates a new branch with the given name, and points it at the
+            current head commit.
+          </p>
+          <p class="command-name" id="command-name">rm-branch</p>
+          <p class="command-description">
+            Deletes the branch with the given name.
+          </p>
+          <p class="command-name" id="command-name">reset</p>
+          <p class="command-description">
+            Checks out the files tracked by the given commit, removes untracked
+            files, and moves the current head to the given commit.
+          </p>
+          <p class="command-name" id="command-name">merge</p>
+          <p class="command-description">
+            Merges files from the given branch into the current branch, similar
+            to git merge.
+          </p>
+          <p class="command-name" id="command-name">add-remote</p>
+          <p class="command-description">
+            Saves a remote repository under the given name.
+          </p>
+          <p class="command-name" id="command-name">rm-remote</p>
+          <p class="command-description">
+            Removes information associated with the given remote name.
+          </p>
+          <p class="command-name" id="command-name">fetch</p>
+          <p class="command-description">
+            Copies commits and blobs from the given remote branch into the local
+            repository, saving fetched commits under a new branch.
+          </p>
+          <p class="command-name" id="command-name">push</p>
+          <p class="command-description">
+            Appends commits from the current branch to the end of the given
+            remote branch.
+          </p>
+          <p class="command-name" id="command-name">pull</p>
+          <p class="command-description">
+            Fetches the remote branch and merges it into the current branch.
+          </p>
+        </ul>
+      </section>
+
+      <h1 class="breakdown-title" id="title-typeface">Challenges</h1>
+      <span class="breakdown-text" id="body-typeface"
+        >Project design: Planning Gitlet's design was not a straightforward
+        process. Methodically cycling between learning, planning, and coding
+        helped me locate design flaws, plan ahead, and continuously iterate
+        until my implementation aligned perfectly with the intended design.
+      </span>
+
+      <p class="breakdown-text" id="body-typeface">
+        Checkout, merge, and fetch: These commands involve altering the working
+        directory based on information pulled from commit histories. For
+        example, the command merge behaves differently based on the earliest
+        split point of the given branches. For these commands to work, I treated
+        commit histories as directed acyclic graphs so I could easily traverse
+        them in reverse level order. My implementation involved using hashmaps,
+        linked lists, and unordered sets to store and retrieve information
+        during traversals.
+      </p>
+      <figure class="figure-container">
+        <img src="images/gitlet-merge.png" class="figure-image" />
+        <figcaption class="figure-caption">
+          Example of LCA in the merge command: Gitlet finds the latest common
+          ancestor of two commits in O(n) time (where n represents the number of
+          parents of each branch head) by running DFS to find all parents of
+          commit A, then matching those commits with each parent of commit B.
+          Every shared commit is a split point, and the LCA is the split point
+          with the greatest depth. Gitlet avoids calculating node depths during
+          merge by memoizing depth each time a new commit is saved.
+        </figcaption>
+      </figure>
+
+      <p class="breakdown-text" id="body-typeface">
+        Testing and debugging: Gitlet was particularly challenging because each
+        command relies upon the proper functionality of the other commands (for
+        example, fetching a remote branch is impossible if the remote repository
+        is improperly initialized.) I unit tested rigorously to ensure that
+        early bugs did not permeate later code, and found myself spending as
+        much time writing tests as I did coding up the main content. My
+        poorly-written tests often led me astray; my well-written ones were
+        crucial for clarifying key invariables and managing complexity.
+      </p>
+
+      <h1 class="takeaways-title" id="title-typeface">Takeaways</h1>
+      <span class="breakdown-text" id="body-typeface"
+        >This was my first introduction to software design; instead of coding to
+        meet a list of predefined requirements, I had to preemptively think
+        about designing in a way that is structured, well-organized, fast, and
+        flexible so I can develop new features without getting lost. I spent -
+        and wasted - a lot of time working and reworking both my design and
+        implementation, which helped me build a strong mental framework for
+        setting up larger, more complex projects.
+      </span>
+    </div>
+
+    <section class="footer">
+      <span class="footer-bg"></span>
+      <p class="need-more">NEED MORE?</p>
+      <p class="footer-links">
+        <a
+          class="about-linkedin-link"
+          href="https://www.linkedin.com/in/jlu130/"
+          style="color: black; text-decoration: none"
+        >
+          <span class="about-linkedin">Linkedin</span>
+        </a>
+        <span> &ensp;|&ensp; </span>
+        <a
+          class="about-github-link"
+          href="https://github.com/jonz0"
+          style="color: black; text-decoration: none"
+        >
+          <span class="about-github">Github</span>
+        </a>
+        <span> &ensp;|&ensp; </span>
+        <a
+          class="about-email-link"
+          href="mailto:ijonluu@gmail.com"
+          style="color: black; text-decoration: none"
+        >
+          <span class="about-email">Email</span>
+        </a>
+        <span> &ensp;|&ensp; </span>
+        <a
+          class="about-aboutme-link"
+          href="/about.html"
+          style="color: black; text-decoration: none"
+        >
+          <span class="about-aboutme">About Me</span>
+        </a>
+      </p>
+    </section>
+  </body>
+</html>

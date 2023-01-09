@@ -1,26 +1,53 @@
-const snowflakes = {
+const bubbles = {
   particles: {
     number: {
-      value: 100,
-    },
-    shape: {
-      type: "polygon",
+      value: 165,
+      density: {
+        enable: false,
+      },
     },
     size: {
-      value: 10,
+      value: 5,
       random: true,
+      anim: {
+        speed: 4,
+        size_min: 0.4,
+      },
     },
     line_linked: {
       enable: false,
     },
     move: {
-      enable: true,
-      speed: 2,
-      direction: "bottom",
-      straight: false,
+      random: true,
+      speed: 1.5,
+      direction: "top",
+      out_mode: "out",
     },
   },
-  interactivity: {},
+  interactivity: {
+    events: {
+      onhover: {
+        enable: true,
+        mode: "bubble",
+      },
+      onclick: {
+        enable: true,
+        mode: "repulse",
+      },
+    },
+    modes: {
+      bubble: {
+        distance: 50,
+        duration: 2,
+        size: 0,
+        opacity: 0,
+      },
+      repulse: {
+        distance: 180,
+        duration: 1.8,
+      },
+    },
+  },
 };
 
-particlesJS("particles-js", snowflakes);
+particlesJS("particles-js", bubbles);
