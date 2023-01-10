@@ -146,7 +146,10 @@
         Get to know the Firebase and Google Maps APIs.
       </li>
       <li id="body-typeface">
-        Figure out how to structure, retrieve, and store relevant data.
+        Figure out how to extract metadata from media files.
+      </li>
+      <li id="body-typeface">
+        Plan how my application will structure, retrieve, and store relevant data.
       </li id="body-typeface">
       <li id="body-typeface">Make really stupid stuff like a counter. And a to-do list I'll never use.</li>
       <li id="body-typeface">Build the project.</li>
@@ -165,13 +168,16 @@
       anticipate how much I could get out of reading documentation. This clicked for me as soon as
       I read the React docs and went straight to making reusable components for the project - the
       docs really lived up to their hype! Google Maps and Firebase docs were also very easy to
-      digest, and it was only when I was looking for libraries to read me.
+      digest, and it was only when I was looking for libraries to read metadata that I had issues working with
+      poorly-documented dev tools.
     </p>
 
     <p class="breakdown-text" id="body-typeface">
       Once I put together a basic login and main application UI, I mapped out how my application would generate,
       store, and retrieve data (namely uploaded images, and stored locations since Firebase handles authentication
-      automatically.) I settled on something like this:
+      automatically.) I started by learning to extract location and time information from metadata
+      using EXIFR, and encoding images as Base64 (hashed using SHA-3 using Crypto-JS.) Finally, the back-end structure
+      for EXIF Mapper looked like this:
     </p>
 
     <figure class="figure-container">
@@ -179,17 +185,17 @@
       <figcaption class="figure-caption">
         Firestore is a document-oriented database that stores data in collections of documents as opposed
         to tables and rows. I stored users as collections, which contain subcollections for markers and hashed images
-        stored as JSON records.
-        Each marker contains a reference to a collection of images associated with the marker located in Firebase
-        Storage. Image hashes are stored in
-        Firestore database for the purpose of checking for duplicate images since Storage is being used for binary data
-        and can't be queried like a database.
+        stored as JSON records. Each marker contains a reference to a collection of images associated with the marker
+        located in Firebase Storage.
+
+        <p>Note: Image hashes are stored in Firestore database for the purpose of checking for
+          duplicate images since Storage is being used for binary data and can't be queried like a database.</p>
       </figcaption>
     </figure>
 
     <p class="breakdown-text" id="body-typeface">
-      Once I built out the data access and request fulfillment side, my project was fully functional (save a few bugs)
-      and all I needed to do was make it pretty enough to deploy!
+      Once I structured out the data access layer and connected it with the front-end of the application, everything was
+      fully functional (save a few bugs) and all I needed to do was make it pretty enough to deploy!
     </p>
 
     <figure class="figure-container">
@@ -197,10 +203,38 @@
     </figure>
 
     <h1 class="takeaways-title" id="title-typeface">Takeaways</h1>
-    <span class="breakdown-text" id="body-typeface">WIP
+    <span class="breakdown-text" id="body-typeface">This project really helped me cement the fundamentals of JavaScript
+      and React and get a feel for the basics of front and back-end web development. I learned how to integrate and
+      manage various APIs and external libraries, while cutting the signal from the noise when I learned how to use
+      them. Moreover, I revisited some of the learnings from my previous projects (e.g. data structures for organizing
+      and sorting marker andimage objects, and design thinking to efficiently bring together all aspects of the
+      application.)
     </span>
-  </div>
 
+    <p class="breakdown-text" id="body-typeface">There were also several things I wanted to improve upon in EXIF mapper.
+      Some questions
+      I had yet to answer included:
+      <li id="body-typeface">
+        How would I handle multiple markers located very closely together, with both short and long durations between
+        visits?
+      </li>
+      <li id="body-typeface">
+        How should EXIF Mapper displa video files associated with each marker? How should the large ones be stored?
+      </li>
+      <li id="body-typeface">
+        The size and positioning of info windows above each marker could get really ugly depending on zoom and
+        overlapping. How could the UI be adjusted to make info window display more friendly?
+      </li>
+    </p>
+
+    <p class="breakdown-text" id="body-typeface">
+      With the skills I developed up to this point, I'm confident I can resolve most of these issues given some
+      additional time. Still, my
+      primary goal for this project was to extract as much learning value as possible, and with a great deal of
+      learning out of the way, I wanted to work on some more advanced things. When I feel that I can make some more big
+      leaps, I'll revisit this project and make it even better.
+    </p>
+  </div>
 
   <section class="footer">
     <span class="footer-bg"></span>
