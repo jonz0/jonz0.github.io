@@ -1,127 +1,113 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="keywords" content="Jonathan Lu" />
-    <meta name="description" content="This is my personal site." />
-    <link rel="stylesheet" href="css/style.css" />
-    <title>Jonathan Lu - Website</title>
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/script-main.js"></script>
-    <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  </head>
 
-  <body class="body">
-    <div id="particles-js"></div>
-    <script src="./js/app.js"></script>
-    <div class="logo">
-      <img
-        class="logo-portrait"
-        id="logo-portrait"
-        src="/images/jlu prof-vert.jpg"
-      />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta name="keywords" content="Jonathan Lu" />
+  <meta name="description" content="This is my personal site." />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Jonathan Lu - Website</title>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/script-main.js"></script>
+  <script src="//cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body class="body">
+  <div id="particles-js"></div>
+  <script src="./js/app.js"></script>
+  <div class="logo">
+    <img class="logo-portrait" id="logo-portrait" src="/images/jlu prof-vert.jpg" />
+  </div>
+
+  <div class="hamburger-background">
+    <div class="hamburger-icon">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+  </div>
 
-    <div class="hamburger-background">
-      <div class="hamburger-icon">
-        <span></span>
-        <span></span>
-        <span></span>
+  <div class="hamburger-background-large">
+    <div class="hamburger-icon-large">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <div class="hamburger-menu">
+    <a href="/index.html" class="home-button">HOME</a>
+    <a class="menu-link" href="/about.html" In Progress>About Me
+      <span class="menu-wrapper"></span>
+    </a>
+    <a class="menu-link" href="/gitlet.html" In Progress>Gitlet
+      <span class="menu-wrapper"></span>
+    </a>
+    <a class="menu-link" href="/exif-mapper.html" In Progress>EXIF Mapper
+      <span class="menu-wrapper"></span>
+    </a>
+    <a class="menu-link" href="/timeslots.html" In Progress>Timeslots
+      <span class="menu-wrapper"></span>
+    </a>
+    <a class="menu-link" href="#" In Progress>In Progress
+      <span class="menu-wrapper"></span>
+    </a>
+  </div>
+
+  <div class="contents-container">
+    <div class="contents-left">
+      <div class="background-white"></div>
+      <div class="intro" id="mini-typeface">INTRO</div>
+      <span class="about-description">Hi, I'm Jonathan, a startup enthusiast learning to be a
+        product-minded developer.
+      </span>
+      <div class="about-me">
+        <img src="images/ic-chevron-right@4x.png" class="right-arrow" />
+        <a href="/about.html" class="about-link">About Me </a>
+        <span class="about-wrapper"></span>
+      </div>
+
+      <div class="external-links">
+        <div class="check-me-out">Check me out!</div>
+        <a href="https://github.com/jonz0" class="github-container">
+          <img class="github" src="images/github-white.png" />
+        </a>
+        <a href="https://www.linkedin.com/in/jlu130/" class="linkedin-container">
+          <img class="linkedin" src="images/linkedin-white.png" />
+        </a>
+        <a href="mailto:ijonluu@gmail.com" class="email-container">
+          <img class="email" src="images/mail-white.png" />
+        </a>
       </div>
     </div>
 
-    <div class="hamburger-background-large">
-      <div class="hamburger-icon-large">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-
-    <div class="hamburger-menu">
-      <a href="/index.html" class="home-button">HOME</a>
-      <a class="menu-link" href="/about.html" In Progress
-        >About Me
-        <span class="menu-wrapper"></span>
+    <div class="contents-right">
+      <p class="my-projects" id="mini-typeface">MY PROJECTS</p>
+      <a href="/gitlet.html" class="project-name" id="gitlet">Gitlet
+        <span class="project-wrapper-1" id="project-wrapper"></span>
       </a>
-      <a class="menu-link" href="/gitlet.html" In Progress
-        >Gitlet
-        <span class="menu-wrapper"></span>
+      <img class="project-bg" id="bg-1" src="images/gitlet-diagram.png" />
+      <a href="/exif-mapper.html" class="project-name" id="worlds">EXIF Mapper
+        <span class="project-wrapper-2" id="project-wrapper"></span>
       </a>
-      <a class="menu-link" href="/exif-mapper.html" In Progress
-        >EXIF Mapper
-        <span class="menu-wrapper"></span>
+      <img class="project-bg" id="bg-2" src="images/mapper-example.png" />
+      <a href="/timeslots.html" class="project-name" id="inprogress">Timeslots
+        <span class="project-wrapper-3" id="project-wrapper"></span>
       </a>
-      <a class="menu-link" href="/timeslots.html" In Progress
-        >Timeslots
-        <span class="menu-wrapper"></span>
+      <img class="project-bg" id="bg-3" src="images/calendar-example.png" />
+      <a href="#" class="project-name" id="travelmap">In Progress
+        <span class="project-wrapper-4" id="project-wrapper"></span>
       </a>
-      <a class="menu-link" href="#" In Progress
-        >In Progress
-        <span class="menu-wrapper"></span>
-      </a>
-    </div>
-
-    <div class="contents-container">
-      <div class="contents-left">
-        <div class="intro" id="mini-typeface">INTRO</div>
-        <span class="about-description"
-          >Hi, I'm Jonathan, a startup enthusiast learning to be a
-          product-minded developer.
-        </span>
-        <div class="about-me">
-          <img src="images/ic-chevron-right@4x.png" class="right-arrow" />
-          <a href="/about.html" class="about-link">About Me </a>
-          <span class="about-wrapper"></span>
-        </div>
-
-        <div class="external-links">
-          <div class="check-me-out">Check me out!</div>
-          <a href="https://github.com/jonz0" class="github-container">
-            <img class="github" src="images/github-white.png" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/jlu130/"
-            class="linkedin-container"
-          >
-            <img class="linkedin" src="images/linkedin-white.png" />
-          </a>
-          <a href="mailto:ijonluu@gmail.com" class="email-container">
-            <img class="email" src="images/mail-white.png" />
-          </a>
-        </div>
-      </div>
-
-      <div class="contents-right">
-        <p class="my-projects" id="mini-typeface">MY PROJECTS</p>
-        <a href="/gitlet.html" class="project-name" id="gitlet"
-          >Gitlet
-          <span class="project-wrapper-1" id="project-wrapper"></span>
-        </a>
-        <img class="project-bg" id="bg-1" src="images/gitlet-tilted.png" />
-        <a href="/exif-mapper.html" class="project-name" id="worlds"
-          >EXIF Mapper
-          <span class="project-wrapper-2" id="project-wrapper"></span>
-        </a>
-        <img class="project-bg" id="bg-2" src="images/mapper-tilted.png" />
-        <a href="/timeslots.html" class="project-name" id="inprogress"
-          >Timeslots
-          <span class="project-wrapper-3" id="project-wrapper"></span>
-        </a>
-        <img class="project-bg" id="bg-3" src="images/calendar-tilted.png" />
-        <a href="#" class="project-name" id="travelmap"
-          >In Progress
-          <span class="project-wrapper-4" id="project-wrapper"></span>
-        </a>
-        <!-- <img
+      <!-- <img
           class="project-bg"
           id="bg-4"
           src="https://media.cntraveler.com/photos/5a8768cca2fdaf4c74bb6066/16:9/w_3968,h_2232,c_limit/Torrey-Pines_2018_Torrey-Pines-Beach-looking-South--Courtesy-Lisa-Field-SanDiego.jpg"
         /> -->
-      </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
