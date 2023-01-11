@@ -124,7 +124,7 @@
   display: none;
   opacity: 0.9;
   position: absolute;
-  background-color: #bed2ff;
+  background-color: #c4cfff;
   height: 24px;
   width: 130px;
   z-index: -1;
@@ -159,7 +159,7 @@
 .project-wrapper-4 {
   display: none;
   position: absolute;
-  background-color: #9bb7f7;
+  background-color: #9dbaff;
   height: 40%;
   right: -5px;
   bottom: 2px;
@@ -578,6 +578,7 @@
 
 .home-button:hover {
   font-weight: 500;
+  color: #739dff;
 }
 
 .menu-link {
@@ -593,7 +594,7 @@
 .menu-wrapper {
   position: absolute;
   opacity: 0;
-  background-color: #9bb7f7;
+  background-color: #9dbaff;
   height: 27%;
   bottom: 27px;
   left: -18%;
@@ -894,6 +895,7 @@
 .about-email:hover,
 .about-aboutme:hover {
   font-weight: 700;
+  color: #739dff;
 }
 
 .about-linkedin-link,
@@ -927,7 +929,7 @@
 }
 
 .hamburger-background {
-  background-color: #a5bef8;
+  background-color: #9dbaff;
   position: fixed;
   right: 20px;
   top: 20px;
@@ -1284,7 +1286,7 @@
   }
 
   .hamburger-background-large {
-    background-color: #a5bef8;
+    background-color: #9dbaff;
     position: fixed;
     right: 30px;
     top: 30px;
@@ -1385,7 +1387,6 @@
 
   .right-arrow {
     height: 40px;
-    background-color: #bed2ff;
     align-items: center;
   }
 
