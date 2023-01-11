@@ -201,8 +201,7 @@
 #bg-2 {
   transform: rotateZ(-15deg) rotateX(10deg) rotateY(30deg);
   height: 100%;
-  box-shadow: rgba(0, 0, 0, 0.22) 0px 22px 22px,
-    rgba(0, 0, 0, 0.22) 0px 25px 22px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
   top: 50px;
   border-radius: 25px;
   filter: brightness(85%);
@@ -212,8 +211,7 @@
 #bg-3 {
   transform: rotateZ(-15deg) rotateX(10deg) rotateY(30deg);
   height: 100%;
-  box-shadow: rgba(0, 0, 0, 0.22) 0px 22px 22px,
-    rgba(0, 0, 0, 0.22) 0px 25px 22px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
   top: 50px;
   border-radius: 25px;
   filter: brightness(95%);
@@ -223,8 +221,7 @@
 #bg-1 {
   transform: rotateZ(-15deg) rotateX(10deg) rotateY(30deg);
   height: 100%;
-  box-shadow: rgba(0, 0, 0, 0.22) 0px 22px 22px,
-    rgba(0, 0, 0, 0.22) 0px 25px 22px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
   top: 50px;
   border-radius: 25px;
   filter: brightness(85%);
