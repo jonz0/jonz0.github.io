@@ -5,12 +5,11 @@
 
 ::selection {
   color: #000942;
-  background: #abe5f1;
+  background: #bed2ff;
 }
 
 .logo-portrait {
   position: fixed;
-  border: #abe5f1;
   height: 85px;
   top: 20px;
   left: 20px;
@@ -103,7 +102,7 @@
 
 .right-arrow {
   height: 24px;
-  background-color: #8bdcec;
+  background-color: #c4cfff;
   align-items: center;
 }
 
@@ -125,7 +124,7 @@
   display: none;
   opacity: 0.9;
   position: absolute;
-  background-color: #8bdcec;
+  background-color: #bed2ff;
   height: 24px;
   width: 130px;
   z-index: -1;
@@ -160,7 +159,7 @@
 .project-wrapper-4 {
   display: none;
   position: absolute;
-  background-color: #8bdcec;
+  background-color: #9bb7f7;
   height: 40%;
   right: -5px;
   bottom: 2px;
@@ -594,7 +593,7 @@
 .menu-wrapper {
   position: absolute;
   opacity: 0;
-  background-color: #8bdcec;
+  background-color: #9bb7f7;
   height: 27%;
   bottom: 27px;
   left: -18%;
@@ -928,7 +927,7 @@
 }
 
 .hamburger-background {
-  background-color: #8bdcec;
+  background-color: #a5bef8;
   position: fixed;
   right: 20px;
   top: 20px;
@@ -1285,7 +1284,7 @@
   }
 
   .hamburger-background-large {
-    background-color: #8bdcec;
+    background-color: #a5bef8;
     position: fixed;
     right: 30px;
     top: 30px;
@@ -1386,7 +1385,7 @@
 
   .right-arrow {
     height: 40px;
-    background-color: #8bdcec;
+    background-color: #bed2ff;
     align-items: center;
   }
 
@@ -1609,7 +1608,7 @@
 }
 
 #particles-js {
-  background-color: #abe5f1;
+  background-color: #bed2ff;
   position: fixed;
   width: 75%;
   height: 100%;

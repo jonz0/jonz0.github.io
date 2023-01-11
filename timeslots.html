@@ -127,22 +127,16 @@
     </p>
 
     <h1 class="breakdown-title" id="title-typeface">My Approach</h1>
-    <span class="breakdown-text" id="body-typeface">Without a project skeleton, I planned ahead by diagramming how my
-      implementation of Gitlet should look. To figure out how Git stores
-      things like head commits, branches, and logs, I explored .git in my own
-      repositories and came up with a modified structure that looks like this:
+    <span class="breakdown-text" id="body-typeface">Going into this, I decided to challenge myself with learning how to
+      use the AWS SDK over Firebase for the purpose of learning a new technology. Plus, I wanted to see what the AWS
+      hype was all about - would I regret using it at by the time I finished?
     </span>
-    <div class="gitlet-structure">
-      <img src="images/gitlet-diagram.png" class="gitlet-diagram" />
-      <span class="gitlet-text" id="body-typeface">
-        All repository information (e.g. current head, staging area, blobs,
-        branches, commits, and remote repositories) is saved in a .gitlet
-        file. Commits and blobs are assigned a UUID using SHA-1, serialized,
-        and stored in the objects folder. To speed up object traversal,
-        objects are packaged in folders named by the first two digits of their
-        UUID, similar to Git.
-      </span>
-    </div>
+    <p class="breakdown-text" id="body-typeface">Another goal I had going in was to make the application more robust
+      compared to my previous project, EXIF Mapper. That project was just for me to learn the basics, and I left much of
+      it unfinished - things like front-end security, read/write controls, and other business logic.) I wanted this
+      project to be useful for real, even though I wasn't sure how much I needed to do to make that happen. Ultimately,
+      the true end goal was learning, so I wasn't going to be too disappointed if the app ended up being a flop.
+    </p>
 
     <h1 class="breakdown-title" id="title-typeface">Challenges</h1>
     <span class="breakdown-text" id="body-typeface">Project design: Planning Gitlet's design was not a straightforward
