@@ -205,7 +205,7 @@
   top: 50px;
   border-radius: 25px;
   filter: brightness(85%);
-  margin-left: calc(-35% - 85px);
+  margin-left: calc(-35% - 75px);
 }
 
 #bg-3 {
@@ -215,7 +215,7 @@
   top: 50px;
   border-radius: 25px;
   filter: brightness(95%);
-  margin-left: calc(-35% - 85px);
+  margin-left: calc(-35% - 75px);
 }
 
 #bg-1 {
@@ -225,7 +225,7 @@
   top: 50px;
   border-radius: 25px;
   filter: brightness(85%);
-  margin-left: calc(-35% - 85px);
+  margin-left: calc(-35% - 75px);
 }
 
 #bg-1,
