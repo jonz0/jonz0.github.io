@@ -769,6 +769,11 @@
   padding-right: 2%;
 }
 
+.figure-caption-center {
+  padding-top: 2%;
+  align-self: center;
+}
+
 .gitlet-diagram {
   width: 60%;
   align-self: center;
