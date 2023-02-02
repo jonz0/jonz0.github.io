@@ -15,9 +15,9 @@
 </head>
 
 <body class="project-body" id="page-body">
-  <div class="logo">
+  <!-- <div class="logo">
     <img class="logo-portrait" id="logo-portrait" src="/images/jlu prof-vert.jpg" />
-  </div>
+  </div> -->
 
   <div class="hamburger-background">
     <div class="hamburger-icon">
@@ -105,7 +105,7 @@
 
     <h1 class="breakdown-title" id="title-typeface">Slow and Boring?</h1>
     <span class="breakdown-text" id="body-typeface">
-      My primary grievance was with the interface itself, which is very slow. This is because signup requests take
+      My biggest grievance was with the interface itself, which is very slow. This is because signup requests take
       upwards of 5
       seconds to fulfill. Then, adding insult to injury, the entire page is re-rendered, which is especially
       troublesome when signing up on a mobile device, where a page refresh means I need to scroll through hundreds of
@@ -167,31 +167,81 @@
     </figure>
 
     <p class="breakdown-text" id="body-typeface">
-      Then, much like with EXIF Mapper, I bean the discovery phase where I identified the tools necessary
-      for handling the back-end, as well as how I would structure the data access layer of the entire
-      application. Within the AWS kit, I settled upon AppSync for managing user/attendee/class information, Cognito for
+      Much like with EXIF Mapper, I then identified which tools I needed in order to
+      handle back-end stuff, like how the entire data access layer would be organized. Within the AWS kit, I settled
+      upon AppSync for managing user/attendee/class information, Cognito for
       user authentication, and S3 for file/images.
     </p>
 
     <p class="breakdown-text" id="body-typeface">
-      One thing I struggled with was planning out how my application would handle a moving range of available class
-      signup dates. This gym could conceivably last forever, and I needed users to be able to sign up for classes that
-      exist 50 years from now, even though they are only able to register 7 days in advance. Storing an infinite number
-      of classes that could be registered for in the back-end didn't make sense to me, so I needed to find another
-      solution. Similarly, I planned for users to be able to view a history of their class attendance, which meant that
-      the amount of class data attached to each user grows each day and couldn't be stored like a key-value pair in a
-      user object.
+      During this process, I struggled with designing how to handle a moving range of available class dates that users
+      could sign up for. Here's what I mean: each class is tied to a date, but there are an infinite number of future
+      dates that can be registered for. Storing an infinite number of classes in my database didn't seem feasible, so I
+      figured the application needed to automatically update dates for each class, while simultaneously presenting a
+      moving 7-day signup window for users. Similarly, allowing users to view a monthly history of class attendance
+      the application needed to automatically update a growing catalogue of classes that is attached to each user.
+      These features would later be handled with scheduled AWS Lambda functions that automatically update class
+      dates and append new attendance data to users on a daily basis.
     </p>
 
+    <h1 class="takeaways-title" id="title-typeface">Features and Buildout</h1>
+
+    <span class="breakdown-text" id="body-typeface">
+      Once I had the backend design figured out, piecing together the front end was relatively straightforward, save for
+      a few challenges around interface design, which I mocked up and experimented with on a notebook and paper as I
+      built various pages and features. The more frustrating difficulties came with the backend, the AWS learning curve
+      in particular, as I needed to read through specific parts of documentation for AWS AppSync, CloudWatch, Cognito,
+      IAM, Lambda, and S3 so I could connect the front-end and back-end using JavaScript.
+    </span>
+
+    <span class="breakdown-text" id="body-typeface">
+      Occasionally, I found parts of the AWS documentation to be confusing or unworkable for reasons I couldn't figure
+      out at the time, so I leaned upon a few external libraries like amazon-cognito-identity-js to support the parts I
+      couldn't get going on my own. Beyond documentation, here are a few additional workarounds and learnings I came
+      across while building out the main application:
+      <br />
+      <br />
+      <li id="body-typeface">
+        Global state management with redux: one use case for this arose in the main calendar signup page, where each
+        class needed to pass details props to the main page. My initial setup required some serious prop drilling (from
+        Class -> Day -> main page -> Details component.) Using the Redux store though, details were instead saved
+        as a global state so that the Details component could pull them directly and make state changes through the
+        details slice. Additionally, I used mapStateToProps to rerender components upon modifying global states (for
+        example, the Attendees component is automatically rerendered when the current user changes the details of a
+        class by signing up for it.)
+      </li>
+      <li id="body-typeface">
+        Cache busting: when users update their profile image, a new image request is sent to S3 using an Object URL.
+        However, because images are cached aggressively in the browser, I appended the current date and timestamp
+        <i>Date.now()</i> to the Object URL so that users' updated profile images are reflected immediately upon upload.
+      </li>
+      <li id="body-typeface">
+        GraphQL queries, mutations, and schemas: Because the entire data access layer of the application is built using
+        AppSync which is a GraphQL interface, I picked up the basics of how to design an effective schema with nested
+        types, and learned the hard way to design my schema in a way that is friendly to future changes (as I found
+        myself scrapping and recreating the schema frequently when I planned poorly from the outset.)
+      </li>
+      <li id="body-typeface">
+        Lambda function throttling:
+      </li>
+    </span>
+
+
     <h1 class="takeaways-title" id="title-typeface">Takeaways</h1>
-    <span class="breakdown-text" id="body-typeface">This was my first introduction to software design; instead of coding
-      to
-      meet a list of predefined requirements, I had to preemptively think
-      about designing in a way that is structured, well-organized, fast, and
-      flexible so I can develop new features without getting lost. I spent -
-      and wasted - a lot of time working and reworking both my design and
-      implementation, which helped me build a strong mental framework for
-      setting up larger, more complex projects.
+    <span class="breakdown-text" id="body-typeface">This was my first time bring a real-world application of my code
+      from concept to reality. It was by far my most enjoyable project to date, especially because the features I built
+      or reworked were all ones I would personally find useful as a student at my gym. Most of my struggles and
+      bottlenecks during this project came from working with the AWS back-end, mostly due to my initial lack of
+      understanding of how each of the AWS services work and how I should implement them in my code.
+    </span>
+
+    <span class="breakdown-text" id="body-typeface">On the flip side, building the front-end was also challenging
+      because of the volume of feature requirements I had planned from the outset. Reworking various features based on
+      user feedback was also tedious, but a necessary step in ensuring that the actual user experience for both students
+      and instructors aligned with their specific needs.
+    </span>
+
+    <span class="breakdown-text" id="body-typeface">NexTJS Blurb
     </span>
   </div>
 
