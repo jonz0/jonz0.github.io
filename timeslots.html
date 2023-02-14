@@ -12,6 +12,8 @@
   <title>Jonathan Lu - Timeslots</title>
   <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/script-main.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+  <script src="carousel-script,js" defer></script>
 </head>
 
 <body class="project-body" id="page-body">
@@ -55,7 +57,7 @@
   </div>
 
   <div class="bg-bg">
-    <img src="images/calendar-example.png" class="cover-photo" />
+    <img src="images/serao/demo-4.png" class="cover-photo" id="" cover-timeslots />
   </div>
   <div class="cover-text">
     <h1 class="cover-title">Timeslots</h1>
@@ -92,7 +94,7 @@
         </div>
         <div class="learning-block">
           <h2 class="learning-number">03</h2>
-          <p class="learning-content">Amazon Web Services SDK</p>
+          <p class="learning-content">Amazon Web Services</p>
         </div>
         <div class="learning-block">
           <h2 class="learning-number">04</h2>
@@ -199,38 +201,62 @@
     <span class="breakdown-text" id="body-typeface">
       Occasionally, I found parts of the AWS documentation to be confusing or unworkable for reasons I couldn't figure
       out at the time, so I leaned upon a few external libraries like amazon-cognito-identity-js to support the parts I
-      couldn't get going on my own. Beyond documentation, here are a few additional workarounds and learnings I came
-      across while building out the main application:
-      <br />
-      <br />
-      <li id="body-typeface">
-        Global state management with redux: one use case for this arose in the main calendar signup page, where each
-        class needed to pass details props to the main page. My initial setup required some serious prop drilling (from
-        Class -> Day -> main page -> Details component.) Using the Redux store though, details were instead saved
-        as a global state so that the Details component could pull them directly and make state changes through the
-        details slice. Additionally, I used mapStateToProps to rerender components upon modifying global states (for
-        example, the Attendees component is automatically rerendered when the current user changes the details of a
-        class by signing up for it.)
-      </li>
-      <li id="body-typeface">
-        Cache busting: when users update their profile image, a new image request is sent to S3 using an Object URL.
-        However, because images are cached aggressively in the browser, I appended the current date and timestamp
-        <i>Date.now()</i> to the Object URL so that users' updated profile images are reflected immediately upon upload.
-      </li>
-      <li id="body-typeface">
-        GraphQL queries, mutations, and schemas: Because the entire data access layer of the application is built using
-        AppSync which is a GraphQL interface, I picked up the basics of how to design an effective schema with nested
-        types, and learned the hard way to design my schema in a way that is friendly to future changes (as I found
-        myself scrapping and recreating the schema frequently when I planned poorly from the outset.)
-      </li>
-      <li id="body-typeface">
-        NextJS vs. Create React App: Previously, I learned to use React with Create React App. However, I opted for
-        NextJS primarily to take
-        advantage of server-side rendering when serving updated class and attendance details for users. In addition to
-        learning the basics of client-side vs. server-side rendering, I also made use of NextJS component-level css,
-        which helped me organize and clean up my styling for various elements of the application. Lastly, I enjoyed (but
-        did not notice) the various optimizations NextJS makes for fonts and images.
-      </li>
+      couldn't get going on my own. </span>
+
+    <div class="carousel-wrapper">
+      <div class="wrapper">
+        <i class="fa-solid fa-angle-left"></i>
+        <div class="carousel">
+          <img src="images/serao/demo-1.png" />
+          <img src="images/serao/demo-2.png" />
+          <img src="images/serao/demo-3.png" />
+          <img src="images/serao/demo-4.png" />
+        </div>
+        <i class="fa-solid fa-angle-right"></i>
+      </div>
+    </div>
+
+
+    <span class="breakdown-text" id="body-typeface">Beyond documentation, here are a few additional workarounds
+      and
+      learnings I came
+      across while building out the main application:</span>
+    <br />
+    <br />
+    <li id="body-typeface">
+      Global state management with redux: one use case for this arose in the main calendar signup page, where each
+      class needed to pass details props to the main page. My initial setup required some serious prop drilling
+      (from
+      Class -> Day -> main page -> Details component.) Using the Redux store though, details were instead saved
+      as a global state so that the Details component could pull them directly and make state changes through the
+      details slice. Additionally, I used mapStateToProps to rerender components upon modifying global states (for
+      example, the Attendees component is automatically rerendered when the current user changes the details of a
+      class by signing up for it.)
+    </li>
+    <li id="body-typeface">
+      Cache busting: when users update their profile image, a new image request is sent to S3 using an Object URL.
+      However, because images are cached aggressively in the browser, I appended the current date and timestamp
+      <i>Date.now()</i> to the Object URL so that users' updated profile images are reflected immediately upon
+      upload.
+    </li>
+    <li id="body-typeface">
+      GraphQL queries, mutations, and schemas: Because the entire data access layer of the application is built
+      using
+      AppSync which is a GraphQL interface, I picked up the basics of how to design an effective schema with
+      nested
+      types, and learned the hard way to design my schema in a way that is friendly to future changes (as I found
+      myself scrapping and recreating the schema frequently when I planned poorly from the outset.)
+    </li>
+    <li id="body-typeface">
+      NextJS vs. Create React App: Previously, I learned to use React with Create React App. However, I opted for
+      NextJS primarily to take
+      advantage of server-side rendering when serving updated class and attendance details for users. In addition
+      to
+      learning the basics of client-side vs. server-side rendering, I also made use of NextJS component-level css,
+      which helped me organize and clean up my styling for various elements of the application. Lastly, I enjoyed
+      (but
+      did not notice) the various optimizations NextJS makes for fonts and images.
+    </li>
     </span>
 
 
@@ -239,10 +265,13 @@
       because the features I built
       or reworked were all ones I would personally find useful as a student at my gym. Most of my struggles and
       bottlenecks during this project came from working with the AWS, mostly due to my initial lack of
-      understanding of how each of the AWS services work and how I should implement them in my code. On the flip side,
+      understanding of how each of the AWS services work and how I should implement them in my code. On the flip
+      side,
       building the front-end was also challenging
-      because of the volume of feature requirements I had planned from the outset. Reworking various features based on
-      user feedback was also tedious, but a necessary step in ensuring that the actual user experience was function for
+      because of the volume of feature requirements I had planned from the outset. Reworking various features
+      based on
+      user feedback was also tedious, but a necessary step in ensuring that the actual user experience was
+      function for
       both instructors and students.
     </span>
 
@@ -252,6 +281,7 @@
     <span class="breakdown-text" id="body-typeface">
     </span>
   </div>
+
 
   <section class="footer">
     <span class="footer-bg"></span>
