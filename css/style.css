@@ -289,14 +289,26 @@
 /************ ABOUT SECTION ************/
 
 .cover-photo {
+  height: 120%;
+  width: 120%;
+  opacity: 1;
+  transform: rotateZ(-15deg) rotateX(10deg) rotateY(30deg);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
+  margin-top: 80px;
+  border-radius: 25px;
+  filter: brightness(90%);
+  object-fit: fill;
+}
+
+.bg-bg {
   position: absolute;
   left: 0;
   top: 0;
   height: 70%;
   width: 100%;
-  object-fit: cover;
   opacity: 1;
-  filter: brightness(0.7);
+  background-color: rgb(200, 225, 255);
+  overflow: hidden;
 }
 
 .cover-text {
