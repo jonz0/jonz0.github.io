@@ -1652,6 +1652,7 @@
   white-space: nowrap;
   overflow: hidden;
   font-size: 0px;
+  scroll-behavior: smooth;
 }
 
 .wrapper {
@@ -1692,9 +1693,7 @@
 .carousel img {
   height: 300px;
   margin-left: 14px;
-
   object-fit: cover;
-  width: calc(100% / 3);
 }
 
 .carousel img:first-child {

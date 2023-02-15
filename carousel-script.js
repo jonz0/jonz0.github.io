@@ -1,8 +1,18 @@
 const carousel = document.querySelector(".carousel");
+// firstImg = carousel.querySelectorAll("img")[0];
+// arrowIcons = document.querySelectorAll(".wrapper i");
 
 let isDragStart = false,
   prevPageX,
   prevScrollLeft;
+
+// let firstImgWidth = firstImg.clientWidth + 14;
+
+// arrowIcons.forEach((icon) => {
+//   icon.addEventListener("click", () => {
+//     carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+//   });
+// });
 
 const dragStart = (e) => {
   isDragStart = true;
@@ -13,8 +23,9 @@ const dragStart = (e) => {
 const dragging = (e) => {
   if (!isDragStart) return;
   e.preventDefault();
+  carousel.scrollLeft = e.pageX;
   let positionDiff = e.pageX - prevPageX;
-  carousel.scrollLeft = e.pageX - positionDiff;
+  carousel.scrollLeft = prevScrollLeft - positionDiff;
 };
 
 const dragStop = (e) => {
